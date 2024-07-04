@@ -43,10 +43,10 @@ const App = () => {
                 <Route path='/booking' element={<Booking />} />
                 <Route path={`/success`} element={<ConfirmBooking />} />
                 <Route path={`/failed`} element={<BookingFailed />} />
-                <Route path="/terms" element={<TermAndConditionPage />} />
-                <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-                <Route path="/companydetails" element={<CompanyDetails />} />
-                <Route path="/helpcenter" element={<HelpCenter />} />
+                <Route path="/terms-condition" element={<TermAndConditionPage />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/company-details" element={<CompanyDetails />} />
+                <Route path="/help-center" element={<HelpCenter />} />
               </Route>
               
                {/*Admin Routes */}
