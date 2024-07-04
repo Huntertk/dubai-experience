@@ -1,0 +1,132 @@
+@use './variables.scss' as *;
+
+.allBookingsMainContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    h1{
+        font-size: 1.3rem;
+    }
+    .serviceSelect{ 
+        font-size: 1.1rem;
+        width: 100%;
+        padding: 1rem;
+
+    }
+
+    .bookingFilterTabContainer{
+        margin: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+
+        button{
+            padding: 10px 1rem;
+            font-size: 1.1rem;
+            background-color: $primaryModalColor;
+            color: $primary;
+            border: 2px solid $primary;
+            border-radius: 10px;
+        }
+        .activeTab{
+            background-color: $primary;
+            color: #fff;
+        }
+
+    }
+}
+.allBookingsContainer{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    margin-top: 1rem;
+    padding: 10px;
+
+   
+
+    .cardContainer{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        gap: 10px;
+        background-color: $primaryModalColor;
+        .cardTopStatusContent{
+            display: flex;
+            justify-content:  space-between;
+        }
+
+        .payment-fail{
+            font-weight: 600;
+            color: #ff0000;
+        }
+        .personCount{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+
+            p{
+                background-color: $primary;
+                color: $backgroundColor;
+                padding: 5px;
+            }
+        }
+        .bookingStatus{
+
+
+            .updateBtn{
+               background-color: $primary;
+               color: $backgroundColor; 
+               border: none;
+               cursor: pointer;
+               box-shadow: 1px 1px 1px 1px #000;
+               margin-left: 5px;
+               padding: 0px 5px;
+               &:active{
+                box-shadow: 1px 1px 1px 1px $primary;
+               }
+            }
+        }
+        .totalBill{
+            font-weight: bold;
+        }
+
+    }
+}
+
+
+
+
+@media screen and (min-width: 1024px) {
+    .allBookingsMainContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        h1{
+            font-size: 1.3rem;
+        }
+        .serviceSelect{ 
+            font-size: 1.1rem;
+            width: 500px;
+            padding: 1rem;
+    
+        }
+    }
+    .allBookingsContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    .allBookingsContainer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
