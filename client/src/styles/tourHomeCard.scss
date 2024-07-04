@@ -1,0 +1,22 @@
+@use './variables.scss' as *;
+
+
+.tourCardMainSection{
+
+    .tourCardBigScreen{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .tourCardMainSection{
+
+        .tourCardBigScreen{
+            display: block;
+
+        }
+        .tourCardSmallScreen{
+            display: none;
+        }
+    }   
+}
