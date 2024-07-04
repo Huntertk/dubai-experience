@@ -55,3 +55,10 @@
         width: 400px;
     }
 }
+
+@media screen and (min-width: 900px) {
+    
+    .tourCardSmallDeviceMainContainer{
+        display: none;
+    }
+}

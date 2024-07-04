@@ -1,24 +1,112 @@
 @use './variables.scss' as *;
 
 .tourCardBigDeviceMainContainer{
-    display: grid;
-    grid-template-columns: 350px 1fr 200px;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #bbb;
-    padding: 2rem;
-    border-radius: 14px;
+    display: none;
+}
 
-    .tourCardImgContainer{
-        width: 300px;
+
+@media screen and (min-width: 900px) {
+
+    .tourCardBigDeviceMainContainer{
+        display: grid;
+        grid-template-columns: 350px 1fr 200px;
+        gap: 1rem;
+        // align-items: center;
+        justify-content: center;
+        border: 1px solid #bbb;
+        padding: 2rem;
         border-radius: 14px;
-        overflow: hidden;
-        .imgContainer{
-            img{
-                object-fit: cover;
-                height: 350px;
-                width: 300px;
+    
+        .tourCardImgContainer{
+            width: 300px;
+            border-radius: 14px;
+            overflow: hidden;
+            .imgContainer{
+                img{
+                    object-fit: cover;
+                    height: 350px;
+                    width: 300px;
+                }
             }
         }
+
+        .tourCardDetailsContainer{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            span{
+                color: $primary;
+                font-size: 1.2rem;
+                font-weight: 600;
+            }
+
+            .tourCardDetailsWrapper{
+                h3{
+                    font-size: 1.5rem;
+                    margin-top: 1rem;
+                    margin-bottom: 1rem;
+                }
+
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    li{
+                        font-size: 0.9rem;
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+        }
+
+        .tourCardPricingContainer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-left: 1px dotted #bbb;
+            padding-left: 1rem;
+
+            button{
+                background-color: $primary;
+                color: #fff;
+                width: 100%;
+                padding: 10px 12px;
+                border: none;
+                border-radius: 12px;
+                font-size: 1.1rem;
+            }
+
+            .tourCardHighlights{
+                margin-top: 0.9rem;
+                p{
+                    color: $primary;
+                    font-size: 0.9rem;
+
+                }
+
+                .iconContainer{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    margin-top: 10px;
+
+                    .icon{
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        svg{
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1100px) {
+
+    .tourCardBigDeviceMainContainer{
+        grid-template-columns: 350px 1fr 300px;
     }
 }

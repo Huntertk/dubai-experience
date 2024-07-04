@@ -28,12 +28,8 @@ const TourHomeCard = ({data}) => {
       }
   return (
     <section className='tourCardMainSection'>
-      <div className="tourCardBigScreen">
         <TourCardBigDevice />
-      </div>
-      <div className="tourCardSmallScreen">
         <TourCardSmallDevice />
-      </div>
     </section>
     
   )
