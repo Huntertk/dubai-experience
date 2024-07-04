@@ -37,6 +37,16 @@
             align-items: center;
             gap: 20px;
             
+            .videoWrapper{
+                border-radius: 24px;
+                overflow: hidden;
+                .video{
+                    object-fit: cover;
+                    height: 350px;
+                    border-radius: 14px;
+                    width: 100%;
+                }
+            }
 
 
             .content {

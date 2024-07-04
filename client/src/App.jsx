@@ -2,27 +2,16 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {
   AdminLogin,
   AllBookings,
-  ArasResturant,
-  ArasResturantBookTypeOneDate,
-  ArasResturantBookTypeTwoDate,
-  ArasResturantDateManage,
+  DubaiFrame,
   BookingFailed,
   CompanyDetails,
   ConfirmBooking,
   HelpCenter,
   ManageDates,
   NotFound,
-  PaymentSucess,
   PrivacyPolicy,
   SplashMainaDateManage,
-  SplashMania,
   SplashManiaBookTypeOneDate,
-  SunwayLagoon,
-  SunwayLagoonBookTypeFourDate,
-  SunwayLagoonBookTypeOneDate,
-  SunwayLagoonBookTypeThreeDate,
-  SunwayLagoonBookTypeTwoDate,
-  SunwayLagoonDateManage,
   TermAndConditionPage,
  } from './pages'
 import { AdminLayout, DateSelectionContainer, TourLayout } from './components'
@@ -43,21 +32,15 @@ const App = () => {
               path='/' 
               element={
                 window.location.hostname === 'atmosphere360.malaysia-experience.com' ? (
-                  <ArasResturant />
-                ) : window.location.hostname === 'splashmania.malaysia-experience.com' ? (
-                  <SplashMania />
-                ) : window.location.hostname === 'sunwaylagoon.malaysia-experience.com' ? (
-                  <SunwayLagoon />
-                ) :  window.location.hostname === 'malaysia-experience.onrender.com' ? (
-                  <SplashMania />
-                ) : <ArasResturant />
+                  <DubaiFrame />
+                ) :  window.location.hostname === 'localhost' ? (
+                  <DubaiFrame />
+                ) : <NotFound />
               } 
             />
                 
                 <Route path='/date-select' element={<DateSelectionContainer />} />
                 <Route path='/booking' element={<Booking />} />
-                {/* <Route path={`/${responseClientUrl}`} element={<PaymentSucess />} /> */}
-                {/* <Route path="/bookingconfirm" element={<ConfirmBooking />} /> */}
                 <Route path={`/success`} element={<ConfirmBooking />} />
                 <Route path={`/failed`} element={<BookingFailed />} />
                 <Route path="/terms" element={<TermAndConditionPage />} />
@@ -81,43 +64,6 @@ const App = () => {
                       path="/admin/manage-dates/splash-mania/booktype-one" 
                       element={<SplashManiaBookTypeOneDate />} 
                     />
-
-                    {/**Aras Resturant */}
-                    <Route 
-                      path="/admin/manage-dates/aras-resturant" 
-                      element={<ArasResturantDateManage />} 
-                    />
-                    <Route 
-                      path="/admin/manage-dates/aras-resturant/booktype-one" 
-                      element={<ArasResturantBookTypeOneDate />} 
-                    />
-                    <Route 
-                      path="/admin/manage-dates/aras-resturant/booktype-two" 
-                      element={<ArasResturantBookTypeTwoDate />} 
-                    />
-
-                    {/**Sunway Lagoon */}
-                    <Route 
-                      path="/admin/manage-dates/sunway-lagoon" 
-                      element={<SunwayLagoonDateManage />} 
-                    />  
-                      <Route 
-                      path="/admin/manage-dates/sunway-lagoon/booktype-one" 
-                      element={<SunwayLagoonBookTypeOneDate />} 
-                    />
-                    <Route 
-                      path="/admin/manage-dates/sunway-lagoon/booktype-two" 
-                      element={<SunwayLagoonBookTypeTwoDate />} 
-                    />
-                    <Route 
-                      path="/admin/manage-dates/sunway-lagoon/booktype-three" 
-                      element={<SunwayLagoonBookTypeThreeDate />} 
-                    />
-                    <Route 
-                      path="/admin/manage-dates/sunway-lagoon/booktype-four" 
-                      element={<SunwayLagoonBookTypeFourDate />} 
-                    />
-
                   </Route>
                 </Route>
                 <Route path='*' element={<NotFound />} />

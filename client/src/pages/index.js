@@ -1,7 +1,6 @@
 import Home from "./Home";
 import About from "./About";
-import SplashMania from "./splash-mania/SplashMania";
-import ArasResturant from "./aras-resturant/ArasResturant";
+import DubaiFrame from "./dubai-frame/DubaiFrame";
 import Tours from "./Tours";
 import NotFound from "./NotFound";
 import TermAndConditionPage from "./TermAndConditionPage";
@@ -13,31 +12,14 @@ import ManageDates from "./admin/ManageDates";
 import AllBookings from "./admin/AllBookings";
 import SplashMainaDateManage from "./admin/splash-mania/SplashMainaDateManage";
 import SplashManiaBookTypeOneDate from "./admin/splash-mania/SplashManiaBookTypeOneDate";
-import ArasResturantDateManage from "./admin/aras-resturant/ArasResturantDateManage";
-import ArasResturantBookTypeOneDate from "./admin/aras-resturant/ArasResturantBookTypeOneDate";
 import PaymentSucess from "./PaymentSuccess";
 import ConfirmBooking from "./ConfirmBooking";
-import ArasResturantBookTypeTwoDate from "./admin/aras-resturant/ArasResturantBookTypeTwoDate";
-import SunwayLagoon from "./sunway-lagoon/SunwayLagoon";
-import SunwayLagoonBookTypeFourDate from "./admin/sunwayLagoon/SunwayLagoonBookTypeFourDate";
-import SunwayLagoonBookTypeOneDate from "./admin/sunwayLagoon/SunwayLagoonBookTypeOneDate";
-import SunwayLagoonBookTypeThreeDate from "./admin/sunwayLagoon/SunwayLagoonBookTypeThreeDate";
-import SunwayLagoonBookTypeTwoDate from "./admin/sunwayLagoon/SunwayLagoonBookTypeTwoDate";
-import SunwayLagoonDateManage from "./admin/sunwayLagoon/SunwayLagoonDateManage";
 import BookingFailed from "./BookingFailed";
+
 export {
     BookingFailed,
-    SunwayLagoonDateManage,
-    SunwayLagoonBookTypeOneDate,
-    SunwayLagoonBookTypeTwoDate,
-    SunwayLagoonBookTypeThreeDate,
-    SunwayLagoonBookTypeFourDate,
-    SunwayLagoon,
-    ArasResturantBookTypeTwoDate,
     ConfirmBooking,
     PaymentSucess,
-    ArasResturantBookTypeOneDate,
-    ArasResturantDateManage,
     SplashManiaBookTypeOneDate,
     SplashMainaDateManage,
     Home,
@@ -45,8 +27,7 @@ export {
     TermAndConditionPage,
     NotFound,
     About,
-    SplashMania,
-    ArasResturant,
+    DubaiFrame,
     Tours,
     PrivacyPolicy,
     HelpCenter,

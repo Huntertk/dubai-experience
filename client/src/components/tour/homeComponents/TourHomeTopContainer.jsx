@@ -1,15 +1,26 @@
 import '../../../styles/tourHomeTopContainer.scss';
 
-const TourHomeTopContainer = ({title, desc,imgUrl}) => {
+const TourHomeTopContainer = ({title, desc,imgUrl,videoFile=false}) => {
   return (
     <section className='tourHomeTopContainer'>
         <div className="content">
-            <h1>Book {title} Ticket</h1> 
-            {/* <p>Travelvago is an authorized and trusted partner of the venue, offering curated experiences to enjoy this attraction.</p> */}
+            <h1>Book {title} Ticket</h1>
             <p>{desc}</p>
         </div>
         <div className="tourHomeTopImgContainer">
-            <img src={imgUrl} alt={title} />
+          {
+            videoFile ? (
+              <div className="videoWrapper">
+                <video 
+                  className='video'
+                  src={videoFile}
+                  loop
+                  autoPlay
+                  muted
+                />
+              </div>
+            )  :  <img src={imgUrl} alt={title} />
+          } 
         </div>
     </section>
   )
