@@ -123,30 +123,33 @@ export const arasResturantCardData = [
 ]
 
 //Why Visit
-export const arasResturantWhyVistData = [
+export const dubaiFrameWhyVistData = [
     {
         id: nanoid(),
-        title: "Exceptional Dining Experience",
-        desc:"Delight in a one-of-a-kind culinary journey as the restaurant gracefully revolves, presenting a captivating 360-degree panorama of Kuala Lumpur's city scape.",
-        imgUrl:"https://i.postimg.cc/5yggcB7y/IMG-20240129-WA0076.jpg"
-    },
-    {
-        id: nanoid(),
-        title: "Enchanting Atmosphere",
-        desc:"Immerse yourself in an interior design reminiscent of a futuristic spaceship, crafting a mesmerizing and unforgettable ambiance akin to dining amidst the celestial stars.",
-        imgUrl:"https://i.postimg.cc/BQQbJT73/2.jpg"
-    },
-    {
-        id: nanoid(),
-        title: "Gastronomic Delights",
-        desc:"Indulge in a sumptuous Hi-Tea Buffet prepared by culinary experts, showcasing the best of Malay cuisine with premium ingredients.",
-        imgUrl:"https://i.postimg.cc/2yHz1t9D/9.jpg"
-    },
-    {
-        id: nanoid(),
-        title: "Culinary Excellence",
-        desc:"Savor a delectable Hi-Tea Buffet meticulously crafted by skilled culinary artisans, showcasing the finest elements of Malay cuisine with premium, handpicked ingredients.",
-        imgUrl:"https://i.postimg.cc/TYwdzRhY/10.jpg"
+        title:"Dubai Frame",
+        descList:[
+            {
+                id: nanoid(),
+                title:"Stunning views of the city skyline",
+                desc:"The Dubai Frame offers 360-degree views of the city skyline, including the Burj Khalifa, the Dubai Mall, and the Arabian Gulf.",
+            },
+            {
+                id: nanoid(),
+                title:"Unique architectural structure",
+                desc:"The Dubai Frame is a unique and iconic architectural structure that is shaped like a picture frame. It is one of the most popular tourist attractions in Dubai.",
+            },
+            {
+                id: nanoid(),
+                title:"Showcases Dubai's past, present, and future",
+                desc:"The Dubai Frame is located in Zabeel Park, which is one of the oldest parks in Dubai. This location is symbolic of Dubai's past and present. The Dubai Frame itself is a symbol of Dubai's future, as it represents the city's ambitious plans for the future.",
+            },
+            {
+                id: nanoid(),
+                title:"Thrilling walk on the glass bridge",
+                desc:"The 93-meter-long glass bridge that connects the two towers of the Dubai Frame offers visitors a truly unique and thrilling experience. Walking on the glass bridge gives you the feeling of walking on air, and it offers stunning views of the city below.",
+            },
+        ],
+        imgUrl:"/assets/images/dubai-frame-dubaiFramWhyVisit.avif"
     },
 ]
 
@@ -261,49 +264,49 @@ export const arasResturantTourHomeFAQ = [
 export const dubaiFrameTopThingsToDo = [
     {
         id:nanoid(),
-        imageUrl:"/assets/images/burjkhalifaTicketTopThingsToDo.avif",
+        imageUrl:"/assets/images/dubai-frame-burjkhalifaTicketTopThingsToDo.avif",
         title:"Burj Khalifa Ticket",
         linkUrl:"#"
     },
     {
         id:nanoid(),
-        imageUrl:"/assets/images/aquaventureticketTopThingsToDo.avif",
+        imageUrl:"/assets/images/dubai-frame-aquaventureticketTopThingsToDo.avif",
         title:"Aquaventure Tickets",
         linkUrl:"#"
     },
     {
         id:nanoid(),
-        imageUrl:"/assets/images/dubai-img-worlds-of-adventureTopThingsToDo.avif",
+        imageUrl:"/assets/images/dubai-frame-dubai-img-worlds-of-adventureTopThingsToDo.avif",
         title:"IMG Worlds of Adventure Tickets",
         linkUrl:"#"
     },
     {
         id:nanoid(),
-        imageUrl:"/assets/images/ski-dubaiTopThingsToDo.avif",
+        imageUrl:"/assets/images/dubai-frame-ski-dubaiTopThingsToDo.avif",
         title:"Ski Dubai Tickets",
         linkUrl:"#"
     },
     {
         id:nanoid(),
-        imageUrl:"/assets/images/dubai-desert-safariTopThingsToDo.avif",
+        imageUrl:"/assets/images/dubai-frame-dubai-desert-safariTopThingsToDo.avif",
         title:"Dubai Desert Safari Tour Tickets",
         linkUrl:"#"
     },
     {
         id:nanoid(),
-        imageUrl:"/assets/images/Museum-of-the-Future-Dubai-Tickets-TopThingsToDo.avif",
+        imageUrl:"/assets/images/dubai-frame-Museum-of-the-Future-Dubai-Tickets-TopThingsToDo.avif",
         title:"Museum of the Future Dubai Tickets",
         linkUrl:"#"
     },
     {
         id:nanoid(),
-        imageUrl:"/assets/images/dubai-attractions_aquariumsTopThingsToDo.avif",
+        imageUrl:"/assets/images/dubai-frame-dubai-attractions_aquariumsTopThingsToDo.avif",
         title:"Dubai Aquarium Tickets",
         linkUrl:"#"
     },
     {
         id:nanoid(),
-        imageUrl:"/assets/images/View-at-the-Palm-TopThingsToDo.avif",
+        imageUrl:"/assets/images/dubai-frame-View-at-the-Palm-TopThingsToDo.avif",
         title:"View at the Palm Tickets",
         linkUrl:"#"
     },

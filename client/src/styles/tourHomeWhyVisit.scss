@@ -2,93 +2,59 @@
 
 
 .tourHomeWhyVisitMainComponents{
-    margin-top: 3rem;
-    text-align: center;
-
-
-    h1{
-        margin: 1rem 0;
-    }
-
-    .tourHomeWhyVisitCardContainer{
-        border: 1px solid $cardBorderColor;
-        border-radius: 24px;
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    .tourHomeWhyVisitMainContainer{
+        box-shadow: 0px 0px 10px #bbb;
+        border-top-left-radius: 14px;
+        border-top-right-radius: 14px;
         overflow: hidden;
-        box-shadow: 1px 1px 10px 1px $cardBorderColor;
-
-
-
-        .listData{
-            display: grid;
-            grid-template-columns: repeat(3,350px);
-            text-align: start;
-            justify-items: center;
-            gap: 20px;
-            padding-bottom: 1rem;
-            overflow-x: scroll;
-            
-
-                p{
-                    padding: 1rem;
-                    background-color: $primaryModalColor;
-                    line-height: 24px;
-                    font-size: 15px;
-                    letter-spacing: 0px;
-                    text-align: center;
-                    width: 350px;
-
-                    img{
-                        width: 280px;
-                        height: 200px;
-                        object-fit: cover;
-                    }
-                    span{
-                        display: block;
-                        font-weight: 600;
-                    }
-
-                    &::marker{
-                        font-size: 1.4rem;
-                    }
-                }
+        
+        .tourHomeWhyVisitImgContainer{
+            img{
+                height: 350px;
+                object-fit: cover;
             }
         }
+
+        .tourHomeWhyVisitDetailsContainer{
+            padding: 1rem 1.5rem;
+            span{
+                font-weight: 700;
+            }
+        }
+    }
 }
 
 
-@media screen and (min-width: 1023px) {
-    .tourHomeWhyVisitMainComponents {
-    
-            h1 {
-                margin: 1rem 0;
+@media screen and (min-width: 1024px) {
+    .tourHomeWhyVisitMainComponents{
+
+        
+        .tourHomeWhyVisitMainContainer{
+            display: grid;
+            grid-template-columns: 500px 1fr;
+
+            .tourHomeWhyVisitImgContainer{
+
+                img{
+                    height: 350px;
+                }
             }
     
-            .tourHomeWhyVisitCardContainer {
-    
-                img {
-                    height: 100%;
-                    object-fit: cover;
+            .tourHomeWhyVisitDetailsContainer{
+                padding: 1rem 1.5rem;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+                li{
+                    font-size: 0.9rem;
                 }
-    
-    
-                .listData {
 
-                    p{
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                    ul {
-    
-                        li {
-                            line-height: 28px;
-                            font-size: 18px;
-                            letter-spacing: 0px;
-                            margin: 0.3rem 0;
-                        }
-                    }
-                }
             }
         }
+    }
 }

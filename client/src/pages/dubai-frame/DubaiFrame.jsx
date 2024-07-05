@@ -14,7 +14,7 @@ import {
   arasResturantCardData, 
   arasResturantHighlighhtsData, 
   arasResturantTourHomeFAQ, 
-  arasResturantWhyVistData,
+  dubaiFrameWhyVistData,
   dubaiFrameTopThingsToDo
 } from './data';
 import videoFile from '../../assets/video/dubaiframevid.mp4'
@@ -60,10 +60,10 @@ const DubaiFrame = () => {
        
        <TourYoutubeVideo title={"Dubai Frame Ticket"} para={"Opened in 2018, the Dubai Frame is one of the newest additions to Dubai's glorious skyline. Built to resemble a giant picture frame, the Dubai Frame is a 150-meter tall architectural landmark in the city's lush Zabeel Park and offers spectacular views of Dubai and the gulf beyond. The Dubai Frame is open to visitors every day and tickets are available online."} />
 
-       {/* <TourWhyVisit 
-        whyVisitData={arasResturantWhyVistData}
-        serviceName={"Aras Resturant"}
-      /> */}
+       <TourWhyVisit 
+        whyVisitData={dubaiFrameWhyVistData}
+        serviceName={"Dubai Frame"}
+      />
 
       {/* <TourHomeHighlights 
         serviceName={"Aras Resturant"} 

@@ -4,22 +4,31 @@ const TourWhyVisit = ({whyVisitData, serviceName}) => {
   return (
     <section className='tourHomeWhyVisitMainComponents'>
         
-        <h1>Why You Need to Visit {serviceName} ?</h1>
-        <div className="tourHomeWhyVisitCardContainer">
-            <div className="listData" style={{
-                gridTemplateColumns:`repeat(${whyVisitData.length}, 350px)`,
-            }}>
-                {
-                    whyVisitData.map((data) => {
-                        return <p key={data.id}>
-                        <img src={data.imgUrl} alt={data.title} /><br />
-                        <span>{data.title}</span>{data.desc}<br/>
-                    </p>
-                    })
-                }
-                     
+        <h1>Why Visit {serviceName} ?</h1>
+        {
+            whyVisitData.map((data) => (
+                <div className="tourHomeWhyVisitMainContainer" key={data.id}>
+            <div className="tourHomeWhyVisitCardContainer">
+                <div className="tourHomeWhyVisitImgContainer">
+                    <img src={data.imgUrl} alt={data.title} />
+                </div>
             </div>
+            <ul className="tourHomeWhyVisitDetailsContainer">
+                {
+                    data.descList.map((list) => (
+                        <li key={list.id}>
+                            <span>{list.title} : </span>
+                            {list.desc}
+                        </li>
+                    ))
+                }
+                
+            </ul>
         </div>
+            ))
+        }
+        
+        
     </section>
   )
 }
