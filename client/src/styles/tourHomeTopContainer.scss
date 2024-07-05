@@ -33,7 +33,7 @@
 @media screen and (min-width:767px) {
     .tourHomeTopContainer {
             display: grid;
-            grid-template-columns: .5fr .5fr;
+            grid-template-columns: 0.9fr 1.1fr;
             align-items: center;
             gap: 20px;
             
@@ -42,7 +42,7 @@
                 overflow: hidden;
                 .video{
                     object-fit: cover;
-                    height: 350px;
+                    height: 300px;
                     border-radius: 14px;
                     width: 100%;
                 }
