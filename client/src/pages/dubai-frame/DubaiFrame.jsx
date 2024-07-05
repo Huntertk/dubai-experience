@@ -5,7 +5,8 @@ import {
   TourHomeMap, 
   TourHomeThingToDo, 
   TourHomeTopContainer, 
-  TourWhyVisit 
+  TourWhyVisit, 
+  TourYoutubeVideo
 } from '../../components';
 
 import { 
@@ -56,6 +57,8 @@ const DubaiFrame = () => {
           />
        <TourHomeCardContainer cardData={data?.bookingPlan}  />   
        <TourHomeThingToDo dubaiFrameTopThingsToDo={dubaiFrameTopThingsToDo} />
+       
+       <TourYoutubeVideo title={"Dubai Frame Ticket"} para={"Opened in 2018, the Dubai Frame is one of the newest additions to Dubai's glorious skyline. Built to resemble a giant picture frame, the Dubai Frame is a 150-meter tall architectural landmark in the city's lush Zabeel Park and offers spectacular views of Dubai and the gulf beyond. The Dubai Frame is open to visitors every day and tickets are available online."} />
 
        {/* <TourWhyVisit 
         whyVisitData={arasResturantWhyVistData}

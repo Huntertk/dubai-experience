@@ -8,7 +8,10 @@ const TourHeader = () => {
     <header className='tourHeader'>
         <nav className='tourNav'>
             <div className="logoContainer">
-               <Link to="/"> <img src={logo} alt="" /> <span>by</span> <img className='companyImg' src={tvagologo} alt="Image" /> </Link>
+               <Link to="/"> 
+               <img src={logo} alt="" />
+                {/* <span>by</span> <img className='companyImg' src={tvagologo} alt="Image" />  */}
+                </Link>
             </div>
         </nav>
     </header>

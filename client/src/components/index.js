@@ -13,8 +13,9 @@ import TourHomeAdditionalInformation from "./tour/homeComponents/TourHomeAdditio
 import TourHomeMap from "./tour/homeComponents/TourHomeMap";
 import DateSelectionContainer from "./booking/DateSelectionContainer";
 import AdminLayout from "./admin/AdminLayout";
-
+import TourYoutubeVideo from "./tour/homeComponents/TourYoutubeVideo";
 export {
+    TourYoutubeVideo,
     AdminLayout,
     ImageSlider,
     HomeLayout,
