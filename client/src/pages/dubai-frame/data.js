@@ -154,36 +154,21 @@ export const dubaiFrameWhyVistData = [
 ]
 
 //Highlights
-export const arasResturantHighlighhtsData = [
+export const dubaiFrameHighlighhtsData = [
     {
         id: nanoid(),
-        desc:"Delight in glorious Buffets while floating above Kuala Lumpur's skyline, savoring a symphony of flavors with breathtaking views.",
-        image: "https://i.postimg.cc/5yggcB7y/IMG-20240129-WA0076.jpg"
+        desc:"The Old Dubai Gallery is situated on the mezzanine floor of the Dubai Frame. The gallery is an interactive exhibit that highlights Dubai's humble beginnings as a Bedouin fishing village.",
+        image: "/assets/images/dubaiFrameHighlightsOne.avif"
     },
     {
         id: nanoid(),
-        desc:"Be mesmerized by the spaceship-themed décor as the restaurant gently revolves, creating an otherworldly ambiance like dining among the stars.",
-        image: "https://i.postimg.cc/bvZBQB6T/8.jpg"
+        desc:"resent Dubai is the stunning skyline of the city that you see from the Sky deck level. Glass walls on all sides offer uninterrupted views of Dubai, “Old Dubai” to the north, and “New Dubai” to the south. ",
+        image: "/assets/images/dubaiFrameHighlightsTwo.avif"
     },
     {
         id: nanoid(),
-        desc:"Indulge in a culinary masterpiece crafted by expert chefs, where Malay delicacies showcase a harmonious blend of tradition and innovation.",
-        image: "https://i.postimg.cc/L8XCpWMp/IMG-20240129-WA0079.jpg"
-    },
-    {
-        id: nanoid(),
-        desc:"Upgrade to window seating and unlock a dazzling perspective of the city, elevating your dining experience to unparalleled heights.",
-        image: "https://i.postimg.cc/QNSNYB8y/11.jpg"
-    },
-    {
-        id: nanoid(),
-        desc:"Admire the exquisite interior design that fuses modern sophistication with celestial charm, creating an atmosphere that is both enchanting and sophisticated.",
-        image: "https://i.postimg.cc/SNG3q82W/18.jpg"
-    },
-    {
-        id: nanoid(),
-        desc:"Experience unique celestial events with themed dining nights, creating unforgettable memories under the stars.",
-        image: "https://i.postimg.cc/8PG9qw5p/15.jpg"
+        desc:"Once you make your way back down the other arm of Dubai Frame, the Future Dubai Gallery exhibit awaits you on the mezzanine level. The gallery takes you on a futuristic journey with stunning visuals projected on the insides of a vortex tunnel.",
+        image: "/assets/images/dubaiFrameHighlightsThree.avif"
     },
 ]
 

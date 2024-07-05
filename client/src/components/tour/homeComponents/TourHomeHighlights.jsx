@@ -1,10 +1,9 @@
-import TourHomeCardDetails from './TourHomeCardDetails'
-import '../../../styles/tourHomeThingsToDo.scss'
+import '../../../styles/tourHomeHighlights.scss'
 import TourHomeCardHighlightsDetails from './TourHomeCardHighlightsDetails'
 
 const TourHomeHighlights = ({serviceName, highlightsData, title}) => {
   return (
-    <section className='tourHomeThingsToDoMainContainer'>
+    <section className='tourHomeHighlightsMainContainer'>
         <h1>Highlights {serviceName}</h1>
         <div className="cardMainContainer" 
         style={{
