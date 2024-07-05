@@ -3,6 +3,7 @@ import {
   TourHomeCardContainer, 
   TourHomeHighlights, 
   TourHomeMap, 
+  TourHomeThingToDo, 
   TourHomeTopContainer, 
   TourWhyVisit 
 } from '../../components';
@@ -12,7 +13,8 @@ import {
   arasResturantCardData, 
   arasResturantHighlighhtsData, 
   arasResturantTourHomeFAQ, 
-  arasResturantWhyVistData 
+  arasResturantWhyVistData,
+  dubaiFrameTopThingsToDo
 } from './data';
 import videoFile from '../../assets/video/dubaiframevid.mp4'
 
@@ -53,17 +55,18 @@ const DubaiFrame = () => {
           imgUrl={""}
           />
        <TourHomeCardContainer cardData={data?.bookingPlan}  />   
+       <TourHomeThingToDo dubaiFrameTopThingsToDo={dubaiFrameTopThingsToDo} />
 
-       <TourWhyVisit 
+       {/* <TourWhyVisit 
         whyVisitData={arasResturantWhyVistData}
         serviceName={"Aras Resturant"}
-      />
+      /> */}
 
-      <TourHomeHighlights 
+      {/* <TourHomeHighlights 
         serviceName={"Aras Resturant"} 
         highlightsData={arasResturantHighlighhtsData}
         title={"Aras Resturant"}
-      />
+      /> */}
 
       <TourHomeAdditionalInformation title={"Additional Information"} quesData={arasResturantAdditionInfoData} />
       <TourHomeMap serviceName={"Aras Resturant"} mapUrl={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.780139229368!2d101.6988310720154!3d3.152600388630541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc49c20b18d81d%3A0x3bc50ed3fab4a4b0!2sARAS%20Restaurant%20KL%20Tower!5e0!3m2!1sen!2sin!4v1712253687142!5m2!1sen!2sin"} />

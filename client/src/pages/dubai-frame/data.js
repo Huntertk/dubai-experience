@@ -256,3 +256,43 @@ export const arasResturantTourHomeFAQ = [
         ans:["The Dinner dining will be ideal to witness the City of Light."]
     },
 ]
+
+
+export const dubaiFrameTopThingsToDo = [
+    {
+        id:nanoid(),
+        imageUrl:"/assets/images/burjkhalifaTicketTopThingsToDo.avif",
+        title:"Burj Khalifa Ticket",
+        linkUrl:"#"
+    },
+    {
+        id:nanoid(),
+        imageUrl:"/assets/images/aquaventureticketTopThingsToDo.avif",
+        title:"Aquaventure Tickets",
+        linkUrl:"#"
+    },
+    {
+        id:nanoid(),
+        imageUrl:"/assets/images/dubai-img-worlds-of-adventureTopThingsToDo.avif",
+        title:"IMG Worlds of Adventure Tickets",
+        linkUrl:"#"
+    },
+    {
+        id:nanoid(),
+        imageUrl:"/assets/images/ski-dubaiTopThingsToDo.avif",
+        title:"Ski Dubai Tickets",
+        linkUrl:"#"
+    },
+    {
+        id:nanoid(),
+        imageUrl:"/assets/images/dubai-desert-safariTopThingsToDo.avif",
+        title:"Dubai Desert Safari Tour Tickets",
+        linkUrl:"#"
+    },
+    {
+        id:nanoid(),
+        imageUrl:"/assets/images/Museum-of-the-Future-Dubai-Tickets-TopThingsToDo.avif",
+        title:"Museum of the Future Dubai Tickets",
+        linkUrl:"#"
+    },
+]

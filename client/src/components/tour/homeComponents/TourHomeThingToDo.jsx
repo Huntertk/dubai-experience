@@ -1,17 +1,23 @@
-import TourHomeCardDetails from './TourHomeCardDetails'
 import '../../../styles/tourHomeThingsToDo.scss'
 
-const TourHomeThingToDo = ({serviceName, thingsToDoData}) => {
+const TourHomeThingToDo = ({dubaiFrameTopThingsToDo}) => {
   return (
     <section className='tourHomeThingsToDoMainContainer'>
-        <h1>Things you must try at {serviceName}</h1>
-        <div className="cardMainContainer" 
-        style={{
-          gridTemplateColumns:`repeat(${thingsToDoData.length}, 350px)`
-      }}
-        >
-            <TourHomeCardDetails cardData={thingsToDoData} />
-        </div>
+        <h1>Top things you can do in Dubai</h1>
+          <div className="topThingstoDoContainer"
+           style={{
+              gridTemplateColumns:`repeat(${dubaiFrameTopThingsToDo.length}, 200px)`
+          }}
+          >
+            {
+              dubaiFrameTopThingsToDo.map((thingsToDo) => (
+                <div className="topThingstoDoCard" key={thingsToDo.id}>
+                <img src={thingsToDo.imageUrl} alt={thingsToDo.title} />
+                <h3>{thingsToDo.title}</h3>
+              </div>
+              ))
+            }
+          </div>
     </section>
   )
 }
