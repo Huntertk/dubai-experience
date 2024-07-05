@@ -1,10 +1,28 @@
-import '../../../styles/tourHomeThingsToDo.scss'
+import { useRef } from 'react';
+import '../../../styles/tourHomeThingsToDo.scss';
+import { FaCircleChevronLeft, FaCircleChevronRight} from "react-icons/fa6";
 
 const TourHomeThingToDo = ({dubaiFrameTopThingsToDo}) => {
+  const containerRef = useRef();
+
+  const scrollLeft = () => {
+    containerRef.current.scrollLeft -= 250; // Adjust the scroll amount
+  };
+  const scrollRight = () => {
+    containerRef.current.scrollLeft += 250; // Adjust the scroll amount
+  };
+
   return (
     <section className='tourHomeThingsToDoMainContainer'>
         <h1>Top things you can do in Dubai</h1>
+        <button className='scrollLeftBtn' onClick={scrollLeft}>
+          <FaCircleChevronLeft />
+        </button>
+        <button className='scrollRightBtn' onClick={scrollRight}>
+          <FaCircleChevronRight />
+        </button>
           <div className="topThingstoDoContainer"
+          ref={containerRef}
            style={{
               gridTemplateColumns:`repeat(${dubaiFrameTopThingsToDo.length}, 200px)`
           }}

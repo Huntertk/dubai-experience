@@ -295,4 +295,16 @@ export const dubaiFrameTopThingsToDo = [
         title:"Museum of the Future Dubai Tickets",
         linkUrl:"#"
     },
+    {
+        id:nanoid(),
+        imageUrl:"/assets/images/dubai-attractions_aquariumsTopThingsToDo.avif",
+        title:"Dubai Aquarium Tickets",
+        linkUrl:"#"
+    },
+    {
+        id:nanoid(),
+        imageUrl:"/assets/images/View-at-the-Palm-TopThingsToDo.avif",
+        title:"View at the Palm Tickets",
+        linkUrl:"#"
+    },
 ]
