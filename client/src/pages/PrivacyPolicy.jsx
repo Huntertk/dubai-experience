@@ -8,18 +8,18 @@ const PrivacyPolicy = () => {
         <img src={logo} alt="logo" />
         <h1>Our Commitment to Your Privacy</h1>
         <div className="underline"></div>
-        <p>At Malaysia Experience by Travelvago Sdn Bhd we prioritize the protection and responsible handling of your personal information. This Privacy Policy outlines our practices regarding the collection, processing, and safeguarding of your data when using our platform. It is an integral part of our Terms of Use and aims to inform users about their privacy rights.</p>
+        <p>At Dubai Experience by Travelvago Sdn Bhd we prioritize the protection and responsible handling of your personal information. This Privacy Policy outlines our practices regarding the collection, processing, and safeguarding of your data when using our platform. It is an integral part of our Terms of Use and aims to inform users about their privacy rights.</p>
         <TermsAndConditionMailPoint heading="Your Agreement to this Policy" para="By accessing our platform, you agree to the collection and processing of your personal information in accordance with this Privacy Policy. This information is essential for us to provide the best possible services on our platform. If you have any concerns or questions, reach out to us at " mailId={"privacy@travelvago.com"} />
         <ul>
             <h3>Key Definitions</h3>
             <li><span>Account : </span> A unique account created for you on the platform.</li>
-            <li><span>Company : </span>  Refers to Malaysia Experience by Travelvago Sdn Bhd.</li>
+            <li><span>Company : </span>  Refers to Dubai Experience by Travelvago Sdn Bhd.</li>
             <li><span>Cookies : </span> Small files placed on your device by our platform for various purposes.</li>
             <li><span>Device : </span> Any device used to access the platform, such as a computer or mobile device.</li>
             <li><span>Personal Information : </span> Information related to an identified or identifiable user, collected for service provision and legal obligations.</li>
         </ul>
         <h1>Why We Collect Your Personal Information</h1>
-        <p>Malaysia Experience by Travelvago sdn bhd connects users with service providers to facilitate bookings. We collect personal information to provide platform services and for various outlined processing activities.</p>
+        <p>Dubai Experience by Travelvago sdn bhd connects users with service providers to facilitate bookings. We collect personal information to provide platform services and for various outlined processing activities.</p>
         <ul>
             <h3>Types of Information Collected:</h3>
             <li><span> 1. Non-Identifiable Personal Information : </span> Aggregated data, masked IP addresses, etc.</li>
@@ -36,7 +36,7 @@ const PrivacyPolicy = () => {
         <TermsAndConditionMailPoint heading="Your Rights" para="For data privacy requests or complaints, contact us at privacy@travelvago.com. You have the right to access, delete, or obtain a copy of your information, and we verify the requester's identity for security." />
         <TermsAndConditionMailPoint heading="Changes to Our Privacy Policy" para="We may update our Privacy Policy, and changes are effective when posted on our platform. Please review this policy periodically for any updates." />
         <div className="underline"></div>
-        <p>Malaysia Experience management by Travelvago, an approved and reliable partner of the venue, presents handpicked experiences tailored for your enjoyment at this attraction</p>
+        <p>Dubai Experience management by Travelvago, an approved and reliable partner of the venue, presents handpicked experiences tailored for your enjoyment at this attraction</p>
     </section>
   )
 }
