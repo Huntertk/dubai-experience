@@ -298,7 +298,7 @@ export const dubaiFrameHighlighhtsData = [
 
 //Additional Information
 
-export const arasResturantAdditionInfoData = [
+export const dubaiFrameAdditionInfoData = [
     {
         id: nanoid(),
         ques:"Child Policy",
@@ -345,26 +345,26 @@ export const arasResturantAdditionInfoData = [
 ]
 
 //FAQ
-export const arasResturantTourHomeFAQ = [
+export const dubaiFrameTourHomeFAQ = [
     {
         id: nanoid(),
-        ques:"Should I make an advance reservation for ARAS Restaurant KL Tower ?",
-        ans:["Highly Recommended, advance reservations are welcome to confirm your preferred dining slot."]
+        ques:"What are the opening hours of the Dubai Frame ?",
+        ans:["The Dubai Frame is open daily from 9:00 AM to 9:00 PM."]
     },
     {
         id: nanoid(),
-        ques:"How Can I request a window table at ARAS Restaurant KL Tower ?",
-        ans:["Yes, you can request window Table during reservation/booking with extra charges."]
+        ques:"Where can I buy Dubai Frame Tickets ?",
+        ans:["Tickets can be purchased online at the Dubai Frame website or the ticket office at the Dubai Frame. You can book Online through Headout, where tickets for anyone above 12 cost AED 50, whereas children between 3 and 12 have to pay only AED 25. If you are visiting the Dubai Frame in a big group, you can opt for the Super Save Packs, which offer even more discounts on your tickets."]
     },
     {
         id: nanoid(),
-        ques:"What is dress code for guest at ARAS Restaurant KL Tower ?",
-        ans:["Recommended smart casual attire and no sandals allowed."]
+        ques:"How much do tickets to the Dubai Frame cost ?",
+        ans:["We have General Admission Tickets starting from AED 50 for anyone above 12. Tickets for children between the ages of 3 and 12 are also discounted and are available for AED 25. If you are booking two or more adult tickets, you can opt for the Super Save Pack, where the Tickets are for AED 48."]
     },
     {
         id: nanoid(),
-        ques:"The best time to visit ARAS Restaurant KL Tower ?",
-        ans:["The Dinner dining will be ideal to witness the City of Light."]
+        ques:"What is the cancelation policy for Dubai Frame tickets ?",
+        ans:["These tickets can't be canceled or rescheduled."]
     },
 ]
 
