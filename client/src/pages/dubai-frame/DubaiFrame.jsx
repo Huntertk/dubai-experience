@@ -30,7 +30,7 @@ import LoadingSpinner from '../../components/LoadingSpinner';
 
 const DubaiFrame = () => {
   const dispatch = useDispatch()
-  const {data, isLoading, error, isSuccess} = useGetBookingPlanDataQuery({service:"aras-resturant"});
+  const {data, isLoading, error, isSuccess} = useGetBookingPlanDataQuery({service:"dubai-frame"});
 
   useEffect(() => {
     dispatch(initialRender());
@@ -47,7 +47,7 @@ const DubaiFrame = () => {
     {/*Dynamic Title */}
     <Helmet>
         <title>Book Dubai Frame Tickets | Dubai Experience | Best Deals & Discounts</title>
-        <meta name="description" content="ARAS Restaurant KL Tower Buffet ... Experience great food while enjoying the gorgeous view of the whole Kuala Lumpur on top of KL Tower.! ✓Best Prices ✓Online Reservations ✓Advance Booking ✓Ticket Discounts ✓Group Bookings. Malaysia Experience" />
+        <meta name="description" content="Grab Dubai Frame tickets • Extended validity • Instant confirmation. ✓Best Prices ✓Online Reservations ✓Advance Booking ✓Ticket Discounts ✓Group Bookings. Malaysia Experience" />
       </Helmet>
      <section className='tourHomeMainContainer'>
       <TourHomeTopContainer

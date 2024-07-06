@@ -5,7 +5,7 @@ const bookingPlanSchema = new mongoose.Schema({
         type: String
     },
     desc:{
-        type: String
+        type:[String]
     },
     type:{
         type: String

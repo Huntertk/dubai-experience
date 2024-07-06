@@ -7,7 +7,8 @@ import { FaMobile } from "react-icons/fa";
 import { FaRegClock } from "react-icons/fa6";
 import { GiCancel } from "react-icons/gi";
 
-const TourCardBigDevice = () => {
+const TourCardBigDevice = ({data}) => {
+
   return (
     <div className="tourCardBigDeviceMainContainer">
       <div className="tourCardImgContainer">
@@ -17,22 +18,25 @@ const TourCardBigDevice = () => {
             infiniteLoop={true}
             showStatus={false}
           >
-          <div className="imgContainer">
-            <img src={"https://cdn-imgix.headout.com/media/images/6c6519b8db7ddab3f5381d54ee30032a-Frame-banner.jpg?auto=format&w=552&h=412.8&q=90&ar=3%3A4&crop=faces%2Ccenter&fit=crop"} alt={"img title"} />
-          </div>
-          <div className="imgContainer">
-            <img src={"https://cdn-imgix.headout.com/media/images/00a9a2e3d6347c1a187a2bf48f043ab4-8541-TicketstoDubaiFrame--1.jpg?auto=format&w=552&h=412.8&q=90&ar=3%3A4&crop=faces%2Ccenter&fit=crop"} alt={"img title"} />
-          </div>
+          {
+            data.image.map((img, index) => (
+              <div className="imgContainer" key={index}>
+                <img src={img} alt={data.title} />
+              </div>
+            ))
+          }
         </Carousel>
       </div>
       <div className="tourCardDetailsContainer">
         <span>Ticket</span>
         <div className="tourCardDetailsWrapper">
-          <h3>Dubai Frame Tickets</h3>
+          <h3>{data.title}</h3>
           <ul>
-            <li>Get yourself tickets to the award-winning Dubai Frame - the world's largest picture frame and admire unbeaten views of the city.</li>
-            <li>On one side, you'll notice iconic landmarks of modern Dubai, and on the other, you'll see older parts of the city.</li>
-            <li>Check out the Dubai Frame Museum where you can learn about the city's past, present, and future in a fun and interactive way.</li>
+            {
+              data.desc.map((d, index) => (
+                <li key={index}>{d}</li>
+              ))
+            }
           </ul>
         </div>
       </div>

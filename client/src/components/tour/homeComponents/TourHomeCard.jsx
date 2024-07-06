@@ -11,7 +11,6 @@ import '../../../styles/tourHomeCard.scss'
 
 
 const TourHomeCard = ({data}) => {
-    const {image, id, service, title, desc, type, pricing, preference, inclusionAndExclusion} = data;
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -28,8 +27,8 @@ const TourHomeCard = ({data}) => {
       }
   return (
     <section className='tourCardMainSection'>
-        <TourCardBigDevice />
-        <TourCardSmallDevice />
+        <TourCardBigDevice data={data} />
+        <TourCardSmallDevice data={data} />
     </section>
     
   )
