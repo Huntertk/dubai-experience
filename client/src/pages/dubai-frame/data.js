@@ -156,30 +156,123 @@ export const dubaiFrameWhyVistData = [
 export const dubaiFramePlanVisitData = [
     {
         id: nanoid(),
-        title:"Dubai Frame",
+        title:"Timing",
         descList:[
             {
                 id: nanoid(),
-                title:"Stunning views of the city skyline",
-                desc:"The Dubai Frame offers 360-degree views of the city skyline, including the Burj Khalifa, the Dubai Mall, and the Arabian Gulf.",
+                title:"Opening hours",
+                desc:"9:00 AM to 9:00 PM Last time of entry is 8:30 PM, 30 minutes before closing. Timings may vary during Ramadan.",
             },
             {
                 id: nanoid(),
-                title:"Unique architectural structure",
-                desc:"The Dubai Frame is a unique and iconic architectural structure that is shaped like a picture frame. It is one of the most popular tourist attractions in Dubai.",
-            },
-            {
-                id: nanoid(),
-                title:"Showcases Dubai's past, present, and future",
-                desc:"The Dubai Frame is located in Zabeel Park, which is one of the oldest parks in Dubai. This location is symbolic of Dubai's past and present. The Dubai Frame itself is a symbol of Dubai's future, as it represents the city's ambitious plans for the future.",
-            },
-            {
-                id: nanoid(),
-                title:"Thrilling walk on the glass bridge",
-                desc:"The 93-meter-long glass bridge that connects the two towers of the Dubai Frame offers visitors a truly unique and thrilling experience. Walking on the glass bridge gives you the feeling of walking on air, and it offers stunning views of the city below.",
+                title:"Best Time to Visit",
+                desc:"If you're looking for the best view from the top, you should visit during sunset to experience the golden light settling over the city. However, this is also when the frame is most crowded. If you want to avoid crowds, visiting during early mornings or late evenings on weekdays is best.",
             },
         ],
-        imgUrl:"/assets/images/dubai-frame-dubaiFramWhyVisit.avif"
+        imgUrl:"/assets/images/dubaiFrameVisitPlanTimingImg.avif"
+    },
+    {
+        id: nanoid(),
+        title:"Getting There",
+        descList:[
+            {
+                id: nanoid(),
+                title:"Location",
+                desc:"Dubai Frame is located in Zabeel Park gate 4 in Dubai.",
+            },
+            {
+                id: nanoid(),
+                title:"Closest Metro Station",
+                desc:"Al Jafiliya stop on the Red line.",
+            },
+            {
+                id: nanoid(),
+                title:"Closest Bus Stop",
+                desc:"Bus F09 stops at the Dubai Frame bus stop, right next to the building.",
+            },
+        ],
+        imgUrl:"/assets/images/dubaiFrameVisitPlanGettingThereImg.avif"
+    },
+    {
+        id: nanoid(),
+        title:"Visiting Rules",
+        descList:[
+            {
+                id: nanoid(),
+                title:"Admission",
+                desc:"Infants under the age of 3 get free access, while children aged 3-12 are charged AED 20 for a ticket rather than AED 50 for those over 12.",
+            },
+            {
+                id: nanoid(),
+                title:"Storage Facilities",
+                desc:"A counter at Gate 4 allows storage for large bags and strollers.",
+            },
+            {
+                id: nanoid(),
+                title:"Rules of Visitation",
+                desc:"bar tourists from carrying Food, beverages, pets, sharp tools, and smoking inside the Dubai Frame precincts.",
+            },
+        ],
+        imgUrl:"/assets/images/dubaiFrameVisitPlanVisitingRulesImg.avif"
+    },
+    {
+        id: nanoid(),
+        title:"Attractions Nearby",
+        descList:[
+            {
+                id: nanoid(),
+                title:"Dubai Frame",
+                desc:"is close to some of the most impressive attractions in Dubai — Burj Khalifa, IMG Worlds of Adventure, Dubai Garden Glow, and Dubai Aquarium & Underwater Zoo.",
+            },
+            {
+                id: nanoid(),
+                title:"Walking Distance",
+                desc:"The closest attraction you can walk to is the Dubai Garden Glow, a 15-minute walk from Dubai Frame.",
+            },
+            {
+                id: nanoid(),
+                title:"Zabeel Park",
+                desc:"has dedicated jogging paths, barbecue & picnic areas, and a children's play park.",
+            },
+        ],
+        imgUrl:"/assets/images/dubaiFrameVisitPlanAttractionNearbyImg.avif"
+    },
+    {
+        id: nanoid(),
+        title:"Visitors Tips",
+        descList:[
+            {
+                id: nanoid(),
+                title:"Book",
+                desc:"your tickets in advance",
+            },
+            {
+                id: nanoid(),
+                title:"Arrive",
+                desc:"early.",
+            },
+            {
+                id: nanoid(),
+                title:"Wear",
+                desc:"comfortable clothing and shoes.",
+            },
+            {
+                id: nanoid(),
+                title:"Bring",
+                desc:"a water bottle.",
+            },
+            {
+                id: nanoid(),
+                title:"Be respectful",
+                desc:"of the local culture and environment.",
+            },
+            {
+                id: nanoid(),
+                title:"Visit the",
+                desc:"Future Zone",
+            },
+        ],
+        imgUrl:"/assets/images/dubaiFrameVisitPlanAttractionVisitorTipsImg.avif"
     },
 ]
 

@@ -94,11 +94,12 @@
                 
                 .tourVisitPlanWrapperContainer{
                     display: grid;
-                    grid-template-columns: 500px 1fr;
+                    grid-template-columns: 450px 1fr;
                     
                     .tourVisitPlanImgContainer{
                         img{
-                            height: 450px;
+                            height: 350px;
+                            object-fit: cover;
                         }
                     }
             
