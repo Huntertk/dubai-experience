@@ -13,6 +13,7 @@ import axios from 'axios'
 import LoadingSpinner from '../LoadingSpinner';
 import PreferenceTour from './PreferenceTour';
 import PaxModal from './PaxModal';
+import { totalServicesNameArr } from '../../data';
 
 
 function isPastDate(date) {
@@ -131,7 +132,7 @@ const DateSelectionContainer = () => {
 
           
           const searchParams = new URLSearchParams(window.location.search);
-          const totalServices = ["dubai-frame"]
+          
           const serviceName = searchParams.get('service-name');      
           const tourId = searchParams.get('tourId');
           const formattedDate = selectedDate && new Date(selectedDate).toISOString()
@@ -142,7 +143,7 @@ const DateSelectionContainer = () => {
                 setCalenderOpen(false)
             }
           
-          if(!totalServices.includes(serviceName) || !tourId){
+          if(!totalServicesNameArr.includes(serviceName) || !tourId){
               return <Navigate to="/" />
           }
             const defaultMonth = new Date(Date.now());

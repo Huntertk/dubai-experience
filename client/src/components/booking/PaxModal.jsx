@@ -70,11 +70,13 @@ const PaxModal = ({selectedDate}) => {
     const searchParams = new URLSearchParams(window.location.search);
 
     useEffect(() => {
+
         if(searchParams.has('adultCount')){
             searchParams.set('adultCount', adultCount)
         } else {
             searchParams.append('adultCount', adultCount)
         }
+        
 
         if(searchParams.has('childCount')){
             searchParams.set('childCount', childCount)
@@ -138,7 +140,7 @@ const PaxModal = ({selectedDate}) => {
                     <p>{format(bookingDate, 'PPP')}  </p> 
                     {
                         totalAmount > 0 &&
-                        <Link to="/booking"><button>Next</button></Link> 
+                        <Link to={`/booking?${searchParams.toString()}`}><button>Next</button></Link> 
                         
                     }
                 

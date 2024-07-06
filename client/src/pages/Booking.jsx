@@ -10,9 +10,13 @@ import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import '../styles/booking.scss'
 import { format } from 'date-fns';
+import { totalServicesNameArr } from '../data';
 
 const Booking = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const searchParams = new URLSearchParams(window.location.search);
+    const serviceName = searchParams.get('service-name');
+    const tourId = searchParams.get('tourId');
     const {
         bookingDate,
         adultCount,
@@ -32,7 +36,7 @@ const Booking = () => {
     const dispatch = useDispatch()
     const responseClientUrl = nanoid()
 
-    const bannerImg = service === 'splash-mania' ? "https://i.postimg.cc/15PZfQSw/Splash-Mania-Waterpark-Ticketin-Gamuda-Cove-Selangor-Klook-Malaysia.jpg" : service === 'aras-resturant' ? "https://i.postimg.cc/j5VZydnx/IMG-20240129-WA0073.jpg" : service === 'sunway-lagoon' ? "https://i.postimg.cc/SQ3jTkPk/1-1.jpg" : ""
+    const bannerImg = service === 'dubai-frame' ?  "/assets/images/dubaiFrameVisitPlanGettingThereImg.avif" : ""
 
     const hostName = window.location.hostname;
 
@@ -70,7 +74,7 @@ const Booking = () => {
     }
 
 
-    if (totalAmount === 0) {
+    if (totalAmount === 0 || !totalServicesNameArr.includes(serviceName)) {
         return <Navigate to="/" />
     }
     return (
@@ -87,7 +91,7 @@ const Booking = () => {
                     </div>
                     <div className="topContainer">
                         <p>{format(bookingDate, 'PPP')}</p>
-                        <Link to="/date-select"><BiEditAlt /></Link>
+                        <Link to={`/date-select?${searchParams.toString()}`}><BiEditAlt /></Link>
                     </div>
 
                     <div className="guestQuantity">

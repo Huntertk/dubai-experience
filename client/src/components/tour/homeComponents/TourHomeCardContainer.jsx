@@ -4,8 +4,9 @@ import LoadingSpinner from '../../LoadingSpinner';
 
 const TourHomeCardContainer = ({cardData}) => {
     if(!cardData){
-        return <LoadingSpinner />
-      }
+      return <LoadingSpinner />
+    }
+    
   return (
     <section className='tourHomeCardMainContainer'>
     {cardData.map((data) => {

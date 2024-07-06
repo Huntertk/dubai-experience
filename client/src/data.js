@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 
-
+export const totalServicesNameArr = ["dubai-frame"]
 
 
 
