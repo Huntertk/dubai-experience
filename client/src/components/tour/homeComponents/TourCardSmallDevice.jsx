@@ -3,6 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { choosingBooking } from '../../../redux/features/bookingSlice';
 const TourCardSmallDevice = ({data}) => { 
   const dispatch = useDispatch();
   const {type,service, title,pricing, preference} = data;

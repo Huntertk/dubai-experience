@@ -5,9 +5,8 @@
 
     .prefrenceTabCardContainer{
         display: grid;
-        grid-template-columns: repeat(2,300px);
+        grid-template-columns: 300px;
         gap: 1rem;
-        overflow-x: scroll;
         padding:1rem;
         
         .prefrenceTabCard{
