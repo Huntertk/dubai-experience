@@ -1,8 +1,22 @@
 import '../../../styles/tourCardSmallDevice.scss';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-const TourCardSmallDevice = ({data}) => {
-  
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+const TourCardSmallDevice = ({data}) => { 
+  const dispatch = useDispatch();
+  const {type,service, title,pricing, preference} = data;
+  const navigate = useNavigate(); 
+
+  const handleClick = () => {
+    const searchParams = new URLSearchParams();
+    searchParams.set('service-name', data.service);
+    searchParams.set('tourId', data._id);
+    const path = window.location.pathname + "date-select" +"?" + searchParams.toString();
+    dispatch(choosingBooking({type, title, pricing, preference, service}))
+    navigate(path)
+  }
+
   return (
     <div className="tourCardSmallDeviceMainContainer">
          <div className="tourCardImgContainer">
@@ -29,7 +43,9 @@ const TourCardSmallDevice = ({data}) => {
                 <span>Next available : Tomorrow</span>
             </div>
             <div className="cardBtnContainer">
-                <button>
+                <button
+                  onClick={handleClick}
+                >
                     Book Now
                 </button>
             </div>

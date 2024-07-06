@@ -6,8 +6,23 @@ import { AiFillThunderbolt } from "react-icons/ai";
 import { FaMobile } from "react-icons/fa";
 import { FaRegClock } from "react-icons/fa6";
 import { GiCancel } from "react-icons/gi";
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { choosingBooking } from '../../../redux/features/bookingSlice';
 
 const TourCardBigDevice = ({data}) => {
+  const dispatch = useDispatch();
+  const {type,service, title,pricing, preference} = data;
+  const navigate = useNavigate(); 
+
+  const handleClick = () => {
+    const searchParams = new URLSearchParams()
+    searchParams.set('service-name', data.service)
+    searchParams.set('tourId', data._id)
+    const path = window.location.pathname + "date-select" +"?" + searchParams.toString();
+    dispatch(choosingBooking({type, title, pricing, preference, service}))
+    navigate(path)
+  }
 
   return (
     <div className="tourCardBigDeviceMainContainer">
@@ -41,7 +56,7 @@ const TourCardBigDevice = ({data}) => {
         </div>
       </div>
       <div className="tourCardPricingContainer">
-          <button>Book</button>
+          <button onClick={handleClick}>Book</button>
           <div className="tourCardHighlights">
             <p>Next available : Tomorrow</p>
             <div className="iconContainer">

@@ -226,6 +226,7 @@ const bookingSlice = createSlice({
             state.pricing = action.payload.pricing,
             state.prefrenceOpt = action.payload.preference,
             state.service = action.payload.service
+            setBookingDetailsFromLocalStorage(state)
         },
         settingBookingResponse: (state, action) => {
             state.bookingResponse = ""

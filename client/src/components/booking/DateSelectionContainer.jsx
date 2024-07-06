@@ -130,9 +130,21 @@ const DateSelectionContainer = () => {
           },[])
 
           
-          if(!type){
-              return <Navigate to="/" />
+          const searchParams = new URLSearchParams(window.location.search);
+          const totalServices = ["dubai-frame"]
+          const serviceName = searchParams.get('service-name');      
+          const tourId = searchParams.get('tourId');
+          const formattedDate = selectedDate && new Date(selectedDate).toISOString()
+          
+          const handleClick = () => {
+                dispatch(setBookingDate({selectedBookingDate: formattedDate, selectedDay: selectedDate.toString()}))
+                dispatch(openPaxModel())
+                setCalenderOpen(false)
             }
+          
+          if(!totalServices.includes(serviceName) || !tourId){
+              return <Navigate to="/" />
+          }
             const defaultMonth = new Date(Date.now());
             
             if(isLoading){
@@ -171,16 +183,12 @@ const DateSelectionContainer = () => {
                     selectedDate ? <>
                     <div className='prefrenceAndDateContainer'>
                         <p>{
-                            type && pref ?  pref : <></> 
+                            pref ?  pref : <></> 
                         }</p>
                     <p>You selected {format(selectedDate, 'PPP')}.</p>
                     </div>
                     {
-                        type && pref ? <button onClick={() => {
-                            dispatch(setBookingDate({selectedBookingDate: selectedDate.toString(), selectedDay: selectedDate.toString()}))
-                            dispatch(openPaxModel())
-                            setCalenderOpen(false)
-                        }}>Next</button> : <></>
+                        pref ? <button onClick={handleClick}>Next</button> : <></>
                     }
                     </> : <p>Select One Date</p>
                 }
