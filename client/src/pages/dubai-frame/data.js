@@ -162,7 +162,7 @@ export const dubaiFrameHighlighhtsData = [
     },
     {
         id: nanoid(),
-        desc:"resent Dubai is the stunning skyline of the city that you see from the Sky deck level. Glass walls on all sides offer uninterrupted views of Dubai, “Old Dubai” to the north, and “New Dubai” to the south. ",
+        desc:"Present Dubai is the stunning skyline of the city that you see from the Sky deck level. Glass walls on all sides offer uninterrupted views of Dubai, “Old Dubai” to the north, and “New Dubai” to the south. ",
         image: "/assets/images/dubaiFrameHighlightsTwo.avif"
     },
     {
