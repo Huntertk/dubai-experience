@@ -9,7 +9,6 @@ const bookingPlanRouter = require('./routes/bookingPlanRoute');
 
 const BlockedDateRouter = require('./routes/blockedDateRoutes');
 const errorHandlerMiddleware = require('./middlewares/errorHandleMiddleware');
-const { successBooking } = require('./controllers/bookingController');
 dotenv.config();
 
 //Initializing Express App
@@ -26,7 +25,7 @@ app.use("/api/v1/booking", bookingRouter);
 app.use("/api/v1/admin", adminRouter);
 app.use('/api/v1/bookingplan', bookingPlanRouter)
 app.use("/api/v1/dates-manage/block-dates", BlockedDateRouter);
-app.get("/payment", successBooking)
+
 
 
 //Serving Frontend Statically

@@ -20,9 +20,7 @@ const createBooking = async (req, res) => {
         adultCount,
         childCount,
         totalAmount,
-        bookingType,
         bookingTitle,
-        responseClientUrl,
         service,
         prefrence,
         hostName
@@ -57,11 +55,11 @@ const createBooking = async (req, res) => {
                 },
             ],
             mode: 'payment',
-            success_url: `https://${hostName}/payment?verify=true&id=${booking._id}`,
+            success_url: `https://${hostName}/api/v1/booking/payment?verify=true&id=${booking._id}`,
             cancel_url: `https://${hostName}/payment?verify=false`,
 
-            // success_url: `http://${hostName}:3000/payment?verify=true&id=${booking._id}`,
-            // cancel_url: `http://${hostName}:3000/payment?verify=false`,
+            // success_url: `http://${hostName}:3000/api/v1/booking/payment?verify=true&id=${booking._id}`,
+            // cancel_url: `http://${hostName}:3000/api/v1/booking/payment?verify=false`,
             payment_intent_data: {
                 setup_future_usage: 'off_session',
                 description: 'Booking payment',

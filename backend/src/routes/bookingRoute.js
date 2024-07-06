@@ -7,6 +7,7 @@ const router = Router();
 
 router.post("/", createBooking)
 router.get("/", authAdmin, getAllBooking),
+router.get("/payment", successBooking)
 router.get('/success', getSuccessBookingDetails)
 router.get("/totalbooking", getTotalBookingCount)
 router.get("/confirmed", authAdmin, getConfirmedBooking)
