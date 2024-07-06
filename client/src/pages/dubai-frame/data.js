@@ -153,6 +153,36 @@ export const dubaiFrameWhyVistData = [
     },
 ]
 
+export const dubaiFramePlanVisitData = [
+    {
+        id: nanoid(),
+        title:"Dubai Frame",
+        descList:[
+            {
+                id: nanoid(),
+                title:"Stunning views of the city skyline",
+                desc:"The Dubai Frame offers 360-degree views of the city skyline, including the Burj Khalifa, the Dubai Mall, and the Arabian Gulf.",
+            },
+            {
+                id: nanoid(),
+                title:"Unique architectural structure",
+                desc:"The Dubai Frame is a unique and iconic architectural structure that is shaped like a picture frame. It is one of the most popular tourist attractions in Dubai.",
+            },
+            {
+                id: nanoid(),
+                title:"Showcases Dubai's past, present, and future",
+                desc:"The Dubai Frame is located in Zabeel Park, which is one of the oldest parks in Dubai. This location is symbolic of Dubai's past and present. The Dubai Frame itself is a symbol of Dubai's future, as it represents the city's ambitious plans for the future.",
+            },
+            {
+                id: nanoid(),
+                title:"Thrilling walk on the glass bridge",
+                desc:"The 93-meter-long glass bridge that connects the two towers of the Dubai Frame offers visitors a truly unique and thrilling experience. Walking on the glass bridge gives you the feeling of walking on air, and it offers stunning views of the city below.",
+            },
+        ],
+        imgUrl:"/assets/images/dubai-frame-dubaiFramWhyVisit.avif"
+    },
+]
+
 //Highlights
 export const dubaiFrameHighlighhtsData = [
     {
