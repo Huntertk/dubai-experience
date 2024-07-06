@@ -1,7 +1,6 @@
-import Home from "./Home";
+
 import About from "./About";
 import DubaiFrame from "./dubai-frame/DubaiFrame";
-import Tours from "./Tours";
 import NotFound from "./NotFound";
 import TermAndConditionPage from "./TermAndConditionPage";
 import PrivacyPolicy from "./PrivacyPolicy";
@@ -22,13 +21,11 @@ export {
     PaymentSucess,
     SplashManiaBookTypeOneDate,
     SplashMainaDateManage,
-    Home,
     AllBookings,
     TermAndConditionPage,
     NotFound,
     About,
     DubaiFrame,
-    Tours,
     PrivacyPolicy,
     HelpCenter,
     CompanyDetails,

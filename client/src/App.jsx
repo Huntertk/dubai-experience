@@ -18,10 +18,8 @@ import { AdminLayout, DateSelectionContainer, TourLayout } from './components'
 import { Toaster } from 'react-hot-toast';
 import Booking from './pages/Booking';
 import AdminProtectedRoute from './components/admin/AdminProtectedRoute';
-import { useSelector } from 'react-redux';
 
 const App = () => {
-  const {responseClientUrl} = useSelector(state => state.booking)
   return (
     <>
       <BrowserRouter>
