@@ -29,7 +29,7 @@ const App = () => {
               <Route 
               path='/' 
               element={
-                window.location.hostname === 'atmosphere360.malaysia-experience.com' ? (
+                window.location.hostname === 'dubai-experience.onrender.com' ? (
                   <DubaiFrame />
                 ) :  window.location.hostname === 'localhost' ? (
                   <DubaiFrame />
