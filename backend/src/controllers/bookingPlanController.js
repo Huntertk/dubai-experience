@@ -1,8 +1,10 @@
 const AppError = require("../error/customError.js");
 const BookingPlan = require("../models/bookingPlans.js");
-
+const crypto = require('crypto');
 exports.addBookingPlan = async (req, res, next) => {
     try {
+        const uuid = crypto.randomUUID();
+        req.body.uid = uuid;
         await BookingPlan.create(req.body)
         res.status(201).json({bookingPlan:"Created"})
     } catch (error) {

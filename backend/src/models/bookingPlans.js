@@ -16,6 +16,23 @@ const bookingPlanSchema = new mongoose.Schema({
     image:{
         type:[String]
     },
+    pricing:[
+        {
+            title:String,
+            weekDays:{
+                adult:Number,
+                child:Number,
+            },
+            weekEnds:{
+                adult:Number,
+                child:Number,
+            }
+            
+        }
+    ],
+    uid:{
+        type:String,
+    },
     preference: [
         {
             title: String,

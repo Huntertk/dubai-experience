@@ -18,7 +18,7 @@ const TourCardBigDevice = ({data}) => {
   const handleClick = () => {
     const searchParams = new URLSearchParams()
     searchParams.set('service-name', data.service)
-    searchParams.set('tourId', data._id)
+    searchParams.set('tourId', data.uid)
     const path = window.location.pathname + "date-select" +"?" + searchParams.toString();
     dispatch(choosingBooking({type, title, pricing, preference, service}))
     navigate(path)
