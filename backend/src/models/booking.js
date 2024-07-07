@@ -36,6 +36,9 @@ const bookingSchema = new mongoose.Schema({
     bookingId:{
         type: String
     },
+    tourId:{
+        type: mongoose.Schema.Types.ObjectId
+    },
     bookingType:{
         type:String
     },

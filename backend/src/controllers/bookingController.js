@@ -1,5 +1,4 @@
 const { StatusCodes } = require("http-status-codes")
-const { BadRequestError } = require("../error/customError")
 const Booking = require("../models/booking")
 const nodemailer = require('nodemailer')
 const stripePackage = require('stripe');
@@ -7,11 +6,12 @@ const dotenv = require('dotenv');
 const AppError = require("../error/customError");
 const { bookingEmailTemplate } = require("../utils/emailTemplate");
 const crypto = require('crypto');
+const BookingPlan = require("../models/bookingPlans");
 dotenv.config()
 
 const stripe = stripePackage(`${process.env.STRIPE_SK}`);
 
-const createBooking = async (req, res) => {
+const createPaymentSession = async (req, res, next) => {
     const {
         name,
         email,
@@ -23,67 +23,81 @@ const createBooking = async (req, res) => {
         bookingTitle,
         service,
         prefrence,
-        hostName
+        hostName,
+        tourId
     } = req.body;
     try {
+        let daysArr = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"]
+        const day = daysArr[new Date(bookingDate).getDay()]
+        const bookingPlan = await BookingPlan.findById(tourId);
+        console.log(prefrence);
+        console.log(bookingPlan);
+
+        if(!bookingPlan){
+            return next(new AppError("Wrong Tour Id", 400))
+        }
+        
+
         const countDocuments = await Booking.countDocuments();
         req.body.bookingId = `ME000${countDocuments + 1}`;
         req.body.bookingStatus = "payment not verified"
-        const booking = await Booking.create(req.body);
-        const session = await stripe.checkout.sessions.create({
-            payment_method_types: ['card'],
-            line_items: [
-                {
-                    price_data: {
-                        currency: 'myr',
-                        product_data: {
-                            name: bookingTitle,
-                            metadata:{
-                                bookingDate, 
-                                adultCount, 
-                                childCount,
-                                prefrence, 
-                                name, 
-                                email, 
-                                mobileNumber,
-                                service
-                            }
-                        },
-                        unit_amount: totalAmount * 100,
-                    },
-                    quantity: 1,
-                },
-            ],
-            mode: 'payment',
-            success_url: `https://${hostName}/api/v1/booking/payment?verify=true&id=${booking._id}`,
-            cancel_url: `https://${hostName}/payment?verify=false`,
+        // const booking = await Booking.create(req.body);
 
-            // success_url: `http://${hostName}:3000/api/v1/booking/payment?verify=true&id=${booking._id}`,
-            // cancel_url: `http://${hostName}:3000/api/v1/booking/payment?verify=false`,
-            payment_intent_data: {
-                setup_future_usage: 'off_session',
-                description: 'Booking payment',
-                shipping: {
-                    name,
-                    phone: mobileNumber,
-                    address: {
-                        line1: '...',
-                        postal_code: '...',
-                        city: '...',
-                        country: '...',
-                    },
-                },
-                receipt_email: email,  // Include user's email as receipt_email
-                metadata: {
-                    bookingDate,
-                    adultCount,
-                    childCount,
-                    totalAmount,
-                },
-            },
-        });
 
-        res.json({ url: session.url });
+        // const session = await stripe.checkout.sessions.create({
+        //     payment_method_types: ['card'],
+        //     line_items: [
+        //         {
+        //             price_data: {
+        //                 currency: 'myr',
+        //                 product_data: {
+        //                     name: bookingTitle,
+        //                     metadata:{
+        //                         bookingDate, 
+        //                         adultCount, 
+        //                         childCount,
+        //                         prefrence, 
+        //                         name, 
+        //                         email, 
+        //                         mobileNumber,
+        //                         service
+        //                     }
+        //                 },
+        //                 unit_amount: totalAmount * 100,
+        //             },
+        //             quantity: 1,
+        //         },
+        //     ],
+        //     mode: 'payment',
+        //     success_url: `https://${hostName}/api/v1/booking/payment?verify=true&id=${booking._id}`,
+        //     cancel_url: `https://${hostName}/payment?verify=false`,
+
+        //     // success_url: `http://${hostName}:3000/api/v1/booking/payment?verify=true&id=${booking._id}`,
+        //     // cancel_url: `http://${hostName}:3000/api/v1/booking/payment?verify=false`,
+        //     payment_intent_data: {
+        //         setup_future_usage: 'off_session',
+        //         description: 'Booking payment',
+        //         shipping: {
+        //             name,
+        //             phone: mobileNumber,
+        //             address: {
+        //                 line1: '...',
+        //                 postal_code: '...',
+        //                 city: '...',
+        //                 country: '...',
+        //             },
+        //         },
+        //         receipt_email: email,  // Include user's email as receipt_email
+        //         metadata: {
+        //             bookingDate,
+        //             adultCount,
+        //             childCount,
+        //             totalAmount,
+        //         },
+        //     },
+        // });
+
+        res.json({ url: "session.url" });
     } catch (error) {
         console.error(error);
         res.status(500).send('Internal Server Error');
@@ -278,7 +292,7 @@ module.exports = {
     getTotalBookingCount,
     getAllBooking,
     successBooking,
-    createBooking,
+    createPaymentSession,
     getConfirmedBooking,
     getSuccessBookingDetails
 }

@@ -1,11 +1,12 @@
 const { Router } =  require("express");
-const { createBooking, getAllBooking, getCancelledBooking, getCompletedBooking, getConfirmedBooking, getPendingBooking, getTotalBookingCount, successBooking, updateBooking, getSuccessBookingDetails } =  require("../controllers/bookingController.js");
+const { createPaymentSession, getAllBooking, getCancelledBooking, getCompletedBooking, getConfirmedBooking, getPendingBooking, getTotalBookingCount, successBooking, updateBooking, getSuccessBookingDetails } =  require("../controllers/bookingController.js");
 const { authAdmin } =  require("../middlewares/authMiddleware.js");
+const { validateBookingDataInput } = require("../middlewares/validationMiddleware.js");
 
 
 const router = Router();
 
-router.post("/", createBooking)
+router.post("/", validateBookingDataInput, createPaymentSession)
 router.get("/", authAdmin, getAllBooking),
 router.get("/payment", successBooking)
 router.get('/success', getSuccessBookingDetails)
