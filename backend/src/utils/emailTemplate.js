@@ -51,7 +51,7 @@ a {text-decoration: none;}
                                                                 <table cellpadding="0" cellspacing="0" width="100%">
                                                                     <tbody>
                                                                         <tr>
-                                                                            <td align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank" href=""><img src="https://i.postimg.cc/J4DR0BZG/logo.png" alt style="display: block;" width="165"></a></td>
+                                                                            <td align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank" href=""><img src="https://i.postimg.cc/wvQBY2dR/logo.png" alt style="display: block;" width="165"></a></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td align="center" class="esd-block-text" bgcolor="#ffffff">

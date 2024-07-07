@@ -138,12 +138,12 @@ const successBooking = async (req, res, next) => {
         let imgUrls;
         if(booking.service === 'dubai-frame') {
             imgUrls = {
-                bannerImg:"https://i.postimg.cc/wvQBY2dR/logo.png", 
+                bannerImg:"https://i.postimg.cc/13CSwzpT/dubai-Frame-Highlights-Two.avif", 
                 productImg: "https://i.postimg.cc/cJjR8sKB/dubai-Frame-Highlights-One.avif"
             }
         }
 
-    const dateFormatted = booking.bookingDate.slice(4, 15)
+    const dateFormatted = new Date(booking.bookingDate).toLocaleDateString()
 
     try {
         const transporter = nodemailer.createTransport({
