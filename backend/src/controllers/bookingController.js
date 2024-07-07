@@ -49,9 +49,10 @@ const createPaymentSession = async (req, res, next) => {
                 childTotal = childCount * data.weekDays.child
             }
         });
-
+        const uuid = crypto.randomUUID();
         let totalAmount = adultTotal + childTotal;
         
+        req.body.uid = uuid;
         req.body.totalAmount = totalAmount
         req.body.adultTotal = adultTotal
         req.body.childTotal = childTotal
@@ -66,7 +67,7 @@ const createPaymentSession = async (req, res, next) => {
             line_items: [
                 {
                     price_data: {
-                        currency: 'myr',
+                        currency: 'inr',
                         product_data: {
                             name: bookingTitle,
                             metadata:{
@@ -86,10 +87,10 @@ const createPaymentSession = async (req, res, next) => {
                 },
             ],
             mode: 'payment',
-            success_url: `https://${hostName}/api/v1/booking/payment?verify=true&id=${booking._id}`,
+            success_url: `https://${hostName}/api/v1/booking/payment?verify=true&id=${booking.uid}`,
             cancel_url: `https://${hostName}/payment?verify=false`,
 
-            // success_url: `http://${hostName}:3000/api/v1/booking/payment?verify=true&id=${booking._id}`,
+            // success_url: `http://${hostName}:3000/api/v1/booking/payment?verify=true&id=${booking.uid}`,
             // cancel_url: `http://${hostName}:3000/api/v1/booking/payment?verify=false`,
             payment_intent_data: {
                 setup_future_usage: 'off_session',
@@ -127,13 +128,20 @@ const successBooking = async (req, res, next) => {
     if(req.query.verify === false || !req.query.id){
         return res.redirect("/failed")
     }
-        const booking = await Booking.findById(req.query.id);
+        const booking = await Booking.findOne({uid: req.query.id});
         if(!booking){
             return next(new AppError("Booking not created"))
         }
-        const newBooking = await Booking.findByIdAndUpdate(req.query.id, {payment:true, bookingStatus:"confirmed", successToken:  crypto.randomBytes(16).toString('hex')}, {new: true})
+        const uuid = crypto.randomUUID();
+        const newBooking = await Booking.findByIdAndUpdate(booking._id, {payment:true, bookingStatus:"confirmed", uid:uuid, successToken:  crypto.randomBytes(16).toString('hex')}, {new: true})
 
-    const imgUrls = booking.service === 'splash-mania' ? {bannerImg:"https://i.postimg.cc/15PZfQSw/Splash-Mania-Waterpark-Ticketin-Gamuda-Cove-Selangor-Klook-Malaysia.jpg", productImg: "https://i.postimg.cc/BnSswGw4/splashmania-newtagline-2022-2.png"} : booking.service === 'aras-resturant' ? {bannerImg:"https://i.postimg.cc/DzNRHTWH/6.jpg", productImg: "https://i.postimg.cc/5yggcB7y/IMG-20240129-WA0076.jpg"}  : booking.service === 'sunway-lagoon' && {bannerImg:"https://i.postimg.cc/SQ3jTkPk/1-1.jpg", productImg: "https://i.postimg.cc/qqhqJ5zP/5.jpg"} 
+        let imgUrls;
+        if(booking.service === 'dubai-frame') {
+            imgUrls = {
+                bannerImg:"https://i.postimg.cc/wvQBY2dR/logo.png", 
+                productImg: "https://i.postimg.cc/cJjR8sKB/dubai-Frame-Highlights-One.avif"
+            }
+        }
 
     const dateFormatted = booking.bookingDate.slice(4, 15)
 

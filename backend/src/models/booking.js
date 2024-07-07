@@ -55,6 +55,9 @@ const bookingSchema = new mongoose.Schema({
         type:Boolean,
         default: false
     },
+    uid:{
+        type:String,
+    },
     successToken:String
 },{timestamps: true})
 
