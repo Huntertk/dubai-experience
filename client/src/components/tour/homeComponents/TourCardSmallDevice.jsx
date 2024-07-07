@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { choosingBooking } from '../../../redux/features/bookingSlice';
 const TourCardSmallDevice = ({data}) => { 
   const dispatch = useDispatch();
-  const {type,service, title,pricing, preference} = data;
+  const {type,service, title,pricing, preference, _id} = data;
   const navigate = useNavigate(); 
 
   const handleClick = () => {
@@ -14,7 +14,7 @@ const TourCardSmallDevice = ({data}) => {
     searchParams.set('service-name', data.service);
     searchParams.set('tourId', data.uid);
     const path = window.location.pathname + "date-select" +"?" + searchParams.toString();
-    dispatch(choosingBooking({type, title, pricing, preference, service}))
+    dispatch(choosingBooking({type, title, pricing, preference, service, tourId:_id}))
     navigate(path)
   }
 

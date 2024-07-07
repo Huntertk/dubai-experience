@@ -16,7 +16,6 @@ const Booking = () => {
     const navigate = useNavigate();
     const searchParams = new URLSearchParams(window.location.search);
     const serviceName = searchParams.get('service-name');
-    const tourId = searchParams.get('tourId');
     const {
         bookingDate,
         adultCount,
@@ -28,7 +27,8 @@ const Booking = () => {
         type,
         bookingTitle,
         pref,
-        service
+        service,
+        tourId
     } = useSelector(store => store.booking)
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -59,7 +59,8 @@ const Booking = () => {
                 responseClientUrl,
                 prefrence:pref,
                 service,
-                hostName
+                hostName,
+                tourId
             })
             const response = res.data;
             const {data} = await axios.get('/api/v1/booking/totalbooking')

@@ -114,7 +114,7 @@ const createPaymentSession = async (req, res, next) => {
             },
         });
 
-        res.json({ url: "session.url" });
+        res.json({ url: session.url });
     } catch (error) {
         console.error(error);
         res.status(500).send('Internal Server Error');

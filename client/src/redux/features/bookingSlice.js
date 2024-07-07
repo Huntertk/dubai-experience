@@ -25,7 +25,8 @@ const initialState = {
     bookingTitle:"",
     pricing:{},
     prefrenceOpt:[],
-    service:""
+    service:"",
+    tourId:""
 }
 
 
@@ -111,6 +112,7 @@ const bookingSlice = createSlice({
             state.pricing = action.payload.pricing,
             state.prefrenceOpt = action.payload.preference,
             state.service = action.payload.service
+            state.tourId = action.payload.tourId
             setBookingDetailsFromLocalStorage(state)
         },
         settingBookingResponse: (state, action) => {
