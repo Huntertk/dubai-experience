@@ -4,6 +4,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { bookingConfirm } from '../redux/features/bookingSlice';
 import { useGetSuccessBookingDataQuery } from '../redux/api/bookingDataApi';
 import LoadingSpinner from '../components/LoadingSpinner';
+import { format } from 'date-fns';
 
 const ConfirmBooking = () => {
   const navigate = useNavigate();
