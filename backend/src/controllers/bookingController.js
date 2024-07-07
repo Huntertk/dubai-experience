@@ -143,7 +143,10 @@ const successBooking = async (req, res, next) => {
             }
         }
 
-    const dateFormatted = new Date(booking.bookingDate).toLocaleDateString()
+        const day = booking.bookingDate.getDate(); // Get the day of the month (1-31)
+        const month = booking.bookingDate.getMonth() + 1; // Get the month (0-11), so add 1
+        const year = booking.bookingDate.getFullYear(); // Get the full year (e.g., 2024)
+        const dateFormatted = `${day}/${month}/${year}`
 
     try {
         const transporter = nodemailer.createTransport({
