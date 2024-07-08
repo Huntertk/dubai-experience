@@ -16,6 +16,7 @@ const Booking = () => {
     const navigate = useNavigate();
     const searchParams = new URLSearchParams(window.location.search);
     const serviceName = searchParams.get('service-name');
+    const uniqueId = searchParams.get('tourId')
     const {
         bookingDate,
         adultCount,
@@ -75,7 +76,7 @@ const Booking = () => {
     }
 
 
-    if (totalAmount === 0 || !totalServicesNameArr.includes(serviceName)) {
+    if (totalAmount === 0 || !totalServicesNameArr.includes(serviceName) || !uniqueId) {
         return <Navigate to="/" />
     }
     return (
