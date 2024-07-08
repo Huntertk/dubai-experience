@@ -9,18 +9,17 @@ import HelpCenter from "./HelpCenter";
 import AdminLogin from "./admin/AdminLogin";
 import ManageDates from "./admin/ManageDates";
 import AllBookings from "./admin/AllBookings";
-import SplashMainaDateManage from "./admin/splash-mania/SplashMainaDateManage";
-import SplashManiaBookTypeOneDate from "./admin/splash-mania/SplashManiaBookTypeOneDate";
+import ServiceProductList  from "./admin/ServiceProductList";
 import PaymentSucess from "./PaymentSuccess";
 import ConfirmBooking from "./ConfirmBooking";
 import BookingFailed from "./BookingFailed";
-
+import ServiceProductDateModification from "./admin/ServiceProductDateModification";
 export {
+    ServiceProductDateModification,
     BookingFailed,
     ConfirmBooking,
     PaymentSucess,
-    SplashManiaBookTypeOneDate,
-    SplashMainaDateManage,
+    ServiceProductList,
     AllBookings,
     TermAndConditionPage,
     NotFound,

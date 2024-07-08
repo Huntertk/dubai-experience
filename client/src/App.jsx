@@ -10,9 +10,9 @@ import {
   ManageDates,
   NotFound,
   PrivacyPolicy,
-  SplashMainaDateManage,
-  SplashManiaBookTypeOneDate,
   TermAndConditionPage,
+  ServiceProductList,
+  ServiceProductDateModification
  } from './pages'
 import { AdminLayout, DateSelectionContainer, TourLayout } from './components'
 import { Toaster } from 'react-hot-toast';
@@ -55,12 +55,12 @@ const App = () => {
                     <Route path="/admin/manage-dates" element={<ManageDates />} />
                     {/*Splash Mania */}
                     <Route 
-                      path="/admin/manage-dates/splash-mania" 
-                      element={<SplashMainaDateManage />} 
+                      path="/admin/manage-dates/:serviceName" 
+                      element={<ServiceProductList />} 
                     />
                     <Route 
-                      path="/admin/manage-dates/splash-mania/booktype-one" 
-                      element={<SplashManiaBookTypeOneDate />} 
+                      path="/admin/manage-dates/:serviceName/:id"  
+                      element={<ServiceProductDateModification />} 
                     />
                   </Route>
                 </Route>

@@ -23,3 +23,15 @@ exports.getAllBookingPlan = async (req, res, next) => {
         next(error)
     }
 }
+
+exports.getBookingPlan = async (req, res, next) => {
+    try {
+        const bookingPlan = await BookingPlan.findOne({_id: req.query.id, service: req.query.service})
+        if(!bookingPlan){
+            return next(new AppError("Data not found", 400))
+        }
+        res.status(200).json({bookingPlan})
+    } catch (error) {
+        next(error)
+    }
+}

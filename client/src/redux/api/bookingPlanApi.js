@@ -11,7 +11,18 @@ export const bookingPlanApi = createApi({
                 return{
                     url: '/getallbookingplan',
                     params:{
-                        "service":params.service,
+                        service:params.service,
+                    }
+                }
+            },
+        }),
+        getSingleBookingPlanData: builder.query({
+            query:(params) => {
+                return{
+                    url: '/getbookingplan',
+                    params:{
+                        service: params.service,
+                        id:params.id,
                     }
                 }
             },
@@ -20,4 +31,4 @@ export const bookingPlanApi = createApi({
 })
 
 
-export const {useGetBookingPlanDataQuery} = bookingPlanApi
+export const {useGetBookingPlanDataQuery, useGetSingleBookingPlanDataQuery} = bookingPlanApi

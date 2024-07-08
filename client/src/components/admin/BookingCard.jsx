@@ -50,7 +50,7 @@ const BookingCard = (props) => {
         <span>Order ID: {_id}</span>
           <p>Date of Reservation : {format(bookingDate, 'PPP')}</p>
           <p>Reservation-Type : {bookingTitle}</p>
-          { prefrence && <p>Citizen-Type : {prefrence}</p>}
+          { prefrence && <p>Preference : {prefrence}</p>}
           <p>Booked By : {name}</p>
           <p>Contact : {mobileNumber}</p>
           <p>Email : {email}</p>

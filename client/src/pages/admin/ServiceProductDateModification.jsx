@@ -5,23 +5,37 @@ import { format,differenceInCalendarDays } from 'date-fns';
 import { DayPicker, Row } from 'react-day-picker';
 import toast from 'react-hot-toast'
 import moment from 'moment'
-import '../../../styles/manageDate.scss'
+import '../../styles/manageDate.scss'
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
+import { useGetSingleBookingPlanDataQuery } from '../..//redux/api/bookingPlanApi';
+import LoadingSpinner from '../../components/LoadingSpinner';
 
-const SplashManiaBookTypeOneDate = () => {
+const ServiceProductDateModification = () => {
+  const {serviceName, id} = useParams();
+  const navigate = useNavigate();
+
+  
+  const {data, isLoading:loading, error, isSuccess} = useGetSingleBookingPlanDataQuery(
+    {service: serviceName, id}
+  );
   const [isLoading, setIsLoading] = useState(false)
     const [selectedDate, setSelectedDate] = useState("")
     const [isFetch, setIsFetch] = useState(false)
     const [blockedDates, setBlockedDates] = useState([])
     const disabledDays = blockedDates?.map((dates) => new Date(dates.blockDates))
+    
+    
       const dateToString = selectedDate?.toString();
       function isPastDate(date) {
         return differenceInCalendarDays(date, new Date()) < 0;
       }
+
+    
       
       const addBlockDate = async () => {
         try {
           setIsLoading(true)
-            const {data} = await axios.post('/api/v1/dates-manage/block-dates', {blockDates: dateToString, service:"splash-mania", type: "bookTypeOne"})
+            const response = await axios.post('/api/v1/dates-manage/block-dates', {blockDates: dateToString, service:data.bookingPlan.service, tourId: data.bookingPlan._id})
             toast.success("Date Blocked Successfully")
             setIsFetch(prev => !prev)
             setSelectedDate("")
@@ -33,7 +47,7 @@ const SplashManiaBookTypeOneDate = () => {
         
         const getBlockDates = async () => {
           try {
-            const {data} = await axios.get(`/api/v1/dates-manage/block-dates?service=splash-mania&type=bookTypeOne`)
+            const {data} = await axios.get(`/api/v1/dates-manage/block-dates?service=${serviceName}&tourId=${id}`)
             setBlockedDates(data.blockDates)
           } catch (error) {
             console.log(error);
@@ -50,14 +64,26 @@ const SplashManiaBookTypeOneDate = () => {
             console.log(error);
           }
         }
-
         useEffect(() => {
+          if(error){
+            console.log(error);
+            navigate("/")
+          }
         getBlockDates()
-      },[selectedDate, isFetch])
+      },[selectedDate, isFetch, error])
+    
+      if(loading){
+        return <LoadingSpinner />
+      }
+        
+      if(!serviceName || !id){
+        return <Navigate to="/" /> 
+      } 
+    
 
   return (
     <div className='mainDateManageContainer'>
-        <h1>Ticket To Splash Mania<br /> Date Manage</h1>
+        <h1>{data.bookingPlan.title}<br /> Date Manage</h1>
         <DayPicker
                 defaultMonth={new Date(Date.now())}
                 mode="single"
@@ -91,4 +117,4 @@ const SplashManiaBookTypeOneDate = () => {
   )
 }
 
-export default SplashManiaBookTypeOneDate
+export default ServiceProductDateModification

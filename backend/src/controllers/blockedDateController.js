@@ -11,7 +11,7 @@ const addBlockDates  = async(req, res, next) => {
 
 const getAllBlockDates = async (req, res, next) => {
     try {
-        const blockDates = await BlockedDate.find({type:req.query.type, service:req.query.service})
+        const blockDates = await BlockedDate.find({tourId:req.query.tourId, service:req.query.service})
         res.status(200).json({blockDates})
     } catch (error) {
         next(error)
