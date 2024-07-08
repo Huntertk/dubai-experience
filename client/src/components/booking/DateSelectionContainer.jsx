@@ -104,7 +104,7 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen, d
 
 const DateSelectionContainer = () => {
     const dispatch = useDispatch()
-    const {isPaxModal, type, pref, prefrenceOpt, service} = useSelector(store => store.booking)
+    const {isPaxModal, type, pref, prefrenceOpt, service, tourId} = useSelector(store => store.booking)
         const [selectedDate, setSelectedDate] = useState("")
         const [calenderOpen, setCalenderOpen] = useState(false)
         const [blockedDates, setBlockedDates] = useState([])
@@ -118,7 +118,7 @@ const DateSelectionContainer = () => {
           const getBooklockDates = async () => {
             try {
                 setIsLoading(true)
-                const {data} = await axios.get(`/api/v1/dates-manage/block-dates?service=${service}&type=${type}`)
+                const {data} = await axios.get(`/api/v1/dates-manage/block-dates?service=${service}&tourId=${tourId}`)
                 setBlockedDates(data.blockDates)
                 setIsLoading(false)
               } catch (error) {
@@ -134,7 +134,7 @@ const DateSelectionContainer = () => {
           const searchParams = new URLSearchParams(window.location.search);
           
           const serviceName = searchParams.get('service-name');      
-          const tourId = searchParams.get('tourId');
+          const uniqueId = searchParams.get('tourId');
           const formattedDate = selectedDate && new Date(selectedDate).toISOString()
           
           const handleClick = () => {
@@ -143,7 +143,7 @@ const DateSelectionContainer = () => {
                 setCalenderOpen(false)
             }
           
-          if(!totalServicesNameArr.includes(serviceName) || !tourId){
+          if(!totalServicesNameArr.includes(serviceName) || !uniqueId){
               return <Navigate to="/" />
           }
             const defaultMonth = new Date(Date.now());
