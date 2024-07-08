@@ -25,7 +25,7 @@ const AdminLogin = () => {
         navigate("/admin/all-booking")
       }
       if(error){
-        toast.error(error?.data?.msg);
+        toast.error(error?.data?.message);
       }
     }, [adminEmail, error])
 
