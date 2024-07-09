@@ -130,23 +130,23 @@ export const dubaiFrameWhyVistData = [
         descList:[
             {
                 id: nanoid(),
-                title:"Stunning views of the city skyline",
-                desc:"The Dubai Frame offers 360-degree views of the city skyline, including the Burj Khalifa, the Dubai Mall, and the Arabian Gulf.",
+                title:"Stunning Panoramic Views",
+                desc:"The Dubai Frame offers breathtaking 360-degree views of the city, allowing visitors to see both the modern skyline, including the Burj Khalifa, and the historic districts of Deira and Karama from a unique vantage point.",
             },
             {
                 id: nanoid(),
-                title:"Unique architectural structure",
-                desc:"The Dubai Frame is a unique and iconic architectural structure that is shaped like a picture frame. It is one of the most popular tourist attractions in Dubai.",
+                title:"Architectural Marvel",
+                desc:"Standing at 150 meters tall and 93 meters wide, the Dubai Frame is an impressive feat of modern architecture. Its distinctive design, resembling a giant picture frame, is both visually striking and symbolically significant.",
             },
             {
                 id: nanoid(),
-                title:"Showcases Dubai's past, present, and future",
-                desc:"The Dubai Frame is located in Zabeel Park, which is one of the oldest parks in Dubai. This location is symbolic of Dubai's past and present. The Dubai Frame itself is a symbol of Dubai's future, as it represents the city's ambitious plans for the future.",
+                title:"Sky Deck Experience",
+                desc:"The Sky Deck at the top of the frame provides an exhilarating experience with a glass-bottomed walkway, offering a thrilling view straight down to the ground 150 meters below. This feature adds an adventurous element to your visit.",
             },
             {
                 id: nanoid(),
-                title:"Thrilling walk on the glass bridge",
-                desc:"The 93-meter-long glass bridge that connects the two towers of the Dubai Frame offers visitors a truly unique and thrilling experience. Walking on the glass bridge gives you the feeling of walking on air, and it offers stunning views of the city below.",
+                title:"Interactive Museums",
+                desc:"The ground floor of the Dubai Frame features an interactive museum that showcases Dubai's evolution from a small fishing village to a global metropolis. The multimedia exhibits provide an engaging and educational experience about the city's history and future.",
             },
         ],
         imgUrl:"/assets/images/dubai-frame-dubaiFramWhyVisit.avif"
@@ -280,17 +280,17 @@ export const dubaiFramePlanVisitData = [
 export const dubaiFrameHighlighhtsData = [
     {
         id: nanoid(),
-        desc:"The Old Dubai Gallery is situated on the mezzanine floor of the Dubai Frame. The gallery is an interactive exhibit that highlights Dubai's humble beginnings as a Bedouin fishing village.",
+        desc:"The Dubai Frame serves as a symbol of Dubai's rapid development and visionary growth. It represents the city's ability to merge its traditional past with a modern and innovative future, making it a significant cultural landmark.",
         image: "/assets/images/dubaiFrameHighlightsOne.avif"
     },
     {
         id: nanoid(),
-        desc:"Present Dubai is the stunning skyline of the city that you see from the Sky deck level. Glass walls on all sides offer uninterrupted views of Dubai, “Old Dubai” to the north, and “New Dubai” to the south. ",
+        desc:"Located in Zabeel Park, one of Dubai's largest and most popular parks, the Dubai Frame is easily accessible and offers visitors the opportunity to explore the park's other attractions, such as its gardens, playgrounds, and picnic areas.",
         image: "/assets/images/dubaiFrameHighlightsTwo.avif"
     },
     {
         id: nanoid(),
-        desc:"Once you make your way back down the other arm of Dubai Frame, the Future Dubai Gallery exhibit awaits you on the mezzanine level. The gallery takes you on a futuristic journey with stunning visuals projected on the insides of a vortex tunnel.",
+        desc:"The Dubai Frame is built with sustainability in mind, incorporating energy-efficient materials and technologies. This commitment to environmental responsibility aligns with Dubai's broader efforts to promote green building practices.",
         image: "/assets/images/dubaiFrameHighlightsThree.avif"
     },
 ]
@@ -301,40 +301,47 @@ export const dubaiFrameHighlighhtsData = [
 export const dubaiFrameAdditionInfoData = [
     {
         id: nanoid(),
-        ques:"Child Policy",
+        ques:"How do I get to the Dubai Frame?",
         ans:[
-            "Adult: 13 to 59 years old",
-            "Child: 5 to 12 years old",
-            "Senior citizen: 60 years old and above",
-            "Child below 5 years old FREE"
+            "he Dubai Frame is located within Zabeel Park, along the jogging track.",
+            "You can get to the Dubai Frame by metro, bus, or car.",
+            "Take the F09 bus, it'll take you right outside Zabeel Park.",
+            "The Al Jafiliya Metro Station on the Red Line is right outside Zabeel Park and just a few minutes on foot from the Dubai Frame."
         ]
     },
     {
         id: nanoid(),
-        ques:"Operating Hours ?",
+        ques:"When should I visit the Dubai Frame ?",
         ans:[
-            "Hi-Tea: 3pm to 5:30pm",
-            "Dinner: 6:30pm to 10pm",
-            "Lunch: 11:30am to 2:30pm"
+            "Dubai Frame timings are 9:00 AM to 9:00 PM every day of the week, with final entry at 8:30 PM. If you want to avoid crowds, the best time to visit is early morning or late evening on weekdays. However, if you don't wish to groups, the best time is definitely during sunset to enjoy the view of the city bathed in sunlight."
         ]
     },
     {
         id: nanoid(),
-        ques:"Important Information",
+        ques:"How long does it take to visit the Dubai Frame ?",
         ans:[
-            "Shorts and Slippers are prohibited.",
-            "Recommend to make advanced reservations to confirm your preferred dining slot.",
-            "Consider upgrading to window seat for better sky view(Subject to availability).",
-            "Observe decorum and follow staff instruction for a pleasant visit.",
-            "Remark about any dietary restrictions or allergies during booking.",
-            "This is a Halal certified restaurant. Kindly take note, it is not suitable for Vegetarians as they serve Chickens, Eggs, Seafood and Meats"
+            "It takes about 1-2 hours to visit the Dubai Frame, depending on how much time you spend at each exhibit."
         ]
     },
     {
         id: nanoid(),
-        ques:"Refund/Cancellation Policy",
+        ques:"Is the Dubai Frame accessible for people with disabilities ?",
         ans:[
-            "No cancellation and refund are allowed once purchased."
+            "Yes, the Dubai Frame is accessible for people with disabilities. There are ramps and elevators throughout the attraction."
+        ]
+    },
+    {
+        id: nanoid(),
+        ques:"Can I bring food and drinks into the Dubai Frame ?",
+        ans:[
+            "No, food and drinks are not allowed inside the Dubai Frame."
+        ]
+    },
+    {
+        id: nanoid(),
+        ques:"Can I take pictures at the Dubai Frame ?",
+        ans:[
+            "Yes, you are allowed to take pictures at the Dubai Frame."
         ]
     },
     {
