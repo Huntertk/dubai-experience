@@ -45,7 +45,7 @@ const Pax = ({category, ageText, count, actionType, total}) => {
                     
             </div>
             <div className="price">
-                <span>MYR {total}</span>
+                <span>AED {total}</span>
             </div>
         </div>
     )
@@ -132,7 +132,7 @@ const PaxModal = ({selectedDate}) => {
             </div>
                 <div className="totalPayable">
                     <span>Total</span>
-                <span>MYR {totalAmount}</span>
+                <span>AED {totalAmount}</span>
                 </div>
                 
             <div className="dateContainer">

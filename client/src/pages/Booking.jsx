@@ -102,20 +102,20 @@ const Booking = () => {
                                 <div className="guest">
                                     <p> Adult <span> X {adultCount}</span>
                                     </p>
-                                    <span>MYR {adultTotal}</span>
+                                    <span>AED {adultTotal}</span>
                                 </div>
                         }
                         {
                             childCount === 0 ? "" : <div className="guest">
                                 <p> Child <span> X {childCount}</span></p>
-                                <span>MYR {childTotal}</span>
+                                <span>AED {childTotal}</span>
                             </div>
                         }
 
 
                         <div className="guest">
                             <p className='totalPayable'>Total Payable</p>
-                            <span className='totalPayable'>MYR {totalAmount}</span>
+                            <span className='totalPayable'>AED {totalAmount}</span>
                         </div>
                     </div>
                     <form onSubmit={handleSubmit}>

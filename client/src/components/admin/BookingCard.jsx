@@ -71,7 +71,7 @@ const BookingCard = (props) => {
             </select>
             <button className='updateBtn' onClick={updateBooking}>update</button>
           </div>
-          <p className='totalBill'>Total Bill : MYR {totalAmount}</p>
+          <p className='totalBill'>Total Bill : AED {totalAmount}</p>
           <p>Order Created On : {format(new Date(createdAt), 'MM/dd/yyyy')}</p>
           <p>Last Update at  {formatDistanceToNow(new Date(updatedAt), { addSuffix: true })}</p>
       </div>

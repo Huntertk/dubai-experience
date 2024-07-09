@@ -17,7 +17,7 @@ const CardData = ({cardData, day}) => {
         <div className="prefrenceTabCard">
         <h1>{cardData.title}</h1>
         <div className="content">
-             <p>MYR {price}</p>
+             <p>AED {price}</p>
             
             <button onClick={() => {
                 dispatch(setPreference({pref: cardData.title}))
