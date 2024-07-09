@@ -12,7 +12,8 @@ const ServiceProductList = () => {
   const {data, isLoading, error, isSuccess} = useGetBookingPlanDataQuery({service:serviceName});
   useEffect(() => {
     if(error){
-      navigate("/")
+      console.log(error);
+      navigate("/admin/manage-dates")
     }
 
   },[error])
@@ -23,10 +24,10 @@ const ServiceProductList = () => {
 
   return (
     <section className='manageDates'>
-      <h1>Splash Mania</h1>
+      <h1>{serviceName.toUpperCase()}</h1>
       <div className="btnContainer">
         {
-          data.bookingPlan.map((plan) => (
+          data?.bookingPlan.map((plan) => (
             <Link key={plan.uid} to={`/admin/manage-dates/${serviceName}/${plan._id}`}>{plan.title}</Link>
           ))
         }
