@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import {motion} from 'framer-motion';
 import TourCardBigDevice from './TourCardBigDevice';
 import TourCardSmallDevice from './TourCardSmallDevice';
 import '../../../styles/tourHomeCard.scss'

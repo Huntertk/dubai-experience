@@ -211,17 +211,17 @@ const successBooking = async (req, res, next) => {
                 .fontSize(15)
                 .text(`Tour Name:  ${booking.bookingTitle}`, 50, 260)
                 .fontSize(15)
-                .text(`Guest Name: ${booking.name}`, 50, 310)
+                .text(`Guest Name: ${booking.name}`, 50, 290)
                 .fontSize(15)
-                .text(`Guest Email: ${booking.email}`, 50, 340)
+                .text(`Guest Email: ${booking.email}`, 50, 320)
                 .fontSize(15)
-                .text(`Mobile Number: ${booking.mobileNumber}`, 50, 370)
+                .text(`Mobile Number: ${booking.mobileNumber}`, 50, 350)
                 .fontSize(15)
-                .text(`Total Adult X ${booking.adultCount}`, 50, 400)
+                .text(`Total Adult X ${booking.adultCount}`, 50, 380)
                 .fontSize(15)
-                .text(`Total Child X ${booking.childCount}`, 50, 430)
+                .text(`Total Child X ${booking.childCount}`, 50, 410)
                 .fontSize(15)
-                .text(`Date:  ${dateFormatted}`, 50, 460)
+                .text(`Date:  ${dateFormatted}`, 50, 440)
 
 
                 const generateQrCode = (bookingId, index, qrImageData, paxType) => {

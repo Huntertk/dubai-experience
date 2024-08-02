@@ -47,7 +47,7 @@ const DubaiFrame = () => {
     {/*Dynamic Title */}
     <Helmet>
         <title>Book Dubai Frame Tickets | Dubai Experience | Best Deals & Discounts</title>
-        <meta name="description" content="Grab Dubai Frame tickets • Extended validity • Instant confirmation. ✓Best Prices ✓Online Reservations ✓Advance Booking ✓Ticket Discounts ✓Group Bookings. Malaysia Experience" />
+        <meta name="description" content="Grab Dubai Frame tickets • Extended validity • Instant confirmation. ✓Best Prices ✓Online Reservations ✓Advance Booking ✓Ticket Discounts ✓Group Bookings. Dubai Experience" />
       </Helmet>
      <section className='tourHomeMainContainer'>
       <TourHomeTopContainer
