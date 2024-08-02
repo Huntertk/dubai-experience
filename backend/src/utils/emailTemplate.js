@@ -51,7 +51,7 @@ a {text-decoration: none;}
                                                                 <table cellpadding="0" cellspacing="0" width="100%">
                                                                     <tbody>
                                                                         <tr>
-                                                                            <td align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank" href=""><img src="https://i.postimg.cc/J4DR0BZG/logo.png" alt style="display: block;" width="165"></a></td>
+                                                                            <td align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank" href=""><img src="https://i.postimg.cc/wvQBY2dR/logo.png" alt style="display: block;" width="165"></a></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td align="center" class="esd-block-text" bgcolor="#ffffff">
@@ -618,9 +618,9 @@ a {text-decoration: none;}
                                                                         <tr>
                                                                             <td align="left" class="esd-block-text es-p10" esd-links-color="#14a0f6">
                                                                                 <p style="color: #000000; line-height: 200%; font-size: 15px;">${mailMessage}</p>
-                                                                                <p style="color: #000000; line-height: 200%; font-size: 15px;">Contact details:<br>Tel: +6017-2018194, +60173078194, +60193058194<br>Email: <a href="mailto:support@malaysia-experience.com" target="_blank" style="font-size: 15px; color: #14a0f6;">support@malaysia-experience.com</a></p>
-                                                                                <p style="color: #000000; line-height: 200%; font-size: 15px;">Thank you for choosing Malaysia Experience. We look forward to serving you.</p>
-                                                                                <p style="color: #000000; line-height: 200%; font-size: 15px;">Best regards,<br>Support Team<br>Malaysia Experience</p>
+                                                                                <p style="color: #000000; line-height: 200%; font-size: 15px;">Contact details:<br>Tel: +6017-2018194, +60173078194, +60193058194<br>Email: <a href="mailto:support@Dubai-experience.com" target="_blank" style="font-size: 15px; color: #14a0f6;">support@malaysia-experience.com</a></p>
+                                                                                <p style="color: #000000; line-height: 200%; font-size: 15px;">Thank you for choosing Dubai Experience. We look forward to serving you.</p>
+                                                                                <p style="color: #000000; line-height: 200%; font-size: 15px;">Best regards,<br>Support Team<br>Dubai Experience</p>
                                                                             </td>
                                                                         </tr>
                                                                     </tbody>

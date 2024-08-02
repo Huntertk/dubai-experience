@@ -167,7 +167,7 @@ const successBooking = async (req, res, next) => {
         return next(new AppError("Booking not created",400));
     }
 
-    if(booking.service !== 'aras-resturant' && booking.isQrGenerated === false){
+    if(booking.isQrGenerated === false){
 
         try {
                 let qrDataAdult = await QrCode.find({title: booking.bookingTitle, isUsed:false, Type:"Adult"});
@@ -313,16 +313,10 @@ const successBooking = async (req, res, next) => {
                 
 
         let imgUrls;
-        if(booking.service === 'splash-mania') {
+        if(booking.service === 'dubai-frame') {
             imgUrls = {
-                bannerImg:"https://i.postimg.cc/15PZfQSw/Splash-Mania-Waterpark-Ticketin-Gamuda-Cove-Selangor-Klook-Malaysia.jpg",
-
-                productImg: "https://i.postimg.cc/BnSswGw4/splashmania-newtagline-2022-2.png"
-            }
-        } else if(booking.service === 'sunway-lagoon') {
-            imgUrls = {
-                bannerImg:"https://i.postimg.cc/SQ3jTkPk/1-1.jpg",
-                productImg: "https://i.postimg.cc/qqhqJ5zP/5.jpg"
+                bannerImg:"https://i.postimg.cc/13CSwzpT/dubai-Frame-Highlights-Two.avif", 
+                productImg: "https://i.postimg.cc/cJjR8sKB/dubai-Frame-Highlights-One.avif"
             }
         }
 
@@ -337,7 +331,7 @@ const successBooking = async (req, res, next) => {
                 }
             })
 
-            const mailMessage = `We are delighted to confirm your ticket booking with Malaysia Experience for ${booking.bookingTitle} Entry Ticket! Get ready to embark on an unforgettable experience at one of the most exciting destinations.
+            const mailMessage = `We are delighted to confirm your ticket booking with Dubai Experience for ${booking.bookingTitle} Entry Ticket! Get ready to embark on an unforgettable experience at one of the most exciting destinations.
 `
 
             const mailOptions = {
@@ -414,48 +408,6 @@ const successBooking = async (req, res, next) => {
     }
 
 
-    } else if(booking.service === 'aras-resturant'){    
-        const newBooking = await Booking.findByIdAndUpdate(req.query.id, {payment:true, bookingStatus:"confirmed", successToken:  crypto.randomBytes(16).toString('hex')}, {new: true})
-
-        let imgUrls;
-        if(booking.service === 'aras-resturant'){
-            imgUrls = {
-                bannerImg:"https://i.postimg.cc/DzNRHTWH/6.jpg", 
-                productImg: "https://i.postimg.cc/5yggcB7y/IMG-20240129-WA0076.jpg"
-            }
-        }
-
-        try {
-            const transporter = nodemailer.createTransport({
-                service: 'gmail',
-                auth: {
-                    user: process.env.EMAIL,
-                    pass: process.env.MAIL_PASS
-                }
-            })
-
-            const mailMessage = "We're delighted to confirm your booking! Your official e-ticket is on its way to your email shortly. In case you don't receive it, please don't hesitate to get in touch with us."
-
-            const mailOptions = {
-                from: process.env.EMAIL,
-                to: `${booking.email},
-                ${process.env.EMAIL}`,
-                subject: `Booking Successfully`,
-                html: bookingEmailTemplate(booking, imgUrls, dateFormatted, mailMessage)
-            };
-            transporter.sendMail(mailOptions, function (error, info) {
-                if (error) {
-                    console.log(error);
-                } else {
-
-                    console.log(info.response, " Email sent");
-                }
-            })
-            res.status(StatusCodes.CREATED).redirect(`/success?token=${newBooking.successToken}`)
-            // res.status(200).send("success")
-        } catch (error) {
-            return res.redirect("/failed")
-        }
     } else {
         return res.redirect("/failed")
     }
