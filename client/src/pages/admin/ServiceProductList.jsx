@@ -8,12 +8,12 @@ const ServiceProductList = () => {
   const {serviceName} = useParams();
   const navigate = useNavigate()
 
-
   const {data, isLoading, error, isSuccess} = useGetBookingPlanDataQuery({service:serviceName});
+  
   useEffect(() => {
     if(error){
       console.log(error);
-      navigate("/admin/manage-dates")
+      navigate("/admin/all-booking")
     }
 
   },[error])
@@ -28,7 +28,7 @@ const ServiceProductList = () => {
       <div className="btnContainer">
         {
           data?.bookingPlan.map((plan) => (
-            <Link key={plan.uid} to={`/admin/manage-dates/${serviceName}/${plan._id}`}>{plan.title}</Link>
+            <Link key={plan._id} to={`${plan._id}`}>{plan.title}</Link>
           ))
         }
       </div>

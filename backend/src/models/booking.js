@@ -19,6 +19,9 @@ const bookingSchema = new mongoose.Schema({
     bookingDate:{
         type: String
     },
+    bookingDateString:{
+        type: String
+    },
     name:{
         type:String,
     },
@@ -33,12 +36,12 @@ const bookingSchema = new mongoose.Schema({
         enum: ["pending", "confirmed", "completed", "cancelled", "payment not verified"],
         default: "pending"
     },
-    bookingId:{
-        type: String
-    },
-    tourId:{
+    bookingPlanId:{
         type: mongoose.Schema.Types.ObjectId,
         ref:'BookingPlan'
+    },
+    bookingId:{
+        type: String
     },
     bookingType:{
         type:String
@@ -56,8 +59,9 @@ const bookingSchema = new mongoose.Schema({
         type:Boolean,
         default: false
     },
-    uid:{
-        type:String,
+    isQrGenerated:{
+        type:Boolean,
+        default:false
     },
     successToken:String
 },{timestamps: true})

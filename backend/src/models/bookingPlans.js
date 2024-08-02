@@ -4,9 +4,7 @@ const bookingPlanSchema = new mongoose.Schema({
     title:{
         type: String
     },
-    desc:{
-        type:[String]
-    },
+    desc:[String],
     type:{
         type: String
     },
@@ -15,23 +13,6 @@ const bookingPlanSchema = new mongoose.Schema({
     },
     image:{
         type:[String]
-    },
-    pricing:[
-        {
-            title:String,
-            weekDays:{
-                adult:Number,
-                child:Number,
-            },
-            weekEnds:{
-                adult:Number,
-                child:Number,
-            }
-            
-        }
-    ],
-    uid:{
-        type:String,
     },
     preference: [
         {
@@ -51,11 +32,26 @@ const bookingPlanSchema = new mongoose.Schema({
             details:[String]
         }
     ],
+    pricing:[
+        {
+            title:String,
+            weekDays:{
+                adult:Number,
+                child:Number,
+            },
+            weekEnds:{
+                adult:Number,
+                child:Number,
+            }
+            
+        }
+    ],
     inclusionAndExclusion:{
         cancellationPolicy:[String],
         inclusion:[String],
         exclusion:[String]
-    }
+    },
+    rulesAndRestriction:[String]
 }, {timestamps: true})
 
 const BookingPlan = mongoose.model('BookingPlan', bookingPlanSchema)

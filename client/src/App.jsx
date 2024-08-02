@@ -12,7 +12,9 @@ import {
   PrivacyPolicy,
   TermAndConditionPage,
   ServiceProductList,
-  ServiceProductDateModification
+  ServiceProductDateModification,
+  QrBookingPlan,
+  QrBookingPlanView
  } from './pages'
 import { AdminLayout, DateSelectionContainer, TourLayout } from './components'
 import { Toaster } from 'react-hot-toast';
@@ -48,12 +50,35 @@ const App = () => {
               </Route>
               
                {/*Admin Routes */}
-                <Route path="/admin/login" element={<AdminLogin />} />
+               <Route path="/admin/login" element={<AdminLogin />} />
                 <Route element={<AdminProtectedRoute />}>
                   <Route element={<AdminLayout />}>
                     <Route path="/admin/all-booking" element={<AllBookings />} />
+
+                    {/* QR CODE */}
+                    <Route path="/admin/qr-code" element={<QrBookingPlan />} />
+                    <Route path="/admin/qr-code/view/:serviceName" 
+                      element={<ServiceProductList />} 
+                    />
+                    <Route 
+                      path="/admin/qr-code/view/:serviceName/:id"  
+                      element={<QrBookingPlanView />} 
+                    />
+
+                    {/*Tickets */}
+                    {/* <Route path="/admin/booking-plan" element={<BookingPlan />} />
+                    <Route path="/admin/booking-plan/create" element={<CreateNewBookingPlan />} />
+                    <Route path="/admin/booking-plan/edit" element={<EditBookingPlan />} />
+                    <Route path="/admin/booking-plan/edit/:serviceName" 
+                      element={<ServiceProductList />} 
+                    /> */}
+                    {/* <Route path="/admin/booking-plan/edit/:serviceName/:id" 
+                      element={<EditBookingPlanData />} 
+                    /> */}
+
+
+                    {/*Date Manage */}
                     <Route path="/admin/manage-dates" element={<ManageDates />} />
-                    {/*Splash Mania */}
                     <Route 
                       path="/admin/manage-dates/:serviceName" 
                       element={<ServiceProductList />} 

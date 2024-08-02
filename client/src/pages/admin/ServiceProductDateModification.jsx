@@ -35,7 +35,7 @@ const ServiceProductDateModification = () => {
       const addBlockDate = async () => {
         try {
           setIsLoading(true)
-            const response = await axios.post('/api/v1/dates-manage/block-dates', {blockDates: dateToString, service:data.bookingPlan.service, tourId: data.bookingPlan._id})
+            const response = await axios.post('/api/v1/dates-manage/block-dates', {blockDates: dateToString, service:data.bookingPlan.service, bookingPlanId: data.bookingPlan._id})
             toast.success("Date Blocked Successfully")
             setIsFetch(prev => !prev)
             setSelectedDate("")
@@ -47,7 +47,7 @@ const ServiceProductDateModification = () => {
         
         const getBlockDates = async () => {
           try {
-            const {data} = await axios.get(`/api/v1/dates-manage/block-dates?service=${serviceName}&tourId=${id}`)
+            const {data} = await axios.get(`/api/v1/dates-manage/block-dates?service=${serviceName}&bookingPlanId=${id}`)
             setBlockedDates(data.blockDates)
           } catch (error) {
             console.log(error);

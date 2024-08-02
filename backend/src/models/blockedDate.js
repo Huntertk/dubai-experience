@@ -4,8 +4,8 @@ const datesSchema = new mongoose.Schema({
     blockDates:{
         type: String
     },
-    tourId:{
-        type:mongoose.Schema.Types.ObjectId,
+    bookingPlanId:{
+        type: mongoose.Schema.Types.ObjectId,
         ref:'BookingPlan'
     },
     service:{

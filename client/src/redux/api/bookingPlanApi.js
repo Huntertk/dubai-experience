@@ -27,8 +27,19 @@ export const bookingPlanApi = createApi({
                 }
             },
         }),
+
+        getQrData: builder.query({
+            query:(params) => {
+                return{
+                    url: '/get-qr',
+                    params:{
+                        id: params.id
+                    }
+                }
+            },
+        }),
     })
 })
 
 
-export const {useGetBookingPlanDataQuery, useGetSingleBookingPlanDataQuery} = bookingPlanApi
+export const {useGetBookingPlanDataQuery, useGetSingleBookingPlanDataQuery, useGetQrDataQuery} = bookingPlanApi

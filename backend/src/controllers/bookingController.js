@@ -7,11 +7,17 @@ const AppError = require("../error/customError");
 const { bookingEmailTemplate } = require("../utils/emailTemplate");
 const crypto = require('crypto');
 const BookingPlan = require("../models/bookingPlans");
+const fs = require('fs');
+const path = require('path');
+const qr = require('qrcode')
+const PDFDocument = require('pdfkit');
+const QrCode = require("../models/qrCodeModel");
+const { format } = require("date-fns");
 dotenv.config()
 
 const stripe = stripePackage(`${process.env.STRIPE_SK}`);
 
-const createPaymentSession = async (req, res, next) => {
+const createBooking = async (req, res, next) => {
     const {
         name,
         email,
@@ -19,27 +25,48 @@ const createPaymentSession = async (req, res, next) => {
         bookingDate,
         adultCount,
         childCount,
+        bookingType,
         bookingTitle,
+        responseClientUrl,
         service,
         prefrence,
         hostName,
-        tourId
+        bookingPlanId
     } = req.body;
+
     try {
+
         let daysArr = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"]
         const day = daysArr[new Date(bookingDate).getDay()]
-        const bookingPlan = await BookingPlan.findById(tourId);
+        const bookingPlan = await BookingPlan.findById(bookingPlanId);
 
         if(!bookingPlan){
-            return next(new AppError("Tour Id Wrong", 400))
+            return next(new AppError("Booking Plan Id Wrong", 400))
         }
+        if(service !== 'aras-resturant'){
+            
+                let qrDataAdult = await QrCode.find({title: bookingTitle, isUsed:false, Type:"Adult"});
+                
+                if(qrDataAdult.length < adultCount){
+                    return next(new AppError("Ticket not allowed to book zero inventory"))
+                }
+            
+                let qrDataChild = await QrCode.find({title: bookingTitle, isUsed:false, Type:"Child"});
+                
+                if(qrDataChild.length < childCount){
+                    return next(new AppError("Ticket not allowed to book zero inventory"))
+                }
+            
+        }
+
         let adultTotal = 0;
         let childTotal = 0;
         const pricingData = bookingPlan.pricing.filter(d => d.title === prefrence);
 
         if(pricingData.length === 0){
-            return next(new AppError("Tour Preference Wrong", 400))
+            return next(new AppError("Booking Plan Preference Wrong", 400))
         }
+
         pricingData.forEach((data) => {
             if(day === 'Sun' || day === 'Fri' || day === 'Sat'){
                 adultTotal = adultCount * data.weekEnds.adult
@@ -49,10 +76,8 @@ const createPaymentSession = async (req, res, next) => {
                 childTotal = childCount * data.weekDays.child
             }
         });
-        const uuid = crypto.randomUUID();
         let totalAmount = adultTotal + childTotal;
-        
-        req.body.uid = uuid;
+
         req.body.totalAmount = totalAmount
         req.body.adultTotal = adultTotal
         req.body.childTotal = childTotal
@@ -60,8 +85,6 @@ const createPaymentSession = async (req, res, next) => {
         req.body.bookingId = `ME000${countDocuments + 1}`;
         req.body.bookingStatus = "payment not verified"
         const booking = await Booking.create(req.body);
-
-
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
             line_items: [
@@ -87,11 +110,11 @@ const createPaymentSession = async (req, res, next) => {
                 },
             ],
             mode: 'payment',
-            success_url: `https://${hostName}/api/v1/booking/payment?verify=true&id=${booking.uid}`,
+            success_url: `https://${hostName}/payment?verify=true&id=${booking._id}`,
             cancel_url: `https://${hostName}/payment?verify=false`,
 
-            // success_url: `http://${hostName}:3000/api/v1/booking/payment?verify=true&id=${booking.uid}`,
-            // cancel_url: `http://${hostName}:3000/api/v1/booking/payment?verify=false`,
+            // success_url: `http://${hostName}:3000/payment?verify=true&id=${booking._id}`,
+            // cancel_url: `http://${hostName}:3000/payment?verify=false`,
             payment_intent_data: {
                 setup_future_usage: 'off_session',
                 description: 'Booking payment',
@@ -102,7 +125,7 @@ const createPaymentSession = async (req, res, next) => {
                         line1: '...',
                         postal_code: '...',
                         city: '...',
-                        country: '...',
+                        country: 'in', //this will change later
                     },
                 },
                 receipt_email: email,  // Include user's email as receipt_email
@@ -128,55 +151,314 @@ const successBooking = async (req, res, next) => {
     if(req.query.verify === false || !req.query.id){
         return res.redirect("/failed")
     }
-        const booking = await Booking.findOne({uid: req.query.id});
-        if(!booking){
-            return next(new AppError("Booking not created"))
-        }
-        const uuid = crypto.randomUUID();
-        const newBooking = await Booking.findByIdAndUpdate(booking._id, {payment:true, bookingStatus:"confirmed", uid:uuid, successToken:  crypto.randomBytes(16).toString('hex')}, {new: true})
 
-        let imgUrls;
-        if(booking.service === 'dubai-frame') {
-            imgUrls = {
-                bannerImg:"https://i.postimg.cc/13CSwzpT/dubai-Frame-Highlights-Two.avif", 
-                productImg: "https://i.postimg.cc/cJjR8sKB/dubai-Frame-Highlights-One.avif"
-            }
-        }
+    let booking = await Booking.findById(req.query.id);
+    const bookingPlan = await BookingPlan.findById(booking.bookingPlanId);
+    
 
-        const day = new Date(booking.bookingDate).getDate(); // Get the day of the month (1-31)
-        const month = new Date(booking.bookingDate).getMonth() + 1; // Get the month (0-11), so add 1
-        const year = new Date(booking.bookingDate).getFullYear(); // Get the full year (e.g., 2024)
-        const dateFormatted = `${day}/${month}/${year}`
+    const day = new Date(booking.bookingDate).getDate(); // Get the day of the month (1-31)
+    const month = new Date(booking.bookingDate).getMonth() + 1; // Get the month (0-11), so add 1
+    const year = new Date(booking.bookingDate).getFullYear(); // Get the full year (e.g., 2024)
+    // const dateFormatted = `${day}/${month}/${year}`;
+    const dateFormatted = booking.bookingDateString;
 
-    try {
-        const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            auth: {
-                user: process.env.EMAIL,
-                pass: process.env.MAIL_PASS
-            }
-        })
 
-        const mailOptions = {
-            from: process.env.EMAIL,
-            to: `${booking.email},
-            ${process.env.EMAIL}`,
-            subject: `Booking Successfully`,
-            html: bookingEmailTemplate(booking,imgUrls, dateFormatted)
-        };
-        transporter.sendMail(mailOptions, function (error, info) {
-            if (error) {
-                console.log(error);
-            } else {
-
-                console.log(info.response, " Email sent");
-            }
-        })
-        res.status(StatusCodes.CREATED).redirect(`/success?token=${newBooking.successToken}`)
-    } catch (error) {
-        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error })
+    if(!booking || !bookingPlan){
+        return next(new AppError("Booking not created",400));
     }
 
+    if(booking.service !== 'aras-resturant' && booking.isQrGenerated === false){
+
+        try {
+                let qrDataAdult = await QrCode.find({title: booking.bookingTitle, isUsed:false, Type:"Adult"});
+                    
+                if(qrDataAdult.length < booking.adultCount){
+                    return next(new AppError("Ticket not allowed to book zero inventory"))
+                }
+            
+                let qrDataChild = await QrCode.find({title: booking.bookingTitle, isUsed:false, Type:"Child"});
+                
+                if(qrDataChild.length < booking.childCount){
+                    return next(new AppError("Ticket not allowed to book zero inventory"))
+                }
+        
+                const doc = new PDFDocument();
+                
+                // Pipe its output somewhere, like to a file or HTTP response
+                // See below for browser usage
+                doc.pipe(fs.createWriteStream(path.join(__dirname, "..", "uploads", `${booking._id}_ticket.pdf`)));
+                doc
+                .image(path.join(__dirname, "..", "public", `logo.jpg`), 50, 45, { width: 200 })
+                .fillColor('#444444')
+                .fontSize(15)
+                .text('e-ticket', 200, 50, { align: 'right' })
+                .fillColor("#444444")
+                .fontSize(20)
+                //Ticket Detials
+                .text("Ticket Details", 50, 160)
+                //Hr Line
+                .strokeColor("#aaaaaa")
+                .lineWidth(1)
+                .moveTo(50, 185)
+                .lineTo(550, 185)
+                .stroke()
+                //Detials
+                .fontSize(15)
+                .font('Helvetica-Bold')
+                .text(`Order Id: #${booking._id}`, 50, 200)
+                .fontSize(15)
+                .text(`Booking Id: #${booking.bookingId}`, 50, 230)
+                .fontSize(15)
+                .text(`Tour Name:  ${booking.bookingTitle}`, 50, 260)
+                .fontSize(15)
+                .text(`Guest Name: ${booking.name}`, 50, 310)
+                .fontSize(15)
+                .text(`Guest Email: ${booking.email}`, 50, 340)
+                .fontSize(15)
+                .text(`Mobile Number: ${booking.mobileNumber}`, 50, 370)
+                .fontSize(15)
+                .text(`Total Adult X ${booking.adultCount}`, 50, 400)
+                .fontSize(15)
+                .text(`Total Child X ${booking.childCount}`, 50, 430)
+                .fontSize(15)
+                .text(`Date:  ${dateFormatted}`, 50, 460)
+
+
+                const generateQrCode = (bookingId, index, qrImageData, paxType) => {
+                    return new Promise((resolve, reject) => {
+                        const qrFilePath = path.join(__dirname, "..", "uploads", `${bookingId}_${paxType}_${index+1}_qr.png`)
+
+                        qr.toFile(qrFilePath,`${qrImageData}`,(err) => {
+                            if (err) {
+                                reject(err);
+                              } else {
+                                resolve(qrFilePath);
+                              }
+                        })
+                    })
+                }
+
+                const generateTicketPdf = (doc, qrImageData, qrFilePath, pax, index) => {
+                    doc
+                    .addPage()
+                    .image(path.join(__dirname, "..", "public", `logo.jpg`), 50, 45, { width: 100 })
+                    .image(path.join(__dirname, "..", "public", `${booking.service}.jpg`), 200, 50, {width: 200})
+                    .fontSize(12)
+                    .font('Helvetica')
+                    .text(`Guest Name: ${booking.name}`, 50, 230)
+                    .fontSize(12)
+                    .text(`Guest Email: ${booking.email}`, 50, 260)
+                    .fontSize(12)
+                    .text(`Mobile Number: ${booking.mobileNumber}`, 50, 290)
+                    .fontSize(12)
+                    .text(`${pax} Ticket No:  ${index+1}`, 50, 320)
+                    .image(qrFilePath, 380, 200, {width: 150})
+                    .fontSize(10)
+                    .text(`${qrImageData}`, 405, 340)
+                    .fontSize(12)
+                    .text(`Place QR against the scanner `, 405, 360)
+                    .fontSize(15)
+                    .text(`General Rules and Regulation`, 50, 410)
+                    .strokeColor("#aaaaaa")
+                    .lineWidth(1)
+                    .moveTo(50, 430)
+                    .lineTo(550, 430)
+                    .stroke()
+                    .fontSize(12)
+                    .font('Helvetica')
+                    .list(bookingPlan.rulesAndRestriction,50,440)
+                }
+                
+
+                for (let i = 0; i <booking.adultCount; i++) {
+                    let qrData = await QrCode.findOne({title: booking.bookingTitle, isUsed:false, Type:"Adult"});
+        
+                    const qrImageData = qrData.QrCode;
+        
+                    //Generating Ticket QR
+                    const qrFilePath = await generateQrCode(booking._id,i,qrImageData,'Adult')
+                    qrData.isUsed = true;
+                    qrData.usedBy = booking._id;
+                    await qrData.save();
+                
+                    //Generating Ticket Pdf
+                    generateTicketPdf(doc,qrImageData, qrFilePath, 'Adult', i)
+
+                }
+                    
+        
+                for (let i = 0; i <booking.childCount; i++) {
+                    let qrData = await QrCode.findOne({title: booking.bookingTitle, isUsed:false, Type:"Child"});
+        
+        
+                    const qrImageData = qrData.QrCode;
+                    
+                    //Generating Ticket QR
+                    const qrFilePath = await generateQrCode(booking._id,i,qrImageData,'Child')
+                    qrData.isUsed = true;
+                    qrData.usedBy = booking._id;
+                    await qrData.save();
+
+                     //Generating Ticket Pdf
+                    generateTicketPdf(doc,qrImageData, qrFilePath, 'Child', i)
+                   
+                }
+        
+                    // Finalize PDF file
+                    doc.end();
+    
+            } catch (error) {
+                return next(error)
+            }
+                
+
+        let imgUrls;
+        if(booking.service === 'splash-mania') {
+            imgUrls = {
+                bannerImg:"https://i.postimg.cc/15PZfQSw/Splash-Mania-Waterpark-Ticketin-Gamuda-Cove-Selangor-Klook-Malaysia.jpg",
+
+                productImg: "https://i.postimg.cc/BnSswGw4/splashmania-newtagline-2022-2.png"
+            }
+        } else if(booking.service === 'sunway-lagoon') {
+            imgUrls = {
+                bannerImg:"https://i.postimg.cc/SQ3jTkPk/1-1.jpg",
+                productImg: "https://i.postimg.cc/qqhqJ5zP/5.jpg"
+            }
+        }
+
+        
+
+    try {
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: process.env.EMAIL,
+                    pass: process.env.MAIL_PASS
+                }
+            })
+
+            const mailMessage = `We are delighted to confirm your ticket booking with Malaysia Experience for ${booking.bookingTitle} Entry Ticket! Get ready to embark on an unforgettable experience at one of the most exciting destinations.
+`
+
+            const mailOptions = {
+                from: process.env.EMAIL,
+                to: `${booking.email},
+                ${process.env.EMAIL}`,
+                subject: `Booking Successfully`,
+                html: bookingEmailTemplate(booking,imgUrls, dateFormatted, mailMessage),
+                attachments: [{
+                    filename: `${booking._id}_ticket.pdf`,
+                    path: path.join(__dirname, "..", "uploads", `${booking._id}_ticket.pdf`),
+                    contentType: 'application/pdf'
+                }],
+            };
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
+                    console.log(error);
+                } else {
+                    console.log(info.response, " Email sent");
+
+                    //Generated Qr Pdf Deleted
+                    fs.unlink(path.join(__dirname, "..", "uploads", `${booking._id}_ticket.pdf`), 
+                        (err) => {
+                            if (err) {
+                                console.error('Error while deleting:', err);
+                            }
+                        }
+                    )
+
+                }
+            });
+
+
+            //Deleteting QR Generated Images
+            for (let i = 0; i <booking.adultCount; i++) {
+                fs.unlink(path.join(__dirname, "..", "uploads", `${booking._id}_Adult_${i+1}_qr.png`), (err) => {
+                    if (err) {
+                      console.error('Error while deleting:', err);
+                    }
+                });
+            }
+
+            //Deleteting QR Generated Images
+            for (let i = 0; i <booking.childCount; i++) {
+                fs.unlink(path.join(__dirname, "..", "uploads", `${booking._id}_Child_${i+1}_qr.png`), (err) => {
+                    if (err) {
+                      console.error('Error while deleting:', err);
+
+                    }
+                });
+            }
+
+            
+
+            
+            // Updating Booking Qr Generated to true
+
+            const newBooking = await Booking.findByIdAndUpdate(req.query.id, {
+                payment:true, 
+                bookingStatus:"confirmed", 
+                isQrGenerated: true,
+                successToken:  crypto.randomBytes(16).toString('hex')
+            }, {new: true})
+            
+
+            // Updating Booking Qr Generated to true
+            // booking.isQrGenerated = true;
+            // await booking.save();
+            
+            // res.status(200).send("success")
+            res.status(StatusCodes.CREATED).redirect(`/success?token=${newBooking.successToken}`)
+    } catch (error) {
+        return res.redirect("/failed")
+    }
+
+
+    } else if(booking.service === 'aras-resturant'){    
+        const newBooking = await Booking.findByIdAndUpdate(req.query.id, {payment:true, bookingStatus:"confirmed", successToken:  crypto.randomBytes(16).toString('hex')}, {new: true})
+
+        let imgUrls;
+        if(booking.service === 'aras-resturant'){
+            imgUrls = {
+                bannerImg:"https://i.postimg.cc/DzNRHTWH/6.jpg", 
+                productImg: "https://i.postimg.cc/5yggcB7y/IMG-20240129-WA0076.jpg"
+            }
+        }
+
+        try {
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: process.env.EMAIL,
+                    pass: process.env.MAIL_PASS
+                }
+            })
+
+            const mailMessage = "We're delighted to confirm your booking! Your official e-ticket is on its way to your email shortly. In case you don't receive it, please don't hesitate to get in touch with us."
+
+            const mailOptions = {
+                from: process.env.EMAIL,
+                to: `${booking.email},
+                ${process.env.EMAIL}`,
+                subject: `Booking Successfully`,
+                html: bookingEmailTemplate(booking, imgUrls, dateFormatted, mailMessage)
+            };
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
+                    console.log(error);
+                } else {
+
+                    console.log(info.response, " Email sent");
+                }
+            })
+            res.status(StatusCodes.CREATED).redirect(`/success?token=${newBooking.successToken}`)
+            // res.status(200).send("success")
+        } catch (error) {
+            return res.redirect("/failed")
+        }
+    } else {
+        return res.redirect("/failed")
+    }
 }
 
 
@@ -307,7 +589,7 @@ const getSuccessBookingDetails = async(req, res, next) => {
         await booking.save();
         res.status(200).json(booking)
     } catch (error) {
-        
+        next(error)
     }
 }
 
@@ -320,7 +602,7 @@ module.exports = {
     getTotalBookingCount,
     getAllBooking,
     successBooking,
-    createPaymentSession,
+    createBooking,
     getConfirmedBooking,
     getSuccessBookingDetails
 }

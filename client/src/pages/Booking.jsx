@@ -10,13 +10,10 @@ import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
 import '../styles/booking.scss'
 import { format } from 'date-fns';
-import { totalServicesNameArr } from '../data';
+import toast from 'react-hot-toast';
 
 const Booking = () => {
-    const navigate = useNavigate();
-    const searchParams = new URLSearchParams(window.location.search);
-    const serviceName = searchParams.get('service-name');
-    const uniqueId = searchParams.get('tourId')
+    const navigate = useNavigate()
     const {
         bookingDate,
         adultCount,
@@ -25,11 +22,11 @@ const Booking = () => {
         childTotal,
         totalAmount,
         loading,
-        type,
         bookingTitle,
         pref,
         service,
-        tourId
+        bookingPlanId,
+        bookingDateString
     } = useSelector(store => store.booking)
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -37,7 +34,7 @@ const Booking = () => {
     const dispatch = useDispatch()
     const responseClientUrl = nanoid()
 
-    const bannerImg = service === 'dubai-frame' ?  "/assets/images/dubaiFrameVisitPlanGettingThereImg.avif" : ""
+   const bannerImg = service === 'dubai-frame' ?  "/assets/images/dubaiFrameVisitPlanGettingThereImg.avif" : ""
 
     const hostName = window.location.hostname;
 
@@ -56,12 +53,12 @@ const Booking = () => {
                 childCount,
                 totalAmount,
                 bookingTitle,
-                bookingType: type,
                 responseClientUrl,
                 prefrence:pref,
                 service,
                 hostName,
-                tourId
+                bookingPlanId,
+                bookingDateString
             })
             const response = res.data;
             const {data} = await axios.get('/api/v1/booking/totalbooking')
@@ -69,6 +66,7 @@ const Booking = () => {
 
             window.location.href = response.url;
         } catch (error) {
+            toast.error(error.response.data.msg)
             dispatch(bookingFailed())
             console.log(error);
         }
@@ -76,7 +74,7 @@ const Booking = () => {
     }
 
 
-    if (totalAmount === 0 || !totalServicesNameArr.includes(serviceName) || !uniqueId) {
+    if (totalAmount === 0) {
         return <Navigate to="/" />
     }
     return (
@@ -93,7 +91,7 @@ const Booking = () => {
                     </div>
                     <div className="topContainer">
                         <p>{format(bookingDate, 'PPP')}</p>
-                        <Link to={`/date-select?${searchParams.toString()}`}><BiEditAlt /></Link>
+                        <Link to="/date-select"><BiEditAlt /></Link>
                     </div>
 
                     <div className="guestQuantity">

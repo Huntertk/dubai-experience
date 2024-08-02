@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../../styles/paxModal.scss'
 import {AiOutlinePlusCircle, AiOutlineMinusCircle} from 'react-icons/ai'
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {useNavigate} from 'react-router-dom'
 import { 
@@ -20,10 +20,12 @@ import { format } from 'date-fns';
 
 
 const Pax = ({category, ageText, count, actionType, total}) => {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
+    
     const handleIncrese = () => {
         dispatch(actionType.increase())
     }
+    
     const handleDecrease = () => {
 
         dispatch(actionType.decrease())
@@ -52,8 +54,6 @@ const Pax = ({category, ageText, count, actionType, total}) => {
 }
 
 const PaxModal = ({selectedDate}) => {
-    
-    
     const {
         adultCount, 
         childCount,
@@ -64,29 +64,10 @@ const PaxModal = ({selectedDate}) => {
         pref,
         bookingTitle,
     } = useSelector((store) => store.booking)
+
     const dispatch = useDispatch()
 
-
-    const searchParams = new URLSearchParams(window.location.search);
-
     useEffect(() => {
-
-        if(searchParams.has('adultCount')){
-            searchParams.set('adultCount', adultCount)
-        } else {
-            searchParams.append('adultCount', adultCount)
-        }
-        
-
-        if(searchParams.has('childCount')){
-            searchParams.set('childCount', childCount)
-        } else {
-            searchParams.append('childCount', childCount)
-        }
-
-        const path = window.location.pathname + "?" + searchParams.toString();
-        navigate(path)
-
         dispatch(adultTotalAmount())
         dispatch(childTotalAmount())
         dispatch(countTotalBookingAmount())
@@ -140,7 +121,7 @@ const PaxModal = ({selectedDate}) => {
                     <p>{format(bookingDate, 'PPP')}  </p> 
                     {
                         totalAmount > 0 &&
-                        <Link to={`/booking?${searchParams.toString()}`}><button>Next</button></Link> 
+                        <Link to="/booking"><button>Next</button></Link> 
                         
                     }
                 

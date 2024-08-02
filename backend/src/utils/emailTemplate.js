@@ -1,4 +1,4 @@
-exports.bookingEmailTemplate = (booking, imgUrls, dateFormatted) => ( `
+exports.bookingEmailTemplate = (booking, imgUrls, dateFormatted, mailMessage) => ( `
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
 
@@ -51,7 +51,7 @@ a {text-decoration: none;}
                                                                 <table cellpadding="0" cellspacing="0" width="100%">
                                                                     <tbody>
                                                                         <tr>
-                                                                            <td align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank" href=""><img src="https://i.postimg.cc/wvQBY2dR/logo.png" alt style="display: block;" width="165"></a></td>
+                                                                            <td align="center" class="esd-block-image" style="font-size: 0px;"><a target="_blank" href=""><img src="https://i.postimg.cc/J4DR0BZG/logo.png" alt style="display: block;" width="165"></a></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <td align="center" class="esd-block-text" bgcolor="#ffffff">
@@ -617,7 +617,7 @@ a {text-decoration: none;}
                                                                         </tr>
                                                                         <tr>
                                                                             <td align="left" class="esd-block-text es-p10" esd-links-color="#14a0f6">
-                                                                                <p style="color: #000000; line-height: 200%; font-size: 15px;">We're delighted to confirm your booking! Your official e-ticket is on its way to your email shortly. In case you don't receive it, please don't hesitate to get in touch with us.</p>
+                                                                                <p style="color: #000000; line-height: 200%; font-size: 15px;">${mailMessage}</p>
                                                                                 <p style="color: #000000; line-height: 200%; font-size: 15px;">Contact details:<br>Tel: +6017-2018194, +60173078194, +60193058194<br>Email: <a href="mailto:support@malaysia-experience.com" target="_blank" style="font-size: 15px; color: #14a0f6;">support@malaysia-experience.com</a></p>
                                                                                 <p style="color: #000000; line-height: 200%; font-size: 15px;">Thank you for choosing Malaysia Experience. We look forward to serving you.</p>
                                                                                 <p style="color: #000000; line-height: 200%; font-size: 15px;">Best regards,<br>Support Team<br>Malaysia Experience</p>

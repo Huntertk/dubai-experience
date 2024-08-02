@@ -13,6 +13,7 @@ const initialState = {
     loading: false,
     totalAmount: 0,
     bookingDate: "",
+    bookingDateString:"",
     name:"", 
     email:"",
     mobileNumber:"",
@@ -26,7 +27,7 @@ const initialState = {
     pricing:{},
     prefrenceOpt:[],
     service:"",
-    tourId:""
+    bookingPlanId:""
 }
 
 
@@ -47,17 +48,27 @@ const bookingSlice = createSlice({
             state.childCount = state.childCount - 1
         },
         adultTotalAmount: (state) => {
-            if(state.bookingDay === 'Fri' || state.bookingDay === 'Sat' || state.bookingDay === 'Sun'){
-                state.adultTotal = state.adultCount *  state.prefrenceOpt[0].price.weekEnds.adult
-            } else {
-                state.adultTotal = state.adultCount *  state.prefrenceOpt[0].price.weekDays.adult
+
+            if(state.type === 'bookTypeOne'){
+                if(state.pref === "General Admission") {
+                    if(state.bookingDay === 'Fri' || state.bookingDay === 'Sat' || state.bookingDay === 'Sun'){
+                        state.adultTotal = state.adultCount *  state.prefrenceOpt[0].price.weekEnds.adult
+                    } else {
+                        state.adultTotal = state.adultCount *  state.prefrenceOpt[0].price.weekDays.adult
+                    }
+                } 
             }
         },
         childTotalAmount: (state) => {
-            if(state.bookingDay === 'Fri' || state.bookingDay === 'Sat' || state.bookingDay === 'Sun'){
-                state.childTotal = state.childCount *  state.prefrenceOpt[0].price.weekEnds.child
-            } else {
-                state.childTotal = state.childCount *  state.prefrenceOpt[0].price.weekDays.child
+            if(state.type === 'bookTypeOne'){
+                if(state.pref === "General Admission") {
+                    if(state.bookingDay === 'Fri' || state.bookingDay === 'Sat' || state.bookingDay === 'Sun'){
+
+                        state.childTotal = state.childCount *  state.prefrenceOpt[0].price.weekEnds.child
+                    } else {
+                        state.childTotal = state.childCount *  state.prefrenceOpt[0].price.weekDays.child
+                    }
+                }
             }
         },
         countTotalBookingAmount: (state, action) => {
@@ -66,7 +77,8 @@ const bookingSlice = createSlice({
         },
         setBookingDate: (state, action) => {
             state.bookingDate = action.payload.selectedBookingDate
-            state.bookingResponse = ""
+            state.bookingResponse = "",
+            state.bookingDateString = action.payload.selectedBookingDateString
             state.bookingDay = action.payload.selectedDay.split(' ')[0]
         },
         openPaxModel: (state) => {
@@ -112,8 +124,7 @@ const bookingSlice = createSlice({
             state.pricing = action.payload.pricing,
             state.prefrenceOpt = action.payload.preference,
             state.service = action.payload.service
-            state.tourId = action.payload.tourId
-            setBookingDetailsFromLocalStorage(state)
+            state.bookingPlanId = action.payload.bookingPlanId
         },
         settingBookingResponse: (state, action) => {
             state.bookingResponse = ""

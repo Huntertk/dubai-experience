@@ -13,7 +13,6 @@ import axios from 'axios'
 import LoadingSpinner from '../LoadingSpinner';
 import PreferenceTour from './PreferenceTour';
 import PaxModal from './PaxModal';
-import { totalServicesNameArr } from '../../data';
 
 
 function isPastDate(date) {
@@ -104,7 +103,7 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen, d
 
 const DateSelectionContainer = () => {
     const dispatch = useDispatch()
-    const {isPaxModal, type, pref, prefrenceOpt, service, tourId} = useSelector(store => store.booking)
+    const {isPaxModal, type, pref, prefrenceOpt, service, bookingPlanId} = useSelector(store => store.booking)
         const [selectedDate, setSelectedDate] = useState("")
         const [calenderOpen, setCalenderOpen] = useState(false)
         const [blockedDates, setBlockedDates] = useState([])
@@ -118,7 +117,7 @@ const DateSelectionContainer = () => {
           const getBooklockDates = async () => {
             try {
                 setIsLoading(true)
-                const {data} = await axios.get(`/api/v1/dates-manage/block-dates?service=${service}&tourId=${tourId}`)
+                const {data} = await axios.get(`/api/v1/dates-manage/block-dates?service=${service}&bookingPlanId=${bookingPlanId}`)
                 setBlockedDates(data.blockDates)
                 setIsLoading(false)
               } catch (error) {
@@ -126,26 +125,26 @@ const DateSelectionContainer = () => {
               }
           }
 
+
+          const formattedDate = selectedDate && new Date(selectedDate).toISOString();
+          const handleClick = () => {
+            dispatch(setBookingDate({
+                selectedBookingDate: formattedDate, 
+                selectedDay: selectedDate.toString(),
+                selectedBookingDateString: format(selectedDate, 'PPP')
+            }))
+            dispatch(openPaxModel())
+            setCalenderOpen(false)
+        }
+
         useEffect(() => {
             getBooklockDates()
           },[])
 
           
-          const searchParams = new URLSearchParams(window.location.search);
-          
-          const serviceName = searchParams.get('service-name');      
-          const uniqueId = searchParams.get('tourId');
-          const formattedDate = selectedDate && new Date(selectedDate).toISOString()
-          
-          const handleClick = () => {
-                dispatch(setBookingDate({selectedBookingDate: formattedDate, selectedDay: selectedDate.toString()}))
-                dispatch(openPaxModel())
-                setCalenderOpen(false)
-            }
-          
-          if(!totalServicesNameArr.includes(serviceName) || !uniqueId){
+          if(!service || !bookingPlanId){
               return <Navigate to="/" />
-          }
+            }
             const defaultMonth = new Date(Date.now());
             
             if(isLoading){
