@@ -43,18 +43,18 @@ const createBooking = async (req, res, next) => {
         if(!bookingPlan){
             return next(new AppError("Booking Plan Id Wrong", 400))
         }
-        if(service !== 'aras-resturant'){
+        if(service === 'dubai-frame'){
             
                 let qrDataAdult = await QrCode.find({title: bookingTitle, isUsed:false, Type:"Adult"});
                 
                 if(qrDataAdult.length < adultCount){
-                    return next(new AppError("Ticket not allowed to book zero inventory"))
+                    return next(new AppError("Ticket not allowed to book insufficient  inventory"))
                 }
             
                 let qrDataChild = await QrCode.find({title: bookingTitle, isUsed:false, Type:"Child"});
                 
                 if(qrDataChild.length < childCount){
-                    return next(new AppError("Ticket not allowed to book zero inventory"))
+                    return next(new AppError("Ticket not allowed to book insufficient  inventory"))
                 }
             
         }
@@ -173,13 +173,13 @@ const successBooking = async (req, res, next) => {
                 let qrDataAdult = await QrCode.find({title: booking.bookingTitle, isUsed:false, Type:"Adult"});
                     
                 if(qrDataAdult.length < booking.adultCount){
-                    return next(new AppError("Ticket not allowed to book zero inventory"))
+                    return next(new AppError("Ticket not allowed to book insufficient inventory"))
                 }
             
                 let qrDataChild = await QrCode.find({title: booking.bookingTitle, isUsed:false, Type:"Child"});
                 
                 if(qrDataChild.length < booking.childCount){
-                    return next(new AppError("Ticket not allowed to book zero inventory"))
+                    return next(new AppError("Ticket not allowed to book insufficient inventory"))
                 }
         
                 const doc = new PDFDocument();
@@ -322,90 +322,89 @@ const successBooking = async (req, res, next) => {
 
         
 
-    try {
-            const transporter = nodemailer.createTransport({
-                service: 'gmail',
-                auth: {
-                    user: process.env.EMAIL,
-                    pass: process.env.MAIL_PASS
-                }
-            })
+        try {
+                const transporter = nodemailer.createTransport({
+                    service: 'gmail',
+                    auth: {
+                        user: process.env.EMAIL,
+                        pass: process.env.MAIL_PASS
+                    }
+                })
 
-            const mailMessage = `We are delighted to confirm your ticket booking with Dubai Experience for ${booking.bookingTitle} Entry Ticket! Get ready to embark on an unforgettable experience at one of the most exciting destinations.
-`
+                const mailMessage = `We are delighted to confirm your ticket booking with Dubai Experience for ${booking.bookingTitle} Entry Ticket! Get ready to embark on an unforgettable experience at one of the most exciting destinations.`
 
-            const mailOptions = {
-                from: process.env.EMAIL,
-                to: `${booking.email},
-                ${process.env.EMAIL}`,
-                subject: `Booking Successfully`,
-                html: bookingEmailTemplate(booking,imgUrls, dateFormatted, mailMessage),
-                attachments: [{
-                    filename: `${booking._id}_ticket.pdf`,
-                    path: path.join(__dirname, "..", "uploads", `${booking._id}_ticket.pdf`),
-                    contentType: 'application/pdf'
-                }],
-            };
-            transporter.sendMail(mailOptions, function (error, info) {
-                if (error) {
-                    console.log(error);
-                } else {
-                    console.log(info.response, " Email sent");
+                const mailOptions = {
+                    from: process.env.EMAIL,
+                    to: `${booking.email},
+                    ${process.env.EMAIL}`,
+                    subject: `Booking Successfully`,
+                    html: bookingEmailTemplate(booking,imgUrls, dateFormatted, mailMessage),
+                    attachments: [{
+                        filename: `${booking._id}_ticket.pdf`,
+                        path: path.join(__dirname, "..", "uploads", `${booking._id}_ticket.pdf`),
+                        contentType: 'application/pdf'
+                    }],
+                };
+                transporter.sendMail(mailOptions, function (error, info) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        console.log(info.response, " Email sent");
 
-                    //Generated Qr Pdf Deleted
-                    fs.unlink(path.join(__dirname, "..", "uploads", `${booking._id}_ticket.pdf`), 
-                        (err) => {
-                            if (err) {
-                                console.error('Error while deleting:', err);
+                        //Generated Qr Pdf Deleted
+                        fs.unlink(path.join(__dirname, "..", "uploads", `${booking._id}_ticket.pdf`), 
+                            (err) => {
+                                if (err) {
+                                    console.error('Error while deleting:', err);
+                                }
                             }
+                        )
+
+                    }
+                });
+
+
+                //Deleteting QR Generated Images
+                for (let i = 0; i <booking.adultCount; i++) {
+                    fs.unlink(path.join(__dirname, "..", "uploads", `${booking._id}_Adult_${i+1}_qr.png`), (err) => {
+                        if (err) {
+                        console.error('Error while deleting:', err);
                         }
-                    )
-
+                    });
                 }
-            });
 
+                //Deleteting QR Generated Images
+                for (let i = 0; i <booking.childCount; i++) {
+                    fs.unlink(path.join(__dirname, "..", "uploads", `${booking._id}_Child_${i+1}_qr.png`), (err) => {
+                        if (err) {
+                        console.error('Error while deleting:', err);
 
-            //Deleteting QR Generated Images
-            for (let i = 0; i <booking.adultCount; i++) {
-                fs.unlink(path.join(__dirname, "..", "uploads", `${booking._id}_Adult_${i+1}_qr.png`), (err) => {
-                    if (err) {
-                      console.error('Error while deleting:', err);
-                    }
-                });
-            }
+                        }
+                    });
+                }
 
-            //Deleteting QR Generated Images
-            for (let i = 0; i <booking.childCount; i++) {
-                fs.unlink(path.join(__dirname, "..", "uploads", `${booking._id}_Child_${i+1}_qr.png`), (err) => {
-                    if (err) {
-                      console.error('Error while deleting:', err);
+                
 
-                    }
-                });
-            }
+                
+                // Updating Booking Qr Generated to true
 
-            
+                const newBooking = await Booking.findByIdAndUpdate(req.query.id, {
+                    payment:true, 
+                    bookingStatus:"confirmed", 
+                    isQrGenerated: true,
+                    successToken:  crypto.randomBytes(16).toString('hex')
+                }, {new: true})
+                
 
-            
-            // Updating Booking Qr Generated to true
-
-            const newBooking = await Booking.findByIdAndUpdate(req.query.id, {
-                payment:true, 
-                bookingStatus:"confirmed", 
-                isQrGenerated: true,
-                successToken:  crypto.randomBytes(16).toString('hex')
-            }, {new: true})
-            
-
-            // Updating Booking Qr Generated to true
-            // booking.isQrGenerated = true;
-            // await booking.save();
-            
-            // res.status(200).send("success")
-            res.status(StatusCodes.CREATED).redirect(`/success?token=${newBooking.successToken}`)
-    } catch (error) {
-        return res.redirect("/failed")
-    }
+                // Updating Booking Qr Generated to true
+                // booking.isQrGenerated = true;
+                // await booking.save();
+                
+                // res.status(200).send("success")
+                res.status(StatusCodes.CREATED).redirect(`/success?token=${newBooking.successToken}`)
+        } catch (error) {
+            return res.redirect("/failed")
+        }
 
 
     } else {
