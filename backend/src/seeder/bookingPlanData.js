@@ -62,10 +62,15 @@ exports.bookingPlanData = [
             ]
           },
         rulesAndRestriction: [
-          "The Dubai Frame is open daily from 9:00 AM to 9:00 PM.",
-          "These tickets can't be canceled or rescheduled.",
-          "Dubai Frame is accessible for people with disabilities.",
-          "You are allowed to take pictures at the Dubai Frame."
+          "Please bring a valid Photo ID/passport with you as it is required to be displayed at the entrance.",
+          "Shared transfers are only provided from centrally located hotels and residences in Dubai city. (Deira, Bur Dubai, Sheikh Zayed, Marina).",
+          "The timings for transfers may vary, depending on traffic conditions and your location.",
+          "Animals or pets, Toys, and sharp tools are not allowed at the Dubai Frame.",
+          "Food and beverage will not be permitted at the Dubai Frame.",
+          "Please wear respectful attire.",
+          "Please avoid touching Items displayed in exhibitions.",
+          "Children under the age of 12 must be accompanied by an adult.",
+          "Children under the age of three and people of determination with 2 companions will have free access to the Dubai Frame."
         ]
       },
 ]
