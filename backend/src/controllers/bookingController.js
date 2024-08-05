@@ -90,7 +90,7 @@ const createBooking = async (req, res, next) => {
             line_items: [
                 {
                     price_data: {
-                        currency: 'inr',
+                        currency: 'aed',
                         product_data: {
                             name: bookingTitle,
                             metadata:{

@@ -130,7 +130,7 @@ const Booking = () => {
                         <label htmlFor="phone">Phone</label>
                         <PhoneInput
                         id="phone"
-                            defaultCountry="MY"
+                            defaultCountry="AE"
                             placeholder="Enter phone number"
                             value={mobileNumber}
                             onChange={setMobileNumber}
