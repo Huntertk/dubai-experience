@@ -11,7 +11,6 @@ import { useDispatch } from 'react-redux';
 import { choosingBooking } from '../../../redux/features/bookingSlice';
 
 const TourCardBigDevice = ({data}) => {
-  console.log(data);
   const dispatch = useDispatch();
   const {type,service, title,pricing, preference, _id} = data;
   const navigate = useNavigate(); 

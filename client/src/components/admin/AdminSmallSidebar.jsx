@@ -5,10 +5,7 @@ import { useDispatch } from 'react-redux'
 import { adminSidebarClose } from '../../redux/features/adminSlice'
 import {RiAdminFill} from 'react-icons/ri'
 import {VscGraph} from 'react-icons/vsc'
-import {AiFillCheckSquare} from 'react-icons/ai'
-import {MdOutlinePending} from 'react-icons/md'
-import {ImCancelCircle} from 'react-icons/im'
-import {GiConfirmed} from 'react-icons/gi'
+import { BsQrCode } from "react-icons/bs";
 import { IoCalendarNumberOutline } from 'react-icons/io5'
 
 const AdminSmallSidebar = () => {
@@ -22,26 +19,14 @@ const AdminSmallSidebar = () => {
           to="/admin/all-booking"
           onClick={() => dispatch(adminSidebarClose())}
           ><VscGraph /> All Booking</NavLink>
-          {/* <NavLink 
-          to="/admin/confirmed-booking"
-          onClick={() => dispatch(adminSidebarClose())}
-          ><GiConfirmed /> Confirmed Booking</NavLink>
-          <NavLink 
-          to="/admin/completed-booking"
-          onClick={() => dispatch(adminSidebarClose())}
-          ><AiFillCheckSquare /> Completed Booking</NavLink>
-          <NavLink 
-          to="/admin/pending-booking"
-          onClick={() => dispatch(adminSidebarClose())}
-          ><MdOutlinePending /> Pending Booking</NavLink>
-
-          <NavLink to="/admin/cancelled-booking"
-           onClick={() => dispatch(adminSidebarClose())}
-          ><ImCancelCircle /> Cancelled Booking</NavLink> */}
 
           <NavLink to="/admin/manage-dates"
            onClick={() => dispatch(adminSidebarClose())}
           ><IoCalendarNumberOutline /> Manages Dates</NavLink>
+
+          <NavLink to="/admin/qr-code"
+          onClick={() => dispatch(adminSidebarClose())}
+          ><BsQrCode />Qr Codes</NavLink>
       </div>
     </div>
   )
