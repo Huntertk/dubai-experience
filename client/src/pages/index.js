@@ -17,7 +17,9 @@ import ServiceProductDateModification from "./admin/ServiceProductDateModificati
 import EditBookingPlan from "./admin/EditBookingPlan";
 import QrBookingPlan from "./admin/QrBookingPlan";
 import QrBookingPlanView from "./admin/QrBookingPlanView";
+import AyaUniverse from "./aya-universe/AyaUniverse";
 export {
+    AyaUniverse,
     QrBookingPlanView,
     QrBookingPlan,
     EditBookingPlan,

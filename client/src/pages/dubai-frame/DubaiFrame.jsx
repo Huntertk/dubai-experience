@@ -59,7 +59,11 @@ const DubaiFrame = () => {
        <TourHomeCardContainer cardData={data?.bookingPlan}  />   
        <TourHomeThingToDo dubaiFrameTopThingsToDo={dubaiFrameTopThingsToDo} />
        
-       <TourYoutubeVideo title={"Dubai Frame Ticket"} para={"The Dubai Frame symbolizes Dubai's rapid development and its ability to blend tradition with modernity. It captures the city's journey and its ambitions for the future, making it a significant cultural landmark.The Dubai Frame is built with sustainability in mind, using energy-efficient materials and technologies. It reflects Dubai's commitment to environmental responsibility and green building practices.As one of the most popular tourist attractions in Dubai, the Dubai Frame attracts millions of visitors each year. It offers a unique perspective of the city and has become a must-visit site for tourists and residents alike."} />
+       <TourYoutubeVideo 
+       title={"Dubai Frame Ticket"} 
+       para={"The Dubai Frame symbolizes Dubai's rapid development and its ability to blend tradition with modernity. It captures the city's journey and its ambitions for the future, making it a significant cultural landmark.The Dubai Frame is built with sustainability in mind, using energy-efficient materials and technologies. It reflects Dubai's commitment to environmental responsibility and green building practices.As one of the most popular tourist attractions in Dubai, the Dubai Frame attracts millions of visitors each year. It offers a unique perspective of the city and has become a must-visit site for tourists and residents alike."} 
+       youTubeLink={"https://www.youtube.com/watch?v=ennLZx3d6d0"}
+       />
 
        <TourWhyVisit 
         whyVisitData={dubaiFrameWhyVistData}
