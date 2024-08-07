@@ -153,7 +153,9 @@ const successBooking = async (req, res, next) => {
     }
 
     let booking = await Booking.findById(req.query.id);
+    
     const bookingPlan = await BookingPlan.findById(booking.bookingPlanId);
+    
     
 
     const day = new Date(booking.bookingDate).getDate(); // Get the day of the month (1-31)
@@ -242,7 +244,7 @@ const successBooking = async (req, res, next) => {
                     doc
                     .addPage()
                     .image(path.join(__dirname, "..", "public", `logo.jpg`), 50, 45, { width: 100 })
-                    .image(path.join(__dirname, "..", "public", `${booking.service}.jpg`), 200, 50, {width: 200})
+                    .image(path.join(__dirname, "..", "public", `${booking.service}.jpg`), 200, 50, {width: 200, height: 100,})
                     .fontSize(12)
                     .font('Helvetica')
                     .text(`Guest Name: ${booking.name}`, 50, 280)
@@ -317,6 +319,11 @@ const successBooking = async (req, res, next) => {
             imgUrls = {
                 bannerImg:"https://i.postimg.cc/13CSwzpT/dubai-Frame-Highlights-Two.avif", 
                 productImg: "https://i.postimg.cc/cJjR8sKB/dubai-Frame-Highlights-One.avif"
+            }
+        } else if(booking.service === 'aya-universe') {
+            imgUrls = {
+                bannerImg:"https://i.postimg.cc/ZqGz90cj/3.jpg", 
+                productImg: "https://i.postimg.cc/QC1QxSQW/aya-universe.jpg"
             }
         }
 
