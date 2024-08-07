@@ -34,7 +34,7 @@ const Booking = () => {
     const dispatch = useDispatch()
     const responseClientUrl = nanoid()
 
-   const bannerImg = service === 'dubai-frame' ?  "/assets/images/dubaiFrameVisitPlanGettingThereImg.avif" : ""
+   const bannerImg = service === 'dubai-frame' ?  "/assets/images/dubaiFrameVisitPlanGettingThereImg.avif" : service === 'aya-universe' ? "/assets/images/aya-universe-ayaUniverseWhyVisit.avif" : ""
 
     const hostName = window.location.hostname;
 

@@ -56,12 +56,25 @@ const bookingSlice = createSlice({
                     } else {
                         state.adultTotal = state.adultCount *  state.prefrenceOpt[0].price.weekDays.adult
                     }
-                } 
+                } else if(state.pref === "Tickets to AYA Universe") {
+                    if(state.bookingDay === 'Fri' || state.bookingDay === 'Sat' || state.bookingDay === 'Sun'){
+                        state.adultTotal = state.adultCount *  state.prefrenceOpt[0].price.weekEnds.adult
+                    } else {
+                        state.adultTotal = state.adultCount *  state.prefrenceOpt[0].price.weekDays.adult
+                    }
+                }
             }
         },
         childTotalAmount: (state) => {
             if(state.type === 'bookTypeOne'){
                 if(state.pref === "General Admission") {
+                    if(state.bookingDay === 'Fri' || state.bookingDay === 'Sat' || state.bookingDay === 'Sun'){
+
+                        state.childTotal = state.childCount *  state.prefrenceOpt[0].price.weekEnds.child
+                    } else {
+                        state.childTotal = state.childCount *  state.prefrenceOpt[0].price.weekDays.child
+                    }
+                } else if(state.pref === "Tickets to AYA Universe") {
                     if(state.bookingDay === 'Fri' || state.bookingDay === 'Sat' || state.bookingDay === 'Sun'){
 
                         state.childTotal = state.childCount *  state.prefrenceOpt[0].price.weekEnds.child

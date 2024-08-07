@@ -30,7 +30,7 @@ import LoadingSpinner from '../../components/LoadingSpinner';
 
 const AyaUniverse = () => {
   const dispatch = useDispatch()
-  const {data, isLoading, error, isSuccess} = useGetBookingPlanDataQuery({service:"dubai-frame"});
+  const {data, isLoading, error, isSuccess} = useGetBookingPlanDataQuery({service:"aya-universe"});
   const serviceName = "Aya Universe"
 
   useEffect(() => {
