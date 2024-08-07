@@ -43,6 +43,7 @@ const QrBookingPlan = () => {
         <h3>Select Product</h3>
         <div className="btnContainer">
         <Link to="/admin/qr-code/view/dubai-frame">Dubai Frame</Link>
+        <Link to="/admin/qr-code/view/aya-universe">Aya Universe</Link>
       </div>
     </div>
   )

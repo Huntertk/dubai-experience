@@ -8,6 +8,7 @@ const EditBookingPlan = () => {
         <h3>Select Product</h3>
         <div className="btnContainer">
         <Link to="/admin/booking-plan/edit/dubai-frame">Dubai Frame</Link>
+        <Link to="/admin/booking-plan/edit/aya-universe">Aya Universe</Link>
       </div>
     </div>
   )

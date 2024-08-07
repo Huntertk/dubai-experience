@@ -8,6 +8,7 @@ const ManageDates = () => {
       <h3>Select Product</h3>
       <div className="btnContainer">
         <Link to="/admin/manage-dates/dubai-frame">Dubai Frame</Link>
+        <Link to="/admin/manage-dates/aya-universe">Aya Universe</Link>
       </div>
     </section>
   )

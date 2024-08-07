@@ -46,9 +46,8 @@ const AllBookings = () => {
 
           <select className='serviceSelect' name="service" id="" onChange={(e) => setOption(e.target.value)}>
                 <option value="">All Products</option>
-                <option value={"aras-resturant"}>Aras Resturant</option>
-                <option value={"splash-mania"}>Splash Mania</option>
-                <option value={"sunway-lagoon"}>Sunway Lagoon</option>
+                <option value={"dubai-frame"}>Dubai Frame</option>
+                <option value={"aya-universe"}>Aya Universe</option>
           </select>
           <div className="bookingFilterTabContainer">
             <button 
