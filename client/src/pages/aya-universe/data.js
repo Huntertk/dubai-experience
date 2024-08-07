@@ -277,21 +277,21 @@ export const dubaiFramePlanVisitData = [
 ]
 
 //Highlights
-export const dubaiFrameHighlighhtsData = [
+export const ayaUniverseHighlighhtsData = [
     {
         id: nanoid(),
-        desc:"The Dubai Frame serves as a symbol of Dubai's rapid development and visionary growth. It represents the city's ability to merge its traditional past with a modern and innovative future, making it a significant cultural landmark.",
-        image: "/assets/images/dubaiFrameHighlightsOne.avif"
+        desc:"With each step you take inside The River zone, your footsteps leave behind storms of colors, illuminating deep depths and distant dunes, unlocking a core memory for you!",
+        image: "/assets/images/ayaUniverseHighlightsOne.avif"
     },
     {
         id: nanoid(),
-        desc:"Located in Zabeel Park, one of Dubai's largest and most popular parks, the Dubai Frame is easily accessible and offers visitors the opportunity to explore the park's other attractions, such as its gardens, playgrounds, and picnic areas.",
-        image: "/assets/images/dubaiFrameHighlightsTwo.avif"
+        desc:"Inside The Pool, you are surrounded by immersive projections as you stand on top of an infinite vortex. With each, you will feel closer to the energies swirling around you.",
+        image: "/assets/images/ayaUniverseHighlightsTwo.avif"
     },
     {
         id: nanoid(),
-        desc:"The Dubai Frame is built with sustainability in mind, incorporating energy-efficient materials and technologies. This commitment to environmental responsibility aligns with Dubai's broader efforts to promote green building practices.",
-        image: "/assets/images/dubaiFrameHighlightsThree.avif"
+        desc:"Step into a mirrored chamber filled with pillars of infinite light and interact with a seven-minute show where you can wave your hands to create clouds of colors.",
+        image: "/assets/images/ayaUniverseHighlightsThree.avif"
     },
 ]
 

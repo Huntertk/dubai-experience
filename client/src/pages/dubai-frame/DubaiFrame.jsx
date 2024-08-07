@@ -57,7 +57,7 @@ const DubaiFrame = () => {
           imgUrl={""}
           />
        <TourHomeCardContainer cardData={data?.bookingPlan}  />   
-       <TourHomeThingToDo dubaiFrameTopThingsToDo={dubaiFrameTopThingsToDo} />
+       <TourHomeThingToDo topThingsToDo={dubaiFrameTopThingsToDo} />
        
        <TourYoutubeVideo 
        title={"Dubai Frame Ticket"} 

@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import '../../../styles/tourHomeThingsToDo.scss';
 import { FaCircleChevronLeft, FaCircleChevronRight} from "react-icons/fa6";
 
-const TourHomeThingToDo = ({dubaiFrameTopThingsToDo}) => {
+const TourHomeThingToDo = ({topThingsToDo}) => {
   const containerRef = useRef();
 
   const scrollLeft = () => {
@@ -24,11 +24,11 @@ const TourHomeThingToDo = ({dubaiFrameTopThingsToDo}) => {
           <div className="topThingstoDoContainer"
           ref={containerRef}
            style={{
-              gridTemplateColumns:`repeat(${dubaiFrameTopThingsToDo.length}, 200px)`
+              gridTemplateColumns:`repeat(${topThingsToDo.length}, 200px)`
           }}
           >
             {
-              dubaiFrameTopThingsToDo.map((thingsToDo) => (
+              topThingsToDo.map((thingsToDo) => (
                 <div className="topThingstoDoCard" key={thingsToDo.id}>
                 <img src={thingsToDo.imageUrl} alt={thingsToDo.title} />
                 <h3>{thingsToDo.title}</h3>
