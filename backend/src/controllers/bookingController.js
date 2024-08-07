@@ -244,7 +244,7 @@ const successBooking = async (req, res, next) => {
                     doc
                     .addPage()
                     .image(path.join(__dirname, "..", "public", `logo.jpg`), 50, 45, { width: 100 })
-                    .image(path.join(__dirname, "..", "public", `${booking.service}.jpg`), 200, 50, {width: 200, height: 100,})
+                    .image(path.join(__dirname, "..", "public", `${booking.service}.jpg`), 200, 50, {width: 200, height: 150,})
                     .fontSize(12)
                     .font('Helvetica')
                     .text(`Guest Name: ${booking.name}`, 50, 280)
