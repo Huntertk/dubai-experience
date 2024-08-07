@@ -153,7 +153,7 @@ export const ayaUniverseWhyVistData = [
     },
 ]
 
-export const dubaiFramePlanVisitData = [
+export const ayaUniversePlanVisitData = [
     {
         id: nanoid(),
         title:"Timing",
@@ -161,15 +161,15 @@ export const dubaiFramePlanVisitData = [
             {
                 id: nanoid(),
                 title:"Opening hours",
-                desc:"9:00 AM to 9:00 PM Last time of entry is 8:30 PM, 30 minutes before closing. Timings may vary during Ramadan.",
+                desc:"Sunday to Thursday: 10 AM to 10 PM (last entry 9 PM) & Friday & Saturday: 10 AM to 12 AM (last entry 11 PM)",
             },
             {
                 id: nanoid(),
                 title:"Best Time to Visit",
-                desc:"If you're looking for the best view from the top, you should visit during sunset to experience the golden light settling over the city. However, this is also when the frame is most crowded. If you want to avoid crowds, visiting during early mornings or late evenings on weekdays is best.",
+                desc:"Since AYA Universe is located indoors, you can visit this attraction any time of the year, even the off season. It is recommended to visit during the weekdays to avoid the crowds that flock to the attraction on weekends.",
             },
         ],
-        imgUrl:"/assets/images/dubaiFrameVisitPlanTimingImg.avif"
+        imgUrl:"/assets/images/ayaUniverseVisitPlanTimingImg.avif"
     },
     {
         id: nanoid(),
@@ -178,20 +178,25 @@ export const dubaiFramePlanVisitData = [
             {
                 id: nanoid(),
                 title:"Location",
-                desc:"Dubai Frame is located in Zabeel Park gate 4 in Dubai.",
+                desc:"WAFI City - Oud Metha - Dubai - United Arab Emirates AYA Dubai First Floor, WAFI Mall, Oud Metha Road - Umm Hurair 2 Dubai, UAE",
             },
             {
                 id: nanoid(),
-                title:"Closest Metro Station",
-                desc:"Al Jafiliya stop on the Red line.",
+                title:"By Metro",
+                desc:"The Green Line goes straight to Dubai Healthcare Station, which is the closest station to WAFI City, just a 6-minute walk away from AYA Universe!",
             },
             {
                 id: nanoid(),
-                title:"Closest Bus Stop",
-                desc:"Bus F09 stops at the Dubai Frame bus stop, right next to the building.",
+                title:"By Car",
+                desc:"You can reach Wafi City by taking a taxi or cab service from Sheikh Zayed Road. It takes 10 minutes to reach the location.",
+            },
+            {
+                id: nanoid(),
+                title:"Car parking",
+                desc:"Use the WAFI valet parking service or Carrefour Parking to park on location.",
             },
         ],
-        imgUrl:"/assets/images/dubaiFrameVisitPlanGettingThereImg.avif"
+        imgUrl:"/assets/images/ayaUniverseVisitPlanGettingThereImg.jpg"
     },
     {
         id: nanoid(),
@@ -199,21 +204,31 @@ export const dubaiFramePlanVisitData = [
         descList:[
             {
                 id: nanoid(),
-                title:"Admission",
-                desc:"Infants under the age of 3 get free access, while children aged 3-12 are charged AED 20 for a ticket rather than AED 50 for those over 12.",
+                title:"Dress code",
+                desc:"Although there is no dress code for entry inside AYA Universe, visitors must dress in comfortable and modest clothing.",
             },
             {
                 id: nanoid(),
-                title:"Storage Facilities",
-                desc:"A counter at Gate 4 allows storage for large bags and strollers.",
+                title:"Comfortable footwear",
+                desc:"Wear comfortable shoes as the attraction requires you to walk throughout your visit.",
             },
             {
                 id: nanoid(),
-                title:"Rules of Visitation",
-                desc:"bar tourists from carrying Food, beverages, pets, sharp tools, and smoking inside the Dubai Frame precincts.",
+                title:"Outside food & beverages",
+                desc:" Visitors are not permitted to bring outside food and beverages inside the park.",
+            },
+            {
+                id: nanoid(),
+                title:"Adult supervision",
+                desc:"Children must be accompanied and supervised by an adult who will be responsible for their care and safety inside the park.",
+            },
+            {
+                id: nanoid(),
+                title:"Personal belongings",
+                desc:"Carry your belongings and valuables with you at all times inside the park.",
             },
         ],
-        imgUrl:"/assets/images/dubaiFrameVisitPlanVisitingRulesImg.avif"
+        imgUrl:"/assets/images/ayaUniverseVisitPlanVisitingRulesImg.jpg"
     },
     {
         id: nanoid(),
@@ -221,21 +236,26 @@ export const dubaiFramePlanVisitData = [
         descList:[
             {
                 id: nanoid(),
+                title:"Dubai Aquarium & Underwater Zoo",
+                desc:"Dive into the glorious Dubai Aquarium, home to over 1000 marine species in 10 million liters of water.",
+            },
+            {
+                id: nanoid(),
                 title:"Dubai Frame",
-                desc:"is close to some of the most impressive attractions in Dubai — Burj Khalifa, IMG Worlds of Adventure, Dubai Garden Glow, and Dubai Aquarium & Underwater Zoo.",
+                desc:" Get a stunning view of the Dubai Skyline from the top of the world’s largest picture frame!",
             },
             {
                 id: nanoid(),
-                title:"Walking Distance",
-                desc:"The closest attraction you can walk to is the Dubai Garden Glow, a 15-minute walk from Dubai Frame.",
+                title:"Burj Khalifa",
+                desc:"Experience Dubai from above the tallest building in the world at the Burj Khalifa.",
             },
             {
                 id: nanoid(),
-                title:"Zabeel Park",
-                desc:"has dedicated jogging paths, barbecue & picnic areas, and a children's play park.",
+                title:"Dubai Dolphinarium",
+                desc:"Enjoy an unforgettable dolphin and seal show, as these amazing creatures perform incredible acts like juggling, singing, and dancing.",
             },
         ],
-        imgUrl:"/assets/images/dubaiFrameVisitPlanAttractionNearbyImg.avif"
+        imgUrl:"/assets/images/ayaUniverseVisitPlanAttractionNearbyImg.jpg"
     },
     {
         id: nanoid(),

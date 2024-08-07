@@ -6,8 +6,8 @@ const TourVisitPlan = ({title, tourVisitPlanData}) => {
   return (
     <section className="tourVisitPlanSection">
       <div className="titleContainer">
-        <h1>Plan Your Visit to The Dubai Frame</h1>
-        <p>Make the most of your visit to the Dubai Frame by being informed and prepared</p>
+        <h1>Plan Your Visit to The {title}</h1>
+        <p>Make the most of your visit to the {title} by being informed and prepared</p>
       </div>
       <div className="tourVisitPlanMainContainer">
         <div className="tourVisitPlanBtnContainer">

@@ -11,12 +11,12 @@ import {
 } from '../../components';
 
 import {
-  dubaiFramePlanVisitData,
   dubaiFrameAdditionInfoData,
   dubaiFrameTourHomeFAQ,
   ayaUniverseTopThingsToDo,
   ayaUniverseWhyVistData,
-  ayaUniverseHighlighhtsData
+  ayaUniverseHighlighhtsData,
+  ayaUniversePlanVisitData
 } from './data';
 import videoFile from '../../assets/video/ayauniversevid.mp4'
 
@@ -77,7 +77,7 @@ const AyaUniverse = () => {
         title={serviceName}
       />
 
-      <TourVisitPlan tourVisitPlanData={dubaiFramePlanVisitData} />
+      <TourVisitPlan tourVisitPlanData={ayaUniversePlanVisitData} title={serviceName} />
 
       <TourHomeAdditionalInformation title={"Additional Information"} quesData={dubaiFrameAdditionInfoData} />
       <TourHomeMap serviceName={serviceName} mapUrl={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231259.85845095658!2d55.0070779865871!3d25.087122422862826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f42db20d99d41%3A0xf93035af01a85798!2sDubai%20Frame!5e0!3m2!1sen!2sin!4v1720260840948!5m2!1sen!2sin"} />
