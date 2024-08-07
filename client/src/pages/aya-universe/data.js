@@ -318,50 +318,33 @@ export const ayaUniverseHighlighhtsData = [
 
 //Additional Information
 
-export const dubaiFrameAdditionInfoData = [
+export const ayaUniverseAdditionInfoData = [
     {
         id: nanoid(),
-        ques:"How do I get to the Dubai Frame?",
+        ques:"What is AYA Universe ?",
         ans:[
-            "he Dubai Frame is located within Zabeel Park, along the jogging track.",
-            "You can get to the Dubai Frame by metro, bus, or car.",
-            "Take the F09 bus, it'll take you right outside Zabeel Park.",
-            "The Al Jafiliya Metro Station on the Red Line is right outside Zabeel Park and just a few minutes on foot from the Dubai Frame."
+            "AYA Universe Dubai is a one-of-a-kind entertainment park offering its guest an immersive experience filled with a unique combination of art and technology. The park offers twelve themed zones, each designed uniquely for an extraordinary experience."
         ]
     },
     {
         id: nanoid(),
-        ques:"When should I visit the Dubai Frame ?",
+        ques:"Where can I buy AYA Universe tickets ?",
         ans:[
-            "Dubai Frame timings are 9:00 AM to 9:00 PM every day of the week, with final entry at 8:30 PM. If you want to avoid crowds, the best time to visit is early morning or late evening on weekdays. However, if you don't wish to groups, the best time is definitely during sunset to enjoy the view of the city bathed in sunlight."
+            "You can buy AYA Universe tickets online and make bookings in advance to avoid waiting in long queues as well as a hassle-free booking experience. Make the most of the online booking experience by opting for skip-the-line tickets and combo tickets with great discounts and offers!"
         ]
     },
     {
         id: nanoid(),
-        ques:"How long does it take to visit the Dubai Frame ?",
+        ques:"Where is AYA Universe located ?",
         ans:[
-            "It takes about 1-2 hours to visit the Dubai Frame, depending on how much time you spend at each exhibit."
+            "AYA Universe is located on level one of Wafi City Mall's Main Atrium in Dubai. The official address is - WAFI City - Oud Metha - Dubai - United Arab Emirates."
         ]
     },
     {
         id: nanoid(),
-        ques:"Is the Dubai Frame accessible for people with disabilities ?",
+        ques:"What are the AYA Universe timings ?",
         ans:[
-            "Yes, the Dubai Frame is accessible for people with disabilities. There are ramps and elevators throughout the attraction."
-        ]
-    },
-    {
-        id: nanoid(),
-        ques:"Can I bring food and drinks into the Dubai Frame ?",
-        ans:[
-            "No, food and drinks are not allowed inside the Dubai Frame."
-        ]
-    },
-    {
-        id: nanoid(),
-        ques:"Can I take pictures at the Dubai Frame ?",
-        ans:[
-            "Yes, you are allowed to take pictures at the Dubai Frame."
+            "AYA Universe is open from 10 AM to 10 PM from Sunday to Thursday, and 10 AM to 12 AM on Friday and Saturday."
         ]
     },
     {
@@ -372,26 +355,36 @@ export const dubaiFrameAdditionInfoData = [
 ]
 
 //FAQ
-export const dubaiFrameTourHomeFAQ = [
+export const ayaUniverseTourHomeFAQ = [
     {
         id: nanoid(),
-        ques:"What are the opening hours of the Dubai Frame ?",
-        ans:["The Dubai Frame is open daily from 9:00 AM to 9:00 PM."]
+        ques:"What's the best time to visit AYA Universe ?",
+        ans:["It is best to visit AYA Universe on weekdays and early mornings to avoid peak crowds. You can visit AYA Universe during the off-season summer months as well since it is located indoors!"]
     },
     {
         id: nanoid(),
-        ques:"Where can I buy Dubai Frame Tickets ?",
-        ans:["Tickets can be purchased online at the Dubai Frame website or the ticket office at the Dubai Frame. You can book Online through Headout, where tickets for anyone above 12 cost AED 50, whereas children between 3 and 12 have to pay only AED 25. If you are visiting the Dubai Frame in a big group, you can opt for the Super Save Packs, which offer even more discounts on your tickets."]
+        ques:"Can I leave my children alone inside AYA Universe ?",
+        ans:["No, children must be supervised at all times at AYA Universe by an adult who is responsible for their safety and care."]
     },
     {
         id: nanoid(),
-        ques:"How much do tickets to the Dubai Frame cost ?",
-        ans:["We have General Admission Tickets starting from AED 50 for anyone above 12. Tickets for children between the ages of 3 and 12 are also discounted and are available for AED 25. If you are booking two or more adult tickets, you can opt for the Super Save Pack, where the Tickets are for AED 48."]
+        ques:"Is there parking space inside AYA Universe ?",
+        ans:["Yes, there is valet parking service available inside Wafi City."]
     },
     {
         id: nanoid(),
-        ques:"What is the cancelation policy for Dubai Frame tickets ?",
-        ans:["These tickets can't be canceled or rescheduled."]
+        ques:"Are food and beverages allowed inside AYA Universe ?",
+        ans:["Outside food and beverages are not allowed, but AYA Universe offers a variety of dining options."]
+    },
+    {
+        id: nanoid(),
+        ques:"What type of restaurants does AYA Universe offer ?",
+        ans:["AYA Universe features diverse restaurants, including international cuisines and themed dining experiences."]
+    },
+    {
+        id: nanoid(),
+        ques:"Are strollers and wheelchairs available inside AYA Universe ?",
+        ans:["Yes, strollers and wheelchairs are available inside AYA Universe."]
     },
 ]
 
