@@ -95,13 +95,13 @@ exports.bookingPlanData = [
             price: {
               weekDays: {
                 adult: 117,
-                child: 117,
-                senior: 117
+                child: 0,
+                senior: 0
               },
               weekEnds: {
                 adult: 117,
-                child: 117,
-                senior: 117
+                child: 0,
+                senior: 0
               }
             },
             title: "Tickets to AYA Universe",
@@ -114,11 +114,11 @@ exports.bookingPlanData = [
           {
             weekDays: {
               adult: 117,
-              child: 25
+              child: 0
             },
             weekEnds: {
               adult: 117,
-              child: 117
+              child: 0
             },
             title: "Tickets to AYA Universe",
           },
