@@ -301,7 +301,7 @@ a {text-decoration: none;}
                                                                                         <tbody>
                                                                                             <tr>
                                                                                                 <td align="right" class="esd-block-text">
-                                                                                                    <p style="font-size: 16px; color: #f26823;"><strong>MYR ${booking.adultTotal}</strong></p>
+                                                                                                    <p style="font-size: 16px; color: #f26823;"><strong>AED ${booking.adultTotal}</strong></p>
                                                                                                 </td>
                                                                                             </tr>
                                                                                             <tr>
@@ -376,7 +376,7 @@ a {text-decoration: none;}
                                                                                         <tbody>
                                                                                             <tr>
                                                                                                 <td align="right" class="esd-block-text">
-                                                                                                    <p style="font-size: 16px; color: #f26823;"><strong>MYR ${booking.childTotal}</strong></p>
+                                                                                                    <p style="font-size: 16px; color: #f26823;"><strong>AED ${booking.childTotal}</strong></p>
                                                                                                 </td>
                                                                                             </tr>
                                                                                             <tr>
@@ -472,7 +472,7 @@ a {text-decoration: none;}
                                                                                         </tr>
                                                                                         <tr>
                                                                                             <td align="right" class="esd-block-text">
-                                                                                                <p style="font-size: 16px; color: #f26823;"><strong>MYR ${booking.totalAmount}</strong></p>
+                                                                                                <p style="font-size: 16px; color: #f26823;"><strong>AED ${booking.totalAmount}</strong></p>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr>
