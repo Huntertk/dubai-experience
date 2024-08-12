@@ -143,7 +143,6 @@ exports.bookingPlanData = [
           "Children under 12 years must be accompanied by a paying adult. The attraction may request age verification before allowing admission.",
           "Height, weight, and age restrictions and medical warnings apply to certain attractions. These will be displayed at each relevant attraction entrance.",
           "The attraction reserves the right to change its operating days and hours, including last admission entry times, without any prior notice. The attraction will not grant any refund due to these changes. Plan your visit ahead of time and check the attraction's website for the latest operating hours.",
-          "The attraction, at its absolute discretion, reserves the right to temporarily or permanently close the facilities for maintenance and reasons outside their control or force majeure, including but not limited to technical, health and safety, and/or operational reasons, or due to special events or private functions. The attraction is not obliged to grant any ticket replacement or refund under these circumstances."
         ]
       },
 ]
