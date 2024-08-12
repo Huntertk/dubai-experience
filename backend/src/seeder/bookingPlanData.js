@@ -137,15 +137,13 @@ exports.bookingPlanData = [
             ]
           },
         rulesAndRestriction: [
-          "Please bring a valid Photo ID/passport with you as it is required to be displayed at the entrance.",
-          "Shared transfers are only provided from centrally located hotels and residences in Dubai city. (Deira, Bur Dubai, Sheikh Zayed, Marina).",
-          "The timings for transfers may vary, depending on traffic conditions and your location.",
-          "Animals or pets, Toys, and sharp tools are not allowed at the Dubai Frame.",
-          "Food and beverage will not be permitted at the Dubai Frame.",
-          "Please wear respectful attire.",
-          "Please avoid touching Items displayed in exhibitions.",
-          "Children under the age of 12 must be accompanied by an adult.",
-          "Children under the age of three and people of determination with 2 companions will have free access to the Dubai Frame."
+          "You must present a valid ticket to gain admission to the attraction. Admission to the attraction will only be granted for the validity period stated on the ticket. Re-entry is not allowed.",
+          "Entry will not be allowed for an invalid ticket that is already redeemed, collected, consumed, lost, or has expired. It will not be replaced; no refund will be provided.",
+          "The attraction reserves the right to request personal identification before granting admission to the attraction. Access may be denied if ticket conditions of sale have not been met.",
+          "Children under 12 years must be accompanied by a paying adult. The attraction may request age verification before allowing admission.",
+          "Height, weight, and age restrictions and medical warnings apply to certain attractions. These will be displayed at each relevant attraction entrance.",
+          "The attraction reserves the right to change its operating days and hours, including last admission entry times, without any prior notice. The attraction will not grant any refund due to these changes. Plan your visit ahead of time and check the attraction's website for the latest operating hours.",
+          "The attraction, at its absolute discretion, reserves the right to temporarily or permanently close the facilities for maintenance and reasons outside their control or force majeure, including but not limited to technical, health and safety, and/or operational reasons, or due to special events or private functions. The attraction is not obliged to grant any ticket replacement or refund under these circumstances."
         ]
       },
 ]
