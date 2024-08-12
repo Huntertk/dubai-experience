@@ -63,6 +63,7 @@ const PaxModal = ({selectedDate}) => {
         bookingDate,
         pref,
         bookingTitle,
+        service
     } = useSelector((store) => store.booking)
 
     const dispatch = useDispatch()
@@ -73,8 +74,8 @@ const PaxModal = ({selectedDate}) => {
         dispatch(countTotalBookingAmount())
 
     },[adultCount, childCount])
-    const navigate = useNavigate()
-
+    const navigate = useNavigate();
+    
   return (
 
     <div className="paxSelectorMainContainer">
@@ -100,16 +101,18 @@ const PaxModal = ({selectedDate}) => {
                     }}
                     total={adultTotal}
                     />
-                    <Pax  
-                    category ={"Child"} 
-                    ageText={"3 to 12 yrs"} 
-                    count={childCount}
-                    actionType={{
-                        increase: childCountIncrease,
-                        decrease: childCountDecrease
-                    }}
-                    total={childTotal}
+                    {
+                        service !== 'aya-universe' &&  <Pax  
+                        category ={"Child"} 
+                        ageText={"3 to 12 yrs"} 
+                        count={childCount}
+                        actionType={{
+                            increase: childCountIncrease,
+                            decrease: childCountDecrease
+                        }}
+                        total={childTotal}
                     />
+                    }
             </div>
                 <div className="totalPayable">
                     <span>Total</span>
