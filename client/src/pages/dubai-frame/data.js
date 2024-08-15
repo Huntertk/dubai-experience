@@ -303,7 +303,7 @@ export const dubaiFrameAdditionInfoData = [
         id: nanoid(),
         ques:"How do I get to the Dubai Frame?",
         ans:[
-            "he Dubai Frame is located within Zabeel Park, along the jogging track.",
+            "Dubai Frame is located within Zabeel Park, along the jogging track.",
             "You can get to the Dubai Frame by metro, bus, or car.",
             "Take the F09 bus, it'll take you right outside Zabeel Park.",
             "The Al Jafiliya Metro Station on the Red Line is right outside Zabeel Park and just a few minutes on foot from the Dubai Frame."
