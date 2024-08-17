@@ -90,8 +90,8 @@ exports.getQr = async( req, res, next) => {
         if(!bookingPlanData){
             return next(new AppError("Booking Plan Data not Found", 404))
         }
-
-        const qrCodes = await QrCode.find({title: bookingPlanData.title}).populate('usedBy', "bookingPlanId bookingDateString bookingTitle email name bookingId isQrGenerated _id")
+        
+        const qrCodes = await QrCode.find({title: bookingPlanData.title, isUsed:req.query.isUsedQr}).populate('usedBy', "bookingPlanId bookingDateString bookingTitle email name bookingId isQrGenerated _id")
         if(qrCodes.length < 1){
             return next(new AppError("Qr Codes not Found", 404))
         }

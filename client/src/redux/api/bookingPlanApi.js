@@ -33,7 +33,8 @@ export const bookingPlanApi = createApi({
                 return{
                     url: '/get-qr',
                     params:{
-                        id: params.id
+                        id: params.id,
+                        isUsedQr:params.isUsedQr
                     }
                 }
             },

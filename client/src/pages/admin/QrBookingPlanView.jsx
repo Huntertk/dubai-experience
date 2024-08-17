@@ -8,7 +8,7 @@ const QrBookingPlanView = () => {
     const {serviceName, id} = useParams();
     const [isUsedQr, setIsQrUsed] = useState(false)
     const navigate = useNavigate();
-    const {data:qrData, isLoading:qrLoading, error:qrError} = useGetQrDataQuery({id})
+    const {data:qrData, isLoading:qrLoading, error:qrError} = useGetQrDataQuery({id, isUsedQr})
     const {data, isLoading, error} = useGetSingleBookingPlanDataQuery(
         {service: serviceName, id}
     );
@@ -37,13 +37,12 @@ const QrBookingPlanView = () => {
                 {
                     qrData?.qrCodes?.length > 0 ? qrData?.qrCodes?.map((qr) => {
                         
-                           if(qr.isUsed === isUsedQr){
                             return (
                                 <div key={qr._id} className='qr-code-view-card'>
                                 <p>Code : {qr.QrCode}</p>
                                 <p>Type : {qr.Type}</p>
                                 {
-                                    isUsedQr && (
+                                    qr.isUsed && (
                                         <>
                                             <p>Booking ID : #{qr.usedBy.bookingId}</p>
                                             <p>Order ID : #{qr.usedBy._id}</p>
@@ -58,7 +57,7 @@ const QrBookingPlanView = () => {
                                 }
                             </div>
                             )
-                           } 
+                           
                         
                     } 
                         
