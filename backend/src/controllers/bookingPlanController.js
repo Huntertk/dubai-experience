@@ -95,6 +95,7 @@ exports.getQr = async( req, res, next) => {
         if(qrCodes.length < 1){
             return next(new AppError("Qr Codes not Found", 404))
         }
+        
         res.status(200).json({qrCodes})
     } catch (error) {
         next(error)

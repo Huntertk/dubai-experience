@@ -27,7 +27,11 @@ const QrBookingPlanView = () => {
   return (
     <div className='qr-code-view-main-container'>
         <h1>All QR Codes</h1>
-        <p>Result : {qrData?.qrCodes?.length}</p>
+        
+        <p>Total Result : {qrData?.qrCodes?.length}</p>
+        <p>Total Adult : {qrData?.qrCodes?.filter((val) => val.Type === 'Adult').length}</p>
+        <p>Total Child : {qrData?.qrCodes?.filter((val) => val.Type === 'Child').length}</p>
+
         <div className="qr-code-view-btn-container">
             <button className={isUsedQr === false ? "activeTab" : ""} onClick={() => setIsQrUsed(false)}>Available QR Codes</button>
             <button className={isUsedQr === true ? "activeTab" : ""} onClick={() => setIsQrUsed(true)}>Used QR Codes</button>
