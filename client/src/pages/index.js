@@ -18,7 +18,9 @@ import EditBookingPlan from "./admin/EditBookingPlan";
 import QrBookingPlan from "./admin/QrBookingPlan";
 import QrBookingPlanView from "./admin/QrBookingPlanView";
 import AyaUniverse from "./aya-universe/AyaUniverse";
+import LostChambers from "./lost-chambers/LostChambers";
 export {
+    LostChambers,
     AyaUniverse,
     QrBookingPlanView,
     QrBookingPlan,

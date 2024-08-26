@@ -15,7 +15,8 @@ import {
   ServiceProductDateModification,
   QrBookingPlan,
   QrBookingPlanView,
-  AyaUniverse
+  AyaUniverse,
+  LostChambers
  } from './pages'
 import { AdminLayout, DateSelectionContainer, TourLayout } from './components'
 import { Toaster } from 'react-hot-toast';
@@ -33,9 +34,9 @@ const App = () => {
               path='/' 
               element={
                 window.location.hostname === 'dubai-experience.onrender.com' ? (
-                  <DubaiFrame />
+                  <LostChambers />
                 ) :  window.location.hostname === 'localhost' ? (
-                  <DubaiFrame />
+                  <LostChambers />
                 ) : <NotFound />
               } 
             />
