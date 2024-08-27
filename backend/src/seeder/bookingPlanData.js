@@ -145,4 +145,73 @@ exports.bookingPlanData = [
           "The attraction reserves the right to change its operating days and hours, including last admission entry times, without any prior notice. The attraction will not grant any refund due to these changes. Plan your visit ahead of time and check the attraction's website for the latest operating hours.",
         ]
       },
+    {
+        title: "Lost Chambers Aquarium Ticket",
+        desc: [
+          "The Lost Chambers Aquarium in Dubai is a fascinating attraction that immerses visitors in the mythical world of Atlantis. Located within the Atlantis The Palm resort on Palm Jumeirah, this aquarium offers an experience that combines stunning marine life exhibits with a narrative inspired by the legend of the lost city of Atlantis.",
+        ],
+        type: "bookTypeOne",
+        service: "lost-chambers",
+        image: [
+          "/assets/images/lostChambersTicketOne.jpg",
+          "/assets/images/lostChambersTicketTwo.jpg",
+          "/assets/images/lostChambersTicketThree.jpg",
+          "/assets/images/lostChambersTicketFour.jpg",
+          "/assets/images/lostChambersTicketFive.jpg"
+        ],
+        preference: [
+          {
+            price: {
+              weekDays: {
+                adult: 45.79,
+                child: 45.79,
+                senior: 0
+              },
+              weekEnds: {
+                adult: 45.79,
+                child: 45.79,
+                senior: 0
+              }
+            },
+            title: "Tickets to The Lost Chambers Aquarium",
+            details: [
+              "Tickets to The Lost Chambers Aquarium"
+            ],
+          }
+        ],
+        pricing: [
+          {
+            weekDays: {
+              adult: 45.79,
+              child: 45.79
+            },
+            weekEnds: {
+              adult: 45.79,
+              child: 45.79
+            },
+            title: "Tickets to Lost Chambers Aquarium",
+          },
+        ],
+        inclusionAndExclusion: {
+            cancellationPolicy: [
+              "These tickets can't be cancelled or rescheduled"
+            ],
+            inclusion: [
+              "Entrance Tickets"
+            ],
+            exclusion: [
+              "Parking",
+              "Food and Drink",
+              "Locker"
+            ]
+          },
+        rulesAndRestriction: [
+          "Tickets should be purchased in advance where possible, either online or at the entrance. Keep your ticket handy for inspection.",
+          "Bring valid ID if required, especially for discounted tickets or special promotions.",
+          "Follow any health and safety guidelines in place, such as wearing masks or using hand sanitizers if required.",
+          "Do not touch or tap on the aquarium glass or disturb the marine life. Follow instructions from staff regarding interaction with exhibits.",
+          "Children should be supervised at all times, especially near exhibits and touch pools.",
+          "Outside food and beverages are typically not allowed inside the aquarium. There are dining options available within the Atlantis The Palm resort."
+        ]
+      },
 ]

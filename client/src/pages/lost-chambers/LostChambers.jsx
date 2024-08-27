@@ -30,7 +30,7 @@ import LoadingSpinner from '../../components/LoadingSpinner';
 
 const LostChambers = () => {
   const dispatch = useDispatch()
-  const {data, isLoading, error, isSuccess} = useGetBookingPlanDataQuery({service:"dubai-frame"});
+  const {data, isLoading, error, isSuccess} = useGetBookingPlanDataQuery({service:"lost-chambers"});
 
   useEffect(() => {
     dispatch(initialRender());
