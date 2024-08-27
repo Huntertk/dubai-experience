@@ -189,7 +189,7 @@ exports.bookingPlanData = [
               adult: 45.79,
               child: 45.79
             },
-            title: "Tickets to Lost Chambers Aquarium",
+            title: "Tickets to The Lost Chambers Aquarium",
           },
         ],
         inclusionAndExclusion: {
