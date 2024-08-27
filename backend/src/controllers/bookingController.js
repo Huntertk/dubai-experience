@@ -43,7 +43,7 @@ const createBooking = async (req, res, next) => {
         if(!bookingPlan){
             return next(new AppError("Booking Plan Id Wrong", 400))
         }
-        if(service === 'dubai-frame' || service === 'aya-universe'){
+        if(service === 'dubai-frame' || service === 'aya-universe' || service === 'lost-chambers'){
             
                 let qrDataAdult = await QrCode.find({title: bookingTitle, isUsed:false, Type:"Adult"});
                 
