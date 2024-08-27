@@ -11,12 +11,12 @@ import {
 } from '../../components';
 
 import {
-  dubaiFramePlanVisitData,
-  dubaiFrameAdditionInfoData,
-  dubaiFrameTourHomeFAQ,
   lostChambersTopThingsToDo,
   lostChambersWhyVistData,
-  lostChambersHighlightsData
+  lostChambersHighlightsData,
+  lostChambersAdditionInfoData,
+  lostChambersTourHomeFAQ,
+  lostChambersPlanVisitData
 } from './data';
 import videoFile from '../../assets/video/lostchambersvid.mp4'
 
@@ -76,13 +76,14 @@ const LostChambers = () => {
         title={"Lost Chambers Aquarium"}
       />
 
-      <TourVisitPlan tourVisitPlanData={dubaiFramePlanVisitData} title={"Lost Chambers Aquarium"} />
+      <TourVisitPlan tourVisitPlanData={lostChambersPlanVisitData} title={"Lost Chambers Aquarium"} />
 
-      <TourHomeAdditionalInformation title={"Additional Information"} quesData={dubaiFrameAdditionInfoData} />
-      <TourHomeMap serviceName={"Dubai Frame"} mapUrl={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d231259.85845095658!2d55.0070779865871!3d25.087122422862826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f42db20d99d41%3A0xf93035af01a85798!2sDubai%20Frame!5e0!3m2!1sen!2sin!4v1720260840948!5m2!1sen!2sin"} />
+      <TourHomeAdditionalInformation title={"Additional Information"} quesData={lostChambersAdditionInfoData} />
+      <TourHomeMap serviceName={"Lost Chambers Aquarium"} mapUrl={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.1214426930505!2d55.1158284753797!3d25.131584777753325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f153faa386ad1%3A0x17ae2b10f488e39a!2sThe%20Lost%20Chambers%20Aquarium%20at%20Aquaventure%20World!5e0!3m2!1sen!2sin!4v1724780013124!5m2!1sen!2sin"} />
+
 
       {/*FAQ */}
-      <TourHomeAdditionalInformation title={"Frequently Asked Questions About Dubai Frame"} quesData={dubaiFrameTourHomeFAQ} />
+      <TourHomeAdditionalInformation title={"Frequently Asked Questions About Lost Chambers Aquarium"} quesData={lostChambersTourHomeFAQ} />
      </section>
     </>
   )

@@ -158,7 +158,7 @@ export const lostChambersWhyVistData = [
     },
 ]
 
-export const dubaiFramePlanVisitData = [
+export const lostChambersPlanVisitData = [
     {
         id: nanoid(),
         title:"Timing",
@@ -338,80 +338,46 @@ export const lostChambersHighlightsData = [
 
 //Additional Information
 
-export const dubaiFrameAdditionInfoData = [
+export const lostChambersAdditionInfoData = [
     {
         id: nanoid(),
-        ques:"How do I get to the Dubai Frame?",
+        ques:"Where is the Lost Chambers Aquarium located ?",
         ans:[
-            "Dubai Frame is located within Zabeel Park, along the jogging track.",
-            "You can get to the Dubai Frame by metro, bus, or car.",
-            "Take the F09 bus, it'll take you right outside Zabeel Park.",
-            "The Al Jafiliya Metro Station on the Red Line is right outside Zabeel Park and just a few minutes on foot from the Dubai Frame."
+            "You can find The Lost Chambers Aquarium at Atlantis, The Palm. To reach it, navigate through The Avenues and follow the signs for The Lost Chambers Aquarium."
         ]
     },
     {
         id: nanoid(),
-        ques:"When should I visit the Dubai Frame ?",
+        ques:"What are your opening hours of the Lost Chambers Aquarium ?",
         ans:[
-            "Dubai Frame timings are 9:00 AM to 9:00 PM every day of the week, with final entry at 8:30 PM. If you want to avoid crowds, the best time to visit is early morning or late evening on weekdays. However, if you don't wish to groups, the best time is definitely during sunset to enjoy the view of the city bathed in sunlight."
+            "You can explore the underwater world at The Lost Chambers Aquarium every day of the year. The aquarium is open from 10:00 AM to 9:00 PM."
         ]
     },
     {
         id: nanoid(),
-        ques:"How long does it take to visit the Dubai Frame ?",
+        ques:"Are there any age restrictions ?",
         ans:[
-            "It takes about 1-2 hours to visit the Dubai Frame, depending on how much time you spend at each exhibit."
+            "The Lost Chambers Aquarium welcomes guests of all ages. Children under 12 years old must be accompanied by an adult. A child price is available for guests aged 3 to 7 years, while guests aged 8 years and older are charged the adult price. Children aged 2 years and under can enjoy complimentary access."
         ]
-    },
-    {
-        id: nanoid(),
-        ques:"Is the Dubai Frame accessible for people with disabilities ?",
-        ans:[
-            "Yes, the Dubai Frame is accessible for people with disabilities. There are ramps and elevators throughout the attraction."
-        ]
-    },
-    {
-        id: nanoid(),
-        ques:"Can I bring food and drinks into the Dubai Frame ?",
-        ans:[
-            "No, food and drinks are not allowed inside the Dubai Frame."
-        ]
-    },
-    {
-        id: nanoid(),
-        ques:"Can I take pictures at the Dubai Frame ?",
-        ans:[
-            "Yes, you are allowed to take pictures at the Dubai Frame."
-        ]
-    },
-    {
-        id: nanoid(),
-        ques:"Redemption Guide",
-        ans:["Upon arrival, show your ticket/e-voucher at the counter."]
     },
 ]
 
 //FAQ
-export const dubaiFrameTourHomeFAQ = [
+export const lostChambersTourHomeFAQ = [
     {
         id: nanoid(),
-        ques:"What are the opening hours of the Dubai Frame ?",
-        ans:["The Dubai Frame is open daily from 9:00 AM to 9:00 PM."]
+        ques:"What can I see at The Lost Chambers Aquarium ?",
+        ans:["The aquarium features a diverse array of marine life, including majestic sharks, vibrant fish, and other underwater species. Explore the mythical lost city of Atlantis and witness the stunning aquatic displays."]
     },
     {
         id: nanoid(),
-        ques:"Where can I buy Dubai Frame Tickets ?",
-        ans:["Tickets can be purchased online at the Dubai Frame website or the ticket office at the Dubai Frame. You can book Online through Headout, where tickets for anyone above 12 cost AED 50, whereas children between 3 and 12 have to pay only AED 25. If you are visiting the Dubai Frame in a big group, you can opt for the Super Save Packs, which offer even more discounts on your tickets."]
+        ques:"Is scuba diving available ?",
+        ans:["Yes, The Lost Chambers Aquarium offers scuba diving experiences for those looking to explore the underwater world more intimately. Check availability and book in advance."]
     },
     {
         id: nanoid(),
-        ques:"How much do tickets to the Dubai Frame cost ?",
-        ans:["We have General Admission Tickets starting from AED 50 for anyone above 12. Tickets for children between the ages of 3 and 12 are also discounted and are available for AED 25. If you are booking two or more adult tickets, you can opt for the Super Save Pack, where the Tickets are for AED 48."]
-    },
-    {
-        id: nanoid(),
-        ques:"What is the cancelation policy for Dubai Frame tickets ?",
-        ans:["These tickets can't be canceled or rescheduled."]
+        ques:"How can I book a diving or snorkeling experience ?",
+        ans:["You can book diving and snorkeling experiences through the Aquaventure website, by calling their reservations team, or directly at the Aquaventure guest services."]
     },
 ]
 
