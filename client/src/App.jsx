@@ -34,7 +34,7 @@ const App = () => {
               path='/' 
               element={
                 window.location.hostname === 'dubai-experience.onrender.com' ? (
-                  <AyaUniverse />
+                  <LostChambers />
                 ) :  window.location.hostname === 'localhost' ? (
                   <LostChambers />
                 ) : <NotFound />
