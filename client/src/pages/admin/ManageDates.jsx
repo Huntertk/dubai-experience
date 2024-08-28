@@ -9,6 +9,7 @@ const ManageDates = () => {
       <div className="btnContainer">
         <Link to="/admin/manage-dates/dubai-frame">Dubai Frame</Link>
         <Link to="/admin/manage-dates/aya-universe">Aya Universe</Link>
+        <Link to="/admin/manage-dates/lost-chambers">Lost Chambers</Link>
       </div>
     </section>
   )

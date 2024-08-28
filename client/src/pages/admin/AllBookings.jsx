@@ -48,6 +48,7 @@ const AllBookings = () => {
                 <option value="">All Products</option>
                 <option value={"dubai-frame"}>Dubai Frame</option>
                 <option value={"aya-universe"}>Aya Universe</option>
+                <option value={"lost-chambers"}>Lost Chambers</option>
           </select>
           <div className="bookingFilterTabContainer">
             <button 

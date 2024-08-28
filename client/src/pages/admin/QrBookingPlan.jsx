@@ -44,6 +44,7 @@ const QrBookingPlan = () => {
         <div className="btnContainer">
         <Link to="/admin/qr-code/view/dubai-frame">Dubai Frame</Link>
         <Link to="/admin/qr-code/view/aya-universe">Aya Universe</Link>
+        <Link to="/admin/qr-code/view/lost-chambers">Lost Chambers</Link>
       </div>
     </div>
   )
