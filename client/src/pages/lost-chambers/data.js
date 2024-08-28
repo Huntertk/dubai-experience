@@ -360,6 +360,11 @@ export const lostChambersAdditionInfoData = [
             "The Lost Chambers Aquarium welcomes guests of all ages. Children under 12 years old must be accompanied by an adult. A child price is available for guests aged 3 to 7 years, while guests aged 8 years and older are charged the adult price. Children aged 2 years and under can enjoy complimentary access."
         ]
     },
+    {
+        id: nanoid(),
+        ques:"Redemption Guide",
+        ans:["Upon arrival, show your ticket/e-voucher at the counter."]
+    },
 ]
 
 //FAQ
