@@ -325,6 +325,11 @@ const successBooking = async (req, res, next) => {
                 bannerImg:"https://i.postimg.cc/ZqGz90cj/3.jpg", 
                 productImg: "https://i.postimg.cc/QC1QxSQW/aya-universe.jpg"
             }
+        } else if(booking.service === 'lost-chambers') {
+            imgUrls = {
+                bannerImg:"https://i.postimg.cc/G3VNDvy5/lost-Chambers-Ticket-Two.jpg", 
+                productImg: "https://i.postimg.cc/h4f6h2fm/lost-Chambers-Ticket-One.jpg"
+            }
         }
 
         
