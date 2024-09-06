@@ -19,7 +19,9 @@ import QrBookingPlan from "./admin/QrBookingPlan";
 import QrBookingPlanView from "./admin/QrBookingPlanView";
 import AyaUniverse from "./aya-universe/AyaUniverse";
 import LostChambers from "./lost-chambers/LostChambers";
+import BurjKhalifa from "./burj-khalifa/BurjKhalifa";
 export {
+    BurjKhalifa,
     LostChambers,
     AyaUniverse,
     QrBookingPlanView,
