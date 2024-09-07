@@ -34,3 +34,23 @@ exports.addBlockTimeSlot = async (req, res, next) => {
     }
 }
 
+
+exports.getBlockedTimeSlot = async (req, res, next) => {
+    try{
+        const bookingPlan = await BookingPlan.findById(req.query.bookingPlanId);
+        if(!bookingPlan){
+            return next(new AppError("Booking Plan Not Found", 404))
+        } 
+        
+        const blockTimeSlot = await BlockedTimeSlot.findOne({dateForSlot:req.query.date});
+        if(!blockTimeSlot){
+            return next(new AppError("No Blocked Timeslot", 404))
+        }
+
+        res.status(200).json({
+            blockTimeSlot
+        })
+    }catch(error){
+
+    }
+}
