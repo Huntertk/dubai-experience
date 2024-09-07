@@ -50,7 +50,32 @@ exports.getBlockedTimeSlot = async (req, res, next) => {
         res.status(200).json({
             blockTimeSlot
         })
-    }catch(error){
+    } catch(error){
+        next(error)
+    }
+}
 
+
+exports.deleteBlockTimeSlot = async (req, res, next) => {
+    try {
+        const bookingPlan = await BookingPlan.findById(req.body.bookingPlanId);
+        if(!bookingPlan){
+            return next(new AppError("Booking Plan Not Found", 404))
+        } 
+        
+        const blockTimeSlot = await BlockedTimeSlot.findOne({dateForSlot:req.body.date});
+        if(!blockTimeSlot){
+            return next(new AppError("No Blocked Timeslot", 404))
+        }
+
+        const filteredTimeSlot = blockTimeSlot.blockedTimeSlot.filter((slot) => slot !== req.body.timeSlot) 
+        blockTimeSlot.blockedTimeSlot = filteredTimeSlot;
+        await blockTimeSlot.save();
+
+        res.status(200).json({
+            message:`Deleted ${req.body.timeSlot}`
+        })
+    } catch (error) {
+        next(error)
     }
 }
