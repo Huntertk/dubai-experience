@@ -1,0 +1,36 @@
+const AppError = require('../error/customError');
+const BlockedTimeSlot = require('../models/blockedTimeSlot');
+const BookingPlan = require('../models/bookingPlans');
+
+exports.addBlockTimeSlot = async (req, res, next) => {
+    try {
+        const bookingPlan = await BookingPlan.findById(req.body.bookingPlanId);
+        if(!bookingPlan){
+            return next(new AppError("Booking Plan Not Found", 404))
+        } 
+
+        const blockTimeSlot = await BlockedTimeSlot.findOne({dateForSlot:req.body.date})
+        
+        if(blockTimeSlot){
+            blockTimeSlot.blockedTimeSlot.push(req.body.timeSlot);
+            await blockTimeSlot.save();
+            return res.status(201).json({
+                message:"Slot Blocked Added Successfully"
+            })
+            
+        } else {
+            const blockTimeSlot = new BlockedTimeSlot();
+            blockTimeSlot.dateForSlot = req.body.date;
+            blockTimeSlot.bookingPlanId = req.body.bookingPlanId;
+            blockTimeSlot.service = req.body.service;
+            blockTimeSlot.blockedTimeSlot.push(req.body.timeSlot);
+            await blockTimeSlot.save();
+            return res.status(201).json({
+                message:"Slot Blocked Created Successfully"
+            })
+        }
+    } catch (error) {
+        next(error);
+    }
+}
+
