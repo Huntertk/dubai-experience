@@ -17,7 +17,7 @@ const TimeSlot = ({blockedTimeSlot}) => {
                     disabled={blockedTimeSlot.includes(slot)}
                     onClick={() => dispatch(selectingTimeSlot({timeSlot:slot}))}
                     >
-                        <p>{slot}</p>
+                        <p>{slot}:00 hrs</p>
                     </button>
                 ))
             }
