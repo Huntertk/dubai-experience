@@ -27,7 +27,9 @@ const initialState = {
     pricing:{},
     prefrenceOpt:[],
     service:"",
-    bookingPlanId:""
+    bookingPlanId:"",
+    timeSlots:[],
+    timeSlot:""
 }
 
 
@@ -107,6 +109,9 @@ const bookingSlice = createSlice({
             state.bookingDateString = action.payload.selectedBookingDateString
             state.bookingDay = action.payload.selectedDay.split(' ')[0]
         },
+        selectingTimeSlot:(state, action) => {
+            state.timeSlot = action.payload.timeSlot
+        },
         openPaxModel: (state) => {
             state.isPaxModal = true
         },
@@ -151,6 +156,7 @@ const bookingSlice = createSlice({
             state.prefrenceOpt = action.payload.preference,
             state.service = action.payload.service
             state.bookingPlanId = action.payload.bookingPlanId
+            state.timeSlots = action.payload.timeSlots
         },
         settingBookingResponse: (state, action) => {
             state.bookingResponse = ""
@@ -184,6 +190,7 @@ export const {
     settingBookingResponse,
     initialRender,
     setPreference,
+    selectingTimeSlot
 } = bookingSlice.actions
 
 export default bookingSlice.reducer

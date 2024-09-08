@@ -229,6 +229,9 @@ exports.bookingPlanData = [
           "/assets/images/burjKhalifaTicketFour.jpg",
           "/assets/images/burjKhalifaTicketFive.jpg"
         ],
+        timeSlots:[
+          "8","9","10","11","12","13"
+        ],
         preference: [
           {
             price: {

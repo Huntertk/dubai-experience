@@ -44,12 +44,10 @@ exports.getBlockedTimeSlot = async (req, res, next) => {
         
         const blockTimeSlot = await BlockedTimeSlot.findOne({dateForSlot:req.query.date});
         if(!blockTimeSlot){
-            return next(new AppError("No Blocked Timeslot", 200))
+            return res.status(200).json([])
         }
 
-        res.status(200).json({
-            blockTimeSlot
-        })
+        res.status(200).json(blockTimeSlot.blockedTimeSlot)
     } catch(error){
         next(error)
     }

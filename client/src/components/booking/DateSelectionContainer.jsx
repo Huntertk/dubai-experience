@@ -134,7 +134,9 @@ const DateSelectionContainer = () => {
             try {
                 setIsLoading(true)
                 const {data} = await axios.get(`/api/v1/dates-manage/block-dates/get-blocked-date-time-slot?bookingPlanId=${bookingPlanId}&date=${formattedDate}`)
-                setBlockedTimeSlot(data.blockDates)
+                console.log(data);
+                
+                setBlockedTimeSlot(data)
                 setIsLoading(false)
               } catch (error) {
                   console.log(error);
@@ -197,7 +199,7 @@ const DateSelectionContainer = () => {
                 selectedDate && <PreferenceTour selectedDate={selectedDate} data={prefrenceOpt}  /> 
             }
             {
-                service === 'burj-khalifa' && selectedDate && pref && <TimeSlot />
+                service === 'burj-khalifa' && selectedDate && pref && <TimeSlot blockedTimeSlot={blockedTimeSlot} />
             }
             <div className="selectedDate">
                 {

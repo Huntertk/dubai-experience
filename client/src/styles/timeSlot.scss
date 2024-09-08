@@ -15,12 +15,26 @@
             padding: 10px 1rem;
             background-color: $primaryModalColor;
             transition: all 0.3s linear;
+            border: 0;
+            > p {
+                font-size: 1.1rem;
+
+            }
             &:hover{
                 color: #fff;
                 cursor: pointer;
                 background-color: $primary;
             }
+            &:disabled{
+                background-color: $primaryModalColor;
+                cursor: not-allowed;
+            }
             
+        }
+
+        .selected{
+            background-color: $primary;
+            color: #fff;
         }
     }
 }

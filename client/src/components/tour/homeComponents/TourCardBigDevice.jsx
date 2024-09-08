@@ -12,11 +12,11 @@ import { choosingBooking } from '../../../redux/features/bookingSlice';
 
 const TourCardBigDevice = ({data}) => {
   const dispatch = useDispatch();
-  const {type,service, title,pricing, preference, _id} = data;
+  const {type,service, title,pricing, preference, _id, timeSlots} = data;
   const navigate = useNavigate(); 
 
   const handleClick = () => {
-    dispatch(choosingBooking({type, title, pricing, preference, service, bookingPlanId:_id}))
+    dispatch(choosingBooking({type, title, pricing, preference, service, bookingPlanId:_id, timeSlots}))
     return navigate("/date-select")
   }
 

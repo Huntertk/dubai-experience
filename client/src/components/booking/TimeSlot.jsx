@@ -1,19 +1,26 @@
+import { useDispatch, useSelector } from 'react-redux';
 import '../../styles/timeSlot.scss';
+import { selectingTimeSlot } from '../../redux/features/bookingSlice';
 
-const TimeSlot = () => {
+const TimeSlot = ({blockedTimeSlot}) => {
+    const dispatch = useDispatch();
+    const {timeSlots, timeSlot} = useSelector((state) => state.booking)
   return (
     <section className='timeSlotsContainer'>
         <h1 style={{fontWeight:700}}>Select Time Slot</h1>
         <div className="timeSlotWrapper">
-            <div className="timeSlot">
-                <p>8pm</p>
-            </div>
-            <div className="timeSlot">
-                <p>9pm</p>
-            </div>
-            <div className="timeSlot">
-                <p>10pm</p>
-            </div>
+            {
+                timeSlots.map((slot) => (
+                    <button 
+                    className={timeSlot === slot ? "timeSlot selected" : "timeSlot"} 
+                    key={slot} 
+                    disabled={blockedTimeSlot.includes(slot)}
+                    onClick={() => dispatch(selectingTimeSlot({timeSlot:slot}))}
+                    >
+                        <p>{slot}</p>
+                    </button>
+                ))
+            }
         </div>
     </section>
   )
