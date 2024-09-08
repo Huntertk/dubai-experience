@@ -51,6 +51,7 @@ const bookingPlanSchema = new mongoose.Schema({
         inclusion:[String],
         exclusion:[String]
     },
+    timeSlots:[String],
     rulesAndRestriction:[String]
 }, {timestamps: true})
 

@@ -1,0 +1,26 @@
+@use './variables.scss' as *;
+
+.timeSlotsContainer{
+    padding: 1rem;
+    text-align: center;
+    > h1 {
+        margin-bottom: 10px;
+    }
+    .timeSlotWrapper{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        .timeSlot{
+            border-radius: 10px;
+            padding: 10px 1rem;
+            background-color: $primaryModalColor;
+            transition: all 0.3s linear;
+            &:hover{
+                color: #fff;
+                cursor: pointer;
+                background-color: $primary;
+            }
+            
+        }
+    }
+}

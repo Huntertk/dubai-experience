@@ -30,7 +30,7 @@ import LoadingSpinner from '../../components/LoadingSpinner';
 
 const BurjKhalifa = () => {
   const dispatch = useDispatch()
-  const {data, isLoading, error, isSuccess} = useGetBookingPlanDataQuery({service:"aya-universe"});
+  const {data, isLoading, error, isSuccess} = useGetBookingPlanDataQuery({service:"burj-khalifa"});
   const serviceName = "Burj Khalifa"
 
   useEffect(() => {

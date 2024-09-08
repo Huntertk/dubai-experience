@@ -13,6 +13,7 @@ import axios from 'axios'
 import LoadingSpinner from '../LoadingSpinner';
 import PreferenceTour from './PreferenceTour';
 import PaxModal from './PaxModal';
+import TimeSlot from './TimeSlot';
 
 
 function isPastDate(date) {
@@ -107,6 +108,7 @@ const DateSelectionContainer = () => {
         const [selectedDate, setSelectedDate] = useState("")
         const [calenderOpen, setCalenderOpen] = useState(false)
         const [blockedDates, setBlockedDates] = useState([])
+        const [blockedTimeSlot, setBlockedTimeSlot] = useState([])
         const disabledDates = blockedDates?.map((dates) => new Date(dates.blockDates))
         const [isLoading, setIsLoading] = useState(false);
         
@@ -125,8 +127,20 @@ const DateSelectionContainer = () => {
               }
           }
 
+          const formattedDate = selectedDate && new Date(selectedDate).toISOString().split('T')[0]
+          
 
-          const formattedDate = selectedDate && new Date(selectedDate).toISOString();
+          const getBlockedTimeSlot = async () => {
+            try {
+                setIsLoading(true)
+                const {data} = await axios.get(`/api/v1/dates-manage/block-dates/get-blocked-date-time-slot?bookingPlanId=${bookingPlanId}&date=${formattedDate}`)
+                setBlockedTimeSlot(data.blockDates)
+                setIsLoading(false)
+              } catch (error) {
+                  console.log(error);
+              }
+          }
+
           const handleClick = () => {
             dispatch(setBookingDate({
                 selectedBookingDate: formattedDate, 
@@ -138,8 +152,12 @@ const DateSelectionContainer = () => {
         }
 
         useEffect(() => {
-            getBooklockDates()
-          },[])
+            getBooklockDates();
+            if(selectedDate){
+                getBlockedTimeSlot()
+            }
+
+          },[selectedDate])
 
           
           if(!service || !bookingPlanId){
@@ -177,6 +195,9 @@ const DateSelectionContainer = () => {
             </div>
             {
                 selectedDate && <PreferenceTour selectedDate={selectedDate} data={prefrenceOpt}  /> 
+            }
+            {
+                service === 'burj-khalifa' && selectedDate && pref && <TimeSlot />
             }
             <div className="selectedDate">
                 {
