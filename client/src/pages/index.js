@@ -20,7 +20,11 @@ import QrBookingPlanView from "./admin/QrBookingPlanView";
 import AyaUniverse from "./aya-universe/AyaUniverse";
 import LostChambers from "./lost-chambers/LostChambers";
 import BurjKhalifa from "./burj-khalifa/BurjKhalifa";
+import ManageTimeSlot from "./admin/ManageTimeSlot";
+import ServiceProductTimeslotModification from "./admin/ServiceProductTimeslotModification";
 export {
+    ServiceProductTimeslotModification,
+    ManageTimeSlot,
     BurjKhalifa,
     LostChambers,
     AyaUniverse,

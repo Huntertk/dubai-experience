@@ -4,6 +4,7 @@ import {RiAdminFill} from 'react-icons/ri'
 import {VscGraph} from 'react-icons/vsc'
 import { BsQrCode } from "react-icons/bs";
 import { IoCalendarNumberOutline } from 'react-icons/io5'
+import { MdAccessTime } from "react-icons/md";
 
 const AdminBigSidebar = () => {
   return (
@@ -12,6 +13,7 @@ const AdminBigSidebar = () => {
         <h1>Admin <RiAdminFill /></h1>
           <NavLink to="/admin/all-booking"><VscGraph /> All Booking</NavLink>
           <NavLink to="/admin/manage-dates"><IoCalendarNumberOutline /> Manages Dates</NavLink>
+          <NavLink to="/admin/manage-timeslot"><MdAccessTime /> Manages Timeslot</NavLink>
           <NavLink to="/admin/qr-code"><BsQrCode />Qr Codes</NavLink>
       </div>
     </aside>

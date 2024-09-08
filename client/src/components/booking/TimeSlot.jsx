@@ -3,6 +3,7 @@ import '../../styles/timeSlot.scss';
 import { selectingTimeSlot } from '../../redux/features/bookingSlice';
 
 const TimeSlot = ({blockedTimeSlot}) => {
+    
     const dispatch = useDispatch();
     const {timeSlots, timeSlot} = useSelector((state) => state.booking)
   return (

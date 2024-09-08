@@ -17,7 +17,9 @@ import {
   QrBookingPlanView,
   AyaUniverse,
   LostChambers,
-  BurjKhalifa
+  BurjKhalifa,
+  ManageTimeSlot,
+  ServiceProductTimeslotModification
  } from './pages'
 import { AdminLayout, DateSelectionContainer, TourLayout } from './components'
 import { Toaster } from 'react-hot-toast';
@@ -90,6 +92,19 @@ const App = () => {
                       path="/admin/manage-dates/:serviceName/:id"  
                       element={<ServiceProductDateModification />} 
                     />
+
+                    {/*Manage TimeSlot */}
+                    <Route path="/admin/manage-timeslot" element={<ManageTimeSlot />} />
+                    <Route 
+                      path="/admin/manage-timeslot/:serviceName" 
+                      element={<ServiceProductList />} 
+                    />
+                    <Route 
+                      path="/admin/manage-timeslot/:serviceName/:id"  
+                      element={<ServiceProductTimeslotModification />} 
+                    />
+
+
                   </Route>
                 </Route>
                 <Route path='*' element={<NotFound />} />
