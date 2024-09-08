@@ -76,6 +76,12 @@
 
             .prefrenceAndDateContainer{
                 width: 90%;
+
+                > p {
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                    margin: 5px;
+                }
             }
 
             button{

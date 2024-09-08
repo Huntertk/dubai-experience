@@ -5,7 +5,7 @@ import './day-picker.css';
 import { format,differenceInCalendarDays } from 'date-fns';
 import { DayPicker, Row } from 'react-day-picker';
 import { useDispatch, useSelector } from 'react-redux';
-import { openPaxModel, setBookingDate, setPreference } from '../../redux/features/bookingSlice';
+import { openPaxModel, selectingTimeSlot, setBookingDate, setPreference } from '../../redux/features/bookingSlice';
 import {Navigate, useNavigate} from 'react-router-dom'
 // import PaxModal from './PaxModal';
 import axios from 'axios'
@@ -104,7 +104,7 @@ const DateBtn = ({setSelectedDate, setCalenderOpen,selectedDate, calenderOpen, d
 
 const DateSelectionContainer = () => {
     const dispatch = useDispatch()
-    const {isPaxModal, type, pref, prefrenceOpt, service, bookingPlanId} = useSelector(store => store.booking)
+    const {isPaxModal, type, pref, prefrenceOpt, service, bookingPlanId, timeSlot} = useSelector(store => store.booking)
         const [selectedDate, setSelectedDate] = useState("")
         const [calenderOpen, setCalenderOpen] = useState(false)
         const [blockedDates, setBlockedDates] = useState([])
@@ -156,8 +156,11 @@ const DateSelectionContainer = () => {
         useEffect(() => {
             getBooklockDates();
             if(selectedDate){
+                dispatch(selectingTimeSlot({timeSlot:""}))
                 getBlockedTimeSlot()
+
             }
+            
 
           },[selectedDate])
 
@@ -205,13 +208,20 @@ const DateSelectionContainer = () => {
                 {
                     selectedDate ? <>
                     <div className='prefrenceAndDateContainer'>
+                    {
+                       service === 'burj-khalifa' && timeSlot && <p>Time : {timeSlot}:00 hrs</p> 
+                    }
                         <p>{
                             pref ?  pref : <></> 
                         }</p>
                     <p>You selected {format(selectedDate, 'PPP')}.</p>
+                    
                     </div>
                     {
-                        pref ? <button onClick={handleClick}>Next</button> : <></>
+                       service !== 'burj-khalifa' && pref ? <button onClick={handleClick}>Next</button> : <></>
+                    }
+                    {
+                       service === 'burj-khalifa' && pref && timeSlot ? <button onClick={handleClick}>Next</button> : <></>
                     }
                     </> : <p>Select One Date</p>
                 }
