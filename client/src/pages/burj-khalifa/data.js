@@ -385,36 +385,34 @@ export const ayaUniverseAdditionInfoData = [
 ]
 
 //FAQ
-export const ayaUniverseTourHomeFAQ = [
+export const burjKhalifaTourHomeFAQ = [
     {
         id: nanoid(),
-        ques:"What's the best time to visit AYA Universe ?",
-        ans:["It is best to visit AYA Universe on weekdays and early mornings to avoid peak crowds. You can visit AYA Universe during the off-season summer months as well since it is located indoors!"]
+        ques:"What is Burj Khalifa ?",
+        ans:["Burj Khalifa is a towering skyscraper located in Dubai, United Arab Emirates. It holds the title of the tallest building in the world, standing at a height of 828 meters (2,717 feet). Completed in 2010, the Burj Khalifa is a marvel of modern engineering and design, featuring 163 floors above ground and 2 below.Its sleek, tapering design and impressive height make it an iconic symbol of Dubai's rapid growth and ambition."]
     },
     {
         id: nanoid(),
-        ques:"Can I leave my children alone inside AYA Universe ?",
-        ans:["No, children must be supervised at all times at AYA Universe by an adult who is responsible for their safety and care."]
+        ques:"Where can i buy Burj Khalifa tickets ?",
+        ans:["You can buy Burj Khalifa tickets online and make bookings in advance to avoid waiting in long queues as well as a hassle-free-booking experience."]
     },
     {
         id: nanoid(),
-        ques:"Is there parking space inside AYA Universe ?",
-        ans:["Yes, there is valet parking service available inside Wafi City."]
+        ques:"Where is Burj Khalifa located",
+        ans:["Burj Khalifa, 1 Sheikh Mohammed bin Rashid Boulevard, Downtown Dubai, UAE"]
     },
     {
         id: nanoid(),
-        ques:"Are food and beverages allowed inside AYA Universe ?",
-        ans:["Outside food and beverages are not allowed, but AYA Universe offers a variety of dining options."]
+        ques:"What are the Burj Khalifa timing ?",
+        ans:[
+            "At the Top (125th Floor) Daily: 8:30 AM to 11:00 PM",
+            "At the Top SKY (148th Floor) Daily: 9:00 AM to 9:00 PM"
+        ]
     },
     {
         id: nanoid(),
-        ques:"What type of restaurants does AYA Universe offer ?",
-        ans:["AYA Universe features diverse restaurants, including international cuisines and themed dining experiences."]
-    },
-    {
-        id: nanoid(),
-        ques:"Are strollers and wheelchairs available inside AYA Universe ?",
-        ans:["Yes, strollers and wheelchairs are available inside AYA Universe."]
+        ques:"Redemption Guide",
+        ans:["Upon arrival, show your tickets/e-voucher at the counter."]
     },
 ]
 

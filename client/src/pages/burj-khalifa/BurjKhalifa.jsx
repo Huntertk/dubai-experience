@@ -12,11 +12,11 @@ import {
 
 import {
   ayaUniverseAdditionInfoData,
-  ayaUniverseTourHomeFAQ,
   burjKhalifaTopThingsToDo,
   burjKhalifaWhyVistData,
   burjKhalifaHighlighhtsData,
-  burjKhalifaPlanVisitData
+  burjKhalifaPlanVisitData,
+  burjKhalifaTourHomeFAQ
 } from './data';
 import videoFile from '../../assets/video/burjKhalifaVid.mp4'
 
@@ -85,7 +85,7 @@ const BurjKhalifa = () => {
       
 
       {/*FAQ */}
-      <TourHomeAdditionalInformation title={"Frequently Asked Questions About Aya Universe"} quesData={ayaUniverseTourHomeFAQ} />
+      <TourHomeAdditionalInformation title={"Frequently Asked Questions About Burj Khalifa"} quesData={burjKhalifaTourHomeFAQ} />
      </section>
     </>
   )
