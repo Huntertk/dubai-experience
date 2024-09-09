@@ -81,7 +81,7 @@ const BurjKhalifa = () => {
       <TourVisitPlan tourVisitPlanData={burjKhalifaPlanVisitData} title={serviceName} />
 
       <TourHomeAdditionalInformation title={"Additional Information"} quesData={ayaUniverseAdditionInfoData} />
-      <TourHomeMap serviceName={serviceName} mapUrl={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.218066550781!2d55.31567457447259!3d25.229579177690102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5dce5bea2dd1%3A0x88632981a972e88f!2sAYA!5e0!3m2!1sen!2sin!4v1723021140274!5m2!1sen!2sin"} />
+      <TourHomeMap serviceName={serviceName} mapUrl={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7220.500761019923!2d55.27005193919169!3d25.194777460849796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43348a67e24b%3A0xff45e502e1ceb7e2!2sBurj%20Khalifa!5e0!3m2!1sen!2sin!4v1725866912035!5m2!1sen!2sin"} />
       
 
       {/*FAQ */}
