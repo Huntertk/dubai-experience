@@ -287,4 +287,76 @@ exports.bookingPlanData = [
           "Outside food and beverages are typically not allowed inside the aquarium."
         ]
       },
+      {
+        title: "124th + 125th Floor (Prime Hour) Burj Khalifa",
+        desc: [
+          "The Burj Khalifa is a towering skyscraper located in Dubai, United Arab Emirates. It holds the title of the tallest building in the world, standing at a height of 828 meters.Its sleek, tapering design and impressive height make it an iconic symbol of Dubai's rapid growth and ambition.",
+        ],
+        type: "bookTypeTwo",
+        service: "burj-khalifa",
+        image: [
+          "/assets/images/burjKhalifaTicketOne.jpg",
+          "/assets/images/burjKhalifaTicketTwo.jpg",
+          "/assets/images/burjKhalifaTicketThree.jpg",
+          "/assets/images/burjKhalifaTicketFour.jpg",
+          "/assets/images/burjKhalifaTicketFive.jpg"
+        ],
+        timeSlots:[
+          "14","15","16","17","18","19"
+        ],
+        preference: [
+          {
+            price: {
+              weekDays: {
+                adult: 45.79,
+                child: 45.79,
+                senior: 0
+              },
+              weekEnds: {
+                adult: 45.79,
+                child: 45.79,
+                senior: 0
+              }
+            },
+            title: "Prime Hours",
+            details: [
+              "124th + 125th Floor (Prime Hour)"
+            ],
+          }
+        ],
+        pricing: [
+          {
+            weekDays: {
+              adult: 45.79,
+              child: 45.79
+            },
+            weekEnds: {
+              adult: 45.79,
+              child: 45.79
+            },
+            title: "Prime Hours",
+          },
+        ],
+        inclusionAndExclusion: {
+            cancellationPolicy: [
+              "These tickets can't be cancelled or rescheduled"
+            ],
+            inclusion: [
+              "Entrance Tickets"
+            ],
+            exclusion: [
+              "Parking",
+              "Food and Drink",
+              "Locker"
+            ]
+          },
+        rulesAndRestriction: [
+          "Tickets should be purchased in advance where possible, either online or at the entrance. Keep your ticket handy for inspection.",
+          "Bring valid ID if required, especially for discounted tickets or special promotions.",
+          "Follow any health and safety guidelines in place, such as wearing masks or using hand sanitizers if required.",
+          "Do not touch or tap on the aquarium glass or disturb the marine life. Follow instructions from staff regarding interaction with exhibits.",
+          "Children should be supervised at all times, especially near exhibits and touch pools.",
+          "Outside food and beverages are typically not allowed inside the aquarium."
+        ]
+      },
 ]

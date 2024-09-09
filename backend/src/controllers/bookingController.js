@@ -169,7 +169,7 @@ const successBooking = async (req, res, next) => {
         return next(new AppError("Booking not created",400));
     }
 
-    if(booking.isQrGenerated === false){
+    if(booking.isQrGenerated === false && booking.service !== 'burj-khalifa'){
 
         try {
                 let qrDataAdult = await QrCode.find({title: booking.bookingTitle, isUsed:false, Type:"Adult"});
@@ -419,6 +419,48 @@ const successBooking = async (req, res, next) => {
         }
 
 
+    } else if(booking.service === 'burj-khalifa'){    
+        const newBooking = await Booking.findByIdAndUpdate(req.query.id, {payment:true, bookingStatus:"confirmed", successToken:  crypto.randomBytes(16).toString('hex')}, {new: true})
+
+        let imgUrls;
+        if(booking.service === 'burj-khalifa'){
+            imgUrls = {
+                bannerImg:"https://i.postimg.cc/Y2VtWMQK/burj-Khalifa-Highlights-One.jpg", 
+                productImg: "https://i.postimg.cc/FR6X3Vdg/burj-Khalifa-Ticket-Two.jpg"
+            }
+        }
+
+        try {
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: process.env.EMAIL,
+                    pass: process.env.MAIL_PASS
+                }
+            })
+
+            const mailMessage = "We're delighted to confirm your booking! Your official e-ticket is on its way to your email shortly. In case you don't receive it, please don't hesitate to get in touch with us."
+
+            const mailOptions = {
+                from: process.env.EMAIL,
+                to: `${booking.email},
+                ${process.env.EMAIL}`,
+                subject: `Booking Successfully`,
+                html: bookingEmailTemplate(booking, imgUrls, dateFormatted, mailMessage)
+            };
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
+                    console.log(error);
+                } else {
+
+                    console.log(info.response, " Email sent");
+                }
+            })
+            res.status(StatusCodes.CREATED).redirect(`/success?token=${newBooking.successToken}`)
+            // res.status(200).send("success")
+        } catch (error) {
+            return res.redirect("/failed")
+        }
     } else {
         return res.redirect("/failed")
     }

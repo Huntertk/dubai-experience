@@ -59,7 +59,8 @@ const Booking = () => {
                 service,
                 hostName,
                 bookingPlanId,
-                bookingDateString
+                bookingDateString,
+                timeSlot
             })
             const response = res.data;
             const {data} = await axios.get('/api/v1/booking/totalbooking')

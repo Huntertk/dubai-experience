@@ -63,6 +63,9 @@ const bookingSchema = new mongoose.Schema({
         type:Boolean,
         default:false
     },
+    timeSlot:{
+        type: String
+    },
     successToken:String
 },{timestamps: true})
 
