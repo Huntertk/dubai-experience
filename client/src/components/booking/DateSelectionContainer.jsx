@@ -157,11 +157,9 @@ const DateSelectionContainer = () => {
             getBooklockDates();
             if(selectedDate){
                 dispatch(selectingTimeSlot({timeSlot:""}))
-                getBlockedTimeSlot()
-
             }
+            getBlockedTimeSlot()
             
-
           },[selectedDate])
 
           
