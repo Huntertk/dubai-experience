@@ -10,6 +10,7 @@ const ManageDates = () => {
         <Link to="/admin/manage-dates/dubai-frame">Dubai Frame</Link>
         <Link to="/admin/manage-dates/aya-universe">Aya Universe</Link>
         <Link to="/admin/manage-dates/lost-chambers">Lost Chambers</Link>
+        <Link to="/admin/manage-dates/burj-khalifa">Burj Khalifa</Link>
       </div>
     </section>
   )
