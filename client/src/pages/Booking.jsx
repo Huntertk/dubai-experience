@@ -26,7 +26,8 @@ const Booking = () => {
         pref,
         service,
         bookingPlanId,
-        bookingDateString
+        bookingDateString,
+        timeSlot
     } = useSelector(store => store.booking)
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -87,6 +88,9 @@ const Booking = () => {
                         <div className="">
                             <p className='bookingType'>{bookingTitle}</p>
                             {pref && <p className='bookingType'>{pref}</p>}
+                            {
+                                service === 'burj-khalifa' && timeSlot && <p>Time: {timeSlot}:00 hrs</p>
+                            }
                         </div>
                     </div>
                     <div className="topContainer">
