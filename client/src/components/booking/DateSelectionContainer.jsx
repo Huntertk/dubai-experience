@@ -207,7 +207,7 @@ const DateSelectionContainer = () => {
                     selectedDate ? <>
                     <div className='prefrenceAndDateContainer'>
                     {
-                       service === 'burj-khalifa' && timeSlot && <p>Time : {timeSlot}:00 hrs</p> 
+                       service === 'burj-khalifa' && timeSlot && <p>Time : {timeSlot} hrs</p> 
                     }
                         <p>{
                             pref ?  pref : <></> 

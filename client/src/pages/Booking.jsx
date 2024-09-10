@@ -90,7 +90,7 @@ const Booking = () => {
                             <p className='bookingType'>{bookingTitle}</p>
                             {pref && <p className='bookingType'>{pref}</p>}
                             {
-                                service === 'burj-khalifa' && timeSlot && <p>Time: {timeSlot}:00 hrs</p>
+                                service === 'burj-khalifa' && timeSlot && <p>Time: {timeSlot} hrs</p>
                             }
                         </div>
                     </div>
