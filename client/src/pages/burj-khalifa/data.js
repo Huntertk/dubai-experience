@@ -348,39 +348,39 @@ export const burjKhalifaHighlighhtsData = [
 
 //Additional Information
 
-export const ayaUniverseAdditionInfoData = [
+export const burjKhalifaAdditionInfoData = [
     {
         id: nanoid(),
-        ques:"What is AYA Universe ?",
+        ques:"What is the best time to visit Burj Khalifa ?",
         ans:[
-            "AYA Universe Dubai is a one-of-a-kind entertainment park offering its guest an immersive experience filled with a unique combination of art and technology. The park offers twelve themed zones, each designed uniquely for an extraordinary experience."
+            "The best time to visit Burj Khalifa is definitely during sunset! Watching the sun set over Dubai's glittering skyline from high in the sky is an unmatched experience when in the city. However, this is also the busiest time of the day. If you want to avoid the crowds, it's best to plan your visit during early morning or late evenings on weekdays."
         ]
     },
     {
         id: nanoid(),
-        ques:"Where can I buy AYA Universe tickets ?",
+        ques:"How do I get to Level 148 of the Burj Khalifa ?",
         ans:[
-            "You can buy AYA Universe tickets online and make bookings in advance to avoid waiting in long queues as well as a hassle-free booking experience. Make the most of the online booking experience by opting for skip-the-line tickets and combo tickets with great discounts and offers!"
+            "Tickets for At The Top Burj Khalifa SKY will have to be purchased separately since a standard ticket does not grant entry to Level 148. Once you purchase this ticket, you will be taken up to At The Top, which is Levels 124 and 125, from where you would have to take a separate elevator to Level 148 (At The Top SKY)."
         ]
     },
     {
         id: nanoid(),
-        ques:"Where is AYA Universe located ?",
+        ques:"Is storage facility available at Burj Khalifa ?",
         ans:[
-            "AYA Universe is located on level one of Wafi City Mall's Main Atrium in Dubai. The official address is - WAFI City - Oud Metha - Dubai - United Arab Emirates."
+            "Yes. Guests can store their bags and luggage in the storage area outside the entry to At The Top."
         ]
     },
     {
         id: nanoid(),
-        ques:"What are the AYA Universe timings ?",
+        ques:"Is Burj Khalifa wheelchair accessible ?",
         ans:[
-            "AYA Universe is open from 10 AM to 10 PM from Sunday to Thursday, and 10 AM to 12 AM on Friday and Saturday."
+            "Yes, the Burj Khalifa is completely wheelchair accessible. Elevators and ramps are in place for the ease of differently abled visitors."
         ]
     },
     {
         id: nanoid(),
-        ques:"Redemption Guide",
-        ans:["Upon arrival, show your ticket/e-voucher at the counter."]
+        ques:"What can I do around Burj Khalifa?",
+        ans:["The main attractions around the Burj Khalifa are the Dubai Mall, Dubai Aquarium, and Dubai Fountain."]
     },
 ]
 
