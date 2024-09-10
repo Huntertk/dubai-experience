@@ -167,6 +167,7 @@ a {text-decoration: none;}
                                                                                                 <p style="font-size: 18px; color: #f26823;"><strong>${booking.bookingTitle}</strong><br></p>
                                                                                                 <p style="font-size: 18px; color: #f26823;"><br></p>
                                                                                                ${booking.prefrence && `<p style="font-size: 18px; color: #f26823;"><strong>${booking.prefrence} </strong></p>` }
+                                                                                               ${booking.timeSlot && `<p style="font-size: 18px; color: #f26823;"><strong>${booking.timeSlot} </strong></p>` }
                                                                                         </tr>
                                                                                     </tbody>
                                                                                 </table>
