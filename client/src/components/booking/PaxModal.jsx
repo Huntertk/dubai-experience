@@ -116,7 +116,7 @@ const PaxModal = ({selectedDate}) => {
             </div>
                 <div className="totalPayable">
                     <span>Total</span>
-                <span>AED {totalAmount}</span>
+                <span>AED {totalAmount.toFixed(2)}</span>
                 </div>
                 
             <div className="dateContainer">

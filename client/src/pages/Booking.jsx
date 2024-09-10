@@ -118,7 +118,7 @@ const Booking = () => {
 
                         <div className="guest">
                             <p className='totalPayable'>Total Payable</p>
-                            <span className='totalPayable'>AED {totalAmount}</span>
+                            <span className='totalPayable'>AED {totalAmount.toFixed(2)}</span>
                         </div>
                     </div>
                     <form onSubmit={handleSubmit}>
