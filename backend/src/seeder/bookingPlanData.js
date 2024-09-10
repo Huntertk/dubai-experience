@@ -359,4 +359,148 @@ exports.bookingPlanData = [
           "Outside food and beverages are typically not allowed inside the aquarium."
         ]
       },
+      {
+        title: "148th + 124th (Non-Prime Hour) Burj Khalifa",
+        desc: [
+          "The Burj Khalifa is a towering skyscraper located in Dubai, United Arab Emirates. It holds the title of the tallest building in the world, standing at a height of 828 meters.Its sleek, tapering design and impressive height make it an iconic symbol of Dubai's rapid growth and ambition.",
+        ],
+        type: "bookTypeThree",
+        service: "burj-khalifa",
+        image: [
+          "/assets/images/burjKhalifaTicketOne.jpg",
+          "/assets/images/burjKhalifaTicketTwo.jpg",
+          "/assets/images/burjKhalifaTicketThree.jpg",
+          "/assets/images/burjKhalifaTicketFour.jpg",
+          "/assets/images/burjKhalifaTicketFive.jpg"
+        ],
+        timeSlots:[
+          "19:00","20:00","21:00"
+        ],
+        preference: [
+          {
+            price: {
+              weekDays: {
+                adult: 361.22,
+                child: 361.22,
+                senior: 0
+              },
+              weekEnds: {
+                adult: 361.22,
+                child: 361.22,
+                senior: 0
+              }
+            },
+            title: "Non-Prime Hours",
+            details: [
+              "148th + 124th (Non-Prime Hour)"
+            ],
+          }
+        ],
+        pricing: [
+          {
+            weekDays: {
+              adult: 361.22,
+              child: 361.22,
+            },
+            weekEnds: {
+              adult: 361.22,
+              child: 361.22,
+            },
+            title: "Non-Prime Hours",
+          },
+        ],
+        inclusionAndExclusion: {
+            cancellationPolicy: [
+              "These tickets can't be cancelled or rescheduled"
+            ],
+            inclusion: [
+              "Entrance Tickets"
+            ],
+            exclusion: [
+              "Parking",
+              "Food and Drink",
+              "Locker"
+            ]
+          },
+        rulesAndRestriction: [
+          "Tickets should be purchased in advance where possible, either online or at the entrance. Keep your ticket handy for inspection.",
+          "Bring valid ID if required, especially for discounted tickets or special promotions.",
+          "Follow any health and safety guidelines in place, such as wearing masks or using hand sanitizers if required.",
+          "Do not touch or tap on the aquarium glass or disturb the marine life. Follow instructions from staff regarding interaction with exhibits.",
+          "Children should be supervised at all times, especially near exhibits and touch pools.",
+          "Outside food and beverages are typically not allowed inside the aquarium."
+        ]
+      },
+      {
+        title: "148th + 124th (Prime Hour) Burj Khalifa",
+        desc: [
+          "The Burj Khalifa is a towering skyscraper located in Dubai, United Arab Emirates. It holds the title of the tallest building in the world, standing at a height of 828 meters.Its sleek, tapering design and impressive height make it an iconic symbol of Dubai's rapid growth and ambition.",
+        ],
+        type: "bookTypeThree",
+        service: "burj-khalifa",
+        image: [
+          "/assets/images/burjKhalifaTicketOne.jpg",
+          "/assets/images/burjKhalifaTicketTwo.jpg",
+          "/assets/images/burjKhalifaTicketThree.jpg",
+          "/assets/images/burjKhalifaTicketFour.jpg",
+          "/assets/images/burjKhalifaTicketFive.jpg"
+        ],
+        timeSlots:[
+          "12:00","13:00","14:00","15:00", "16:00", "17:00", "18:00"
+        ],
+        preference: [
+          {
+            price: {
+              weekDays: {
+                adult: 428.27,
+                child: 428.27,
+                senior: 0
+              },
+              weekEnds: {
+                adult: 428.27,
+                child: 428.27,
+                senior: 0
+              }
+            },
+            title: "Prime Hours",
+            details: [
+              "148th + 124th (Prime Hour)"
+            ],
+          }
+        ],
+        pricing: [
+          {
+            weekDays: {
+              adult: 428.27,
+              child: 428.27,
+            },
+            weekEnds: {
+              adult: 428.27,
+              child: 428.27,
+            },
+            title: "Prime Hours",
+          },
+        ],
+        inclusionAndExclusion: {
+            cancellationPolicy: [
+              "These tickets can't be cancelled or rescheduled"
+            ],
+            inclusion: [
+              "Entrance Tickets"
+            ],
+            exclusion: [
+              "Parking",
+              "Food and Drink",
+              "Locker"
+            ]
+          },
+        rulesAndRestriction: [
+          "Tickets should be purchased in advance where possible, either online or at the entrance. Keep your ticket handy for inspection.",
+          "Bring valid ID if required, especially for discounted tickets or special promotions.",
+          "Follow any health and safety guidelines in place, such as wearing masks or using hand sanitizers if required.",
+          "Do not touch or tap on the aquarium glass or disturb the marine life. Follow instructions from staff regarding interaction with exhibits.",
+          "Children should be supervised at all times, especially near exhibits and touch pools.",
+          "Outside food and beverages are typically not allowed inside the aquarium."
+        ]
+      },
 ]
