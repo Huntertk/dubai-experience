@@ -24,7 +24,7 @@ const ServiceProductTimeslotModification = () => {
     const [blockedTimeSlots, setBlockedTimeSlot] = useState([])
     
     
-      const dateToString = selectedDate && new Date(selectedDate).toISOString().split('T')[0];
+      const dateToString = selectedDate && new Date(selectedDate).toISOString();
       
       
       function isPastDate(date) {
