@@ -306,11 +306,6 @@ export const greenPlanetPlanVisitData = [
                 title:"Be respectful",
                 desc:"of the local culture and environment.",
             },
-            {
-                id: nanoid(),
-                title:"Visit the",
-                desc:"Future Zone",
-            },
         ],
         imgUrl:"/assets/images/dubaiFrameVisitPlanAttractionVisitorTipsImg.avif"
     },
