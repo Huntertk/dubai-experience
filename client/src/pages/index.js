@@ -22,7 +22,9 @@ import LostChambers from "./lost-chambers/LostChambers";
 import BurjKhalifa from "./burj-khalifa/BurjKhalifa";
 import ManageTimeSlot from "./admin/ManageTimeSlot";
 import ServiceProductTimeslotModification from "./admin/ServiceProductTimeslotModification";
+import GreenPlanet from "./green-planet/GreenPlanet";
 export {
+    GreenPlanet,
     ServiceProductTimeslotModification,
     ManageTimeSlot,
     BurjKhalifa,

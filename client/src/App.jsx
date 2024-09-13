@@ -19,7 +19,8 @@ import {
   LostChambers,
   BurjKhalifa,
   ManageTimeSlot,
-  ServiceProductTimeslotModification
+  ServiceProductTimeslotModification,
+  GreenPlanet
  } from './pages'
 import { AdminLayout, DateSelectionContainer, TourLayout } from './components'
 import { Toaster } from 'react-hot-toast';
@@ -39,7 +40,7 @@ const App = () => {
                 window.location.hostname === 'dubai-experience.onrender.com' ? (
                   <BurjKhalifa />
                 ) :  window.location.hostname === 'localhost' ? (
-                  <BurjKhalifa />
+                  <GreenPlanet />
                 ) : <NotFound />
               } 
             />
