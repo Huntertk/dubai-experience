@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 type TypeDateBtnContainerProps = {
-    handleSelectDate:(date:Date) => void
+    handleSelectDate:(date:number) => void
     handleCalenderOpen:() => void
     selectedDate?:Date
     calenderOpen:boolean
@@ -45,7 +45,7 @@ const DateBtnContainer = ({
     return (
         <div className="dateBtnContainer">
             <button className={selectedDate?.toString().slice(0,15) == new Date(Date.now() + 1000 *60 *60 *24).toString().slice(0,15)  ? "active" : ""}
-            onClick={() => handleSelectDate(new Date(Date.now() + 1000 *60 *60 *24 ))}
+            onClick={() => handleSelectDate(new Date(Date.now() + 1000 *60 *60 *24 ).setHours(0,0,0,0))}
             disabled={disabledBtnToDate(1000 *60 *60 *24)}
             >
              <span>
@@ -58,7 +58,7 @@ const DateBtnContainer = ({
         
            <button 
            className={selectedDate?.toString().toString().slice(0,15) == new Date(Date.now() + 1000*60*60*24*2).toString().slice(0,15)  ? "active" : ""}
-           onClick={() => handleSelectDate(new Date(Date.now() + 1000*60*60*24*2))}
+           onClick={() => handleSelectDate(new Date(Date.now() + 1000*60*60*24*2).setHours(0,0,0,0))}
            disabled={disabledBtnToDate(1000 *60 *60 *24*2)}
            >
             <span>
@@ -70,7 +70,7 @@ const DateBtnContainer = ({
             </button>
            <button  
             className={selectedDate?.toString().toString().slice(0,15) == new Date(Date.now() + 1000*60*60*24 * 3).toString().slice(0,15)  ? "active" : ""}
-           onClick={() => handleSelectDate(new Date(Date.now() + 1000*60*60*24 * 3))}
+           onClick={() => handleSelectDate(new Date(Date.now() + 1000*60*60*24 * 3).setHours(0,0,0,0))}
            disabled={disabledBtnToDate(1000 *60 *60 *24*3)}
            >
             <span>
@@ -82,7 +82,7 @@ const DateBtnContainer = ({
             </button>
            <button 
             className={selectedDate?.toString().toString().slice(0,15) == new Date(Date.now() + 1000*60*60*24 *4).toString().slice(0,15)  ? "active" : ""}
-           onClick={() => handleSelectDate(new Date(Date.now() + 1000*60*60*24 * 4))}
+           onClick={() => handleSelectDate(new Date(Date.now() + 1000*60*60*24 * 4).setHours(0,0,0,0))}
            disabled={disabledBtnToDate(1000 *60 *60 *24*4)}
            >
             <span>

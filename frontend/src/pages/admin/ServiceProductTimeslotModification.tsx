@@ -33,7 +33,7 @@ const ServiceProductTimeslotModification = () => {
     useEffect(() => {
         if(selectedDate){
             getBlockedTimeSlot({
-                date:selectedDate.toLocaleDateString(),
+                date:selectedDate.toISOString(),
                 ticketId:id
             })
         }
@@ -82,7 +82,7 @@ const ServiceProductTimeslotModification = () => {
         {selectedDate && blockedTimeSlotData && blockedTimeSlotData.map((d, i) => {
           return <button key={i}
           onClick={() => deleteBlockedTimeSlot({
-            date:selectedDate.toLocaleDateString(),
+            date:selectedDate.toISOString(),
             service,
             ticketId:id,
             timeSlot:d
@@ -103,7 +103,7 @@ const ServiceProductTimeslotModification = () => {
         ].map((d, i) => {
           return <button key={i}
           onClick={() => addBlockedTimeSlot({
-            date:selectedDate.toLocaleDateString(),
+            date:selectedDate.toISOString(),
             service,
             ticketId:id,
             timeSlot:d

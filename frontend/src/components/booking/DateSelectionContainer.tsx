@@ -50,10 +50,10 @@ const DateSelectionContainer = () => {
             setCalenderOpen((prev) => !prev)
         }
 
-        const handleSelectDate = (date:Date):void => {
-            setSelectedDate(date)
+        const handleSelectDate = (date:number):void => {
+            setSelectedDate(new Date(date))
         }
-
+        
         const defaultMonth = new Date(Date.now());
 
             const handleSelectingDate = () => {
@@ -72,7 +72,7 @@ const DateSelectionContainer = () => {
             }
             if(service === 'burj-khalifa' && selectedDate){
                 dispatch(selectingTimeSlot({timeSlot:""}))
-                getBlockedTimeSlot({date:selectedDate.toLocaleDateString(), ticketId})
+                getBlockedTimeSlot({date:selectedDate.toISOString(), ticketId})
             }
             if(timeSlotData){
                 setBlockedTimeSlot(timeSlotData)
