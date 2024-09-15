@@ -4,7 +4,7 @@ import { Toaster } from 'react-hot-toast';
 import LoadingSpinner from './components/Loader';
 
 const TourLayout = lazy(() => import('./components/layout/TourLayout'));
-// const AyaUniverse = lazy(() => import('./pages/aya-universe/AyaUniverse'));
+const AyaUniverse = lazy(() => import('./pages/aya-universe/AyaUniverse'));
 // const LostChambers = lazy(() => import('./pages/lost-chambers/LostChambers'));
 // const GreenPlanet = lazy(() => import('./pages/green-planet/GreenPlanet'));
 // const DubaiFrame = lazy(() => import('./pages/dubai-frame/DubaiFrame'));
@@ -45,7 +45,7 @@ const App = () => {
               path='/' 
               element={
                 window.location.hostname === 'dubai-experience.onrender.com' ? (
-                  <BurjKhalifa />
+                  <AyaUniverse />
                 ) :  window.location.hostname === 'localhost' ? (
                   <BurjKhalifa />
                 ) : <></>
