@@ -1,0 +1,10 @@
+@use './variables.scss' as *;
+
+.homeFAQMainContainer{
+    padding: 1rem;
+
+    .questionMainContainer{
+        width: 90%;
+        margin: 1rem auto;
+    }
+}
