@@ -305,7 +305,7 @@ a {text-decoration: none;}
                                                                                         <tbody>
                                                                                             <tr>
                                                                                                 <td align="right" class="esd-block-text">
-                                                                                                    <p style="font-size: 16px; color: #f26823;"><strong>AED ${booking.adultTotal}</strong></p>
+                                                                                                    <p style="font-size: 16px; color: #f26823;"><strong>AED ${booking.adultTotal.toFixed(2)}</strong></p>
                                                                                                 </td>
                                                                                             </tr>
                                                                                             <tr>
@@ -380,7 +380,7 @@ a {text-decoration: none;}
                                                                                         <tbody>
                                                                                             <tr>
                                                                                                 <td align="right" class="esd-block-text">
-                                                                                                    <p style="font-size: 16px; color: #f26823;"><strong>AED ${booking.childTotal}</strong></p>
+                                                                                                    <p style="font-size: 16px; color: #f26823;"><strong>AED ${booking.childTotal.toFixed(2)}</strong></p>
                                                                                                 </td>
                                                                                             </tr>
                                                                                             <tr>
@@ -476,7 +476,7 @@ a {text-decoration: none;}
                                                                                         </tr>
                                                                                         <tr>
                                                                                             <td align="right" class="esd-block-text">
-                                                                                                <p style="font-size: 16px; color: #f26823;"><strong>AED ${booking.totalAmount}</strong></p>
+                                                                                                <p style="font-size: 16px; color: #f26823;"><strong>AED ${booking.totalAmount.toFixed(2)}</strong></p>
                                                                                             </td>
                                                                                         </tr>
                                                                                         <tr>

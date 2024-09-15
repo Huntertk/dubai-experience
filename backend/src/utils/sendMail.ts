@@ -66,7 +66,7 @@ export const sendTicketConfirmationMail = async (booking:TypeBooking, imgUrls:Ty
             to: `${booking.email},
             ${process.env.EMAIL}`,
             subject: `Booking Successfully`,
-            html: bookingEmailTemplate(booking, imgUrls, booking.bookingDate.toString(), message)
+            html: bookingEmailTemplate(booking, imgUrls, format(booking.bookingDate,'PPP'), message)
         };
         transporter.sendMail(mailOptions, function (error, info) {
             if (error) {
