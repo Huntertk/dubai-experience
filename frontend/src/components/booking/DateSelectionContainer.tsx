@@ -132,7 +132,7 @@ const DateSelectionContainer = () => {
                         <p>{
                             preference ? preference : <></> 
                         }</p>
-                    <p>{format(selectedDate, 'PPPP')}.</p>
+                    <p>{format(selectedDate, 'PPP')}</p>
                     </div>
                     {
                         service === 'burj-khalifa' && timeSlot && preference ? <button onClick={() => {

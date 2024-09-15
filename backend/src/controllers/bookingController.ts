@@ -12,7 +12,7 @@ import path from 'path';
 import qr from 'qrcode';
 import { TypeBaseQuery, TypeBookingQuery, TypeImgUrl } from "../utils/types";
 import { sendTicketConfirmationMail, sendTicketMailWithPdf } from "../utils/sendMail";
-
+import { format } from 'date-fns';
 
 const stripe = new stripePackage(process.env.STRIPE_SK as string);
 
@@ -205,7 +205,7 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
                 .fontSize(15)
                 .text(`Total Child X ${booking.childCount}`, 50, 430)
                 .fontSize(15)
-                .text(`Date:  ${booking.bookingDate}`, 50, 460)
+                .text(`Date:  ${format(booking.bookingDate,'PPP')}`, 50, 460)
 
 
                 const generateQrCode = (bookingId:string, index:number, qrImageData:string, paxType:string):Promise<string> => {

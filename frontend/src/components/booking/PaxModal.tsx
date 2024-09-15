@@ -28,7 +28,7 @@ const PaxModal = ({category, ageText, count, increase, decrease, total}:TypePaxM
                     
             </div>
             <div className="price">
-                <span>AED {total}</span>
+                <span>AED {total.toFixed(2)}</span>
             </div>
         </div>
     )

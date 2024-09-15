@@ -128,13 +128,13 @@ const CheckoutPage = () => {
                                 <div className="guest">
                                     <p> Adult <span> X {adultCount}</span>
                                     </p>
-                                    <span>AED {adultTotal}</span>
+                                    <span>AED {adultTotal.toFixed(2)}</span>
                                 </div>
                         }
                         {
                             childCount === 0 ? "" : <div className="guest">
                                 <p> Child <span> X {childCount}</span></p>
-                                <span>AED {childTotal}</span>
+                                <span>AED {childTotal.toFixed(2)}</span>
                             </div>
                         }
 
