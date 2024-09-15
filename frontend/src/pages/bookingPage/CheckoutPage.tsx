@@ -29,7 +29,8 @@ const CheckoutPage = () => {
         adultTotal,
         childTotal,
         ticketId,
-        timeSlot
+        timeSlot,
+        bookingDateString
     } = useAppSelector((state) => state.booking)
     const [userData, setUserData] = useState<TypeUserData>({
         name:"",
@@ -80,7 +81,8 @@ const CheckoutPage = () => {
                 totalAmount,
                 timeSlot,
                 name:userData.name,
-                mobileNumber
+                mobileNumber,
+                bookingDateString
             })
 
         } catch (error) {

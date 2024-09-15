@@ -13,6 +13,7 @@ type BookingState = {
     childTotal:number;
     totalAmount:number;
     bookingDate:string;
+    bookingDateString:string;
     bookingDay:string;
     name:string;
     email:string;
@@ -45,6 +46,7 @@ const initialState: BookingState = {
   ticketTitle:"",
   pricing:[],
   bookingDate:"",
+  bookingDateString:"",
   bookingDay:"",
   preferenceIndex:0,
   preferenceOption:[],
@@ -105,7 +107,8 @@ export const bookingSlice = createSlice({
     },
     selectingDate: (state, action: PayloadAction<TypeSelectingDate>) => {
       state.bookingDate = action.payload.bookingDate;
-      state.bookingDay = action.payload.bookingDay
+      state.bookingDay = action.payload.bookingDay;
+      state.bookingDateString = action.payload.bookingDateString;
     },
     proceedingToThePaxContainer:(state, action:PayloadAction<{isPaxModalOpen:boolean}>) => {
       state.isPaxModalOpen = action.payload.isPaxModalOpen

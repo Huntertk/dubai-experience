@@ -12,7 +12,6 @@ import path from 'path';
 import qr from 'qrcode';
 import { TypeBaseQuery, TypeBookingQuery, TypeImgUrl } from "../utils/types";
 import { sendTicketConfirmationMail, sendTicketMailWithPdf } from "../utils/sendMail";
-import { format } from 'date-fns';
 
 const stripe = new stripePackage(process.env.STRIPE_SK as string);
 
@@ -46,7 +45,6 @@ export const createBooking = async (req:Request, res:Response, next:NextFunction
         }
 
         bookingPayload.bookingToken = crypto.randomBytes(16).toString('hex');
-
         let adultTotal=0
         let childTotal=0
         const pricingData = ticket.pricing.filter((d) => d.title === bookingPayload.preference);
@@ -205,7 +203,7 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
                 .fontSize(15)
                 .text(`Total Child X ${booking.childCount}`, 50, 430)
                 .fontSize(15)
-                .text(`Date:  ${format(booking.bookingDate,'PPP')}`, 50, 460)
+                .text(`Date:  ${booking.bookingDateString}`, 50, 460)
 
 
                 const generateQrCode = (bookingId:string, index:number, qrImageData:string, paxType:string):Promise<string> => {
@@ -331,7 +329,7 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
                 const mailMessage = `We are delighted to confirm your ticket booking with Dubai Experience for ${booking.ticketTitle} Entry Ticket! Get ready to embark on an unforgettable experience at one of the most exciting destinations.`
 
                 // Sending Mail
-                await sendTicketMailWithPdf(booking, imgUrls, booking.bookingDate,mailMessage)
+                await sendTicketMailWithPdf(booking, imgUrls, booking.bookingDateString,mailMessage)
 
                   //Deleteting QR Generated Images
                 for (let i = 0; i <booking.adultCount; i++) {
@@ -393,7 +391,7 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
             }
 
             //Sending Booking Confirmation Mail 
-            await sendTicketConfirmationMail(booking,imgUrls,booking.bookingDate,mailMessage)
+            await sendTicketConfirmationMail(booking,imgUrls,booking.bookingDateString,mailMessage)
 
             return res.status(201).redirect(`/success?token=${booking.successToken}`)
             // return res.status(201).json({

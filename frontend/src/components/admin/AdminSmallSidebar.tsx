@@ -38,7 +38,7 @@ const AdminSmallSidebar = ({toggleSidebarHandler}:TypeAdminSmallSidebarProps) =>
 
           <NavLink to="/admin/qr-code"
           onClick={() => toggleSidebarHandler(false)}
-          ><BsQrCode />Qr Codes</NavLink>
+          ><BsQrCode /> Qr Codes</NavLink>
       </div>
     </div>
   )

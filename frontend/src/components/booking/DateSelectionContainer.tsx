@@ -61,7 +61,8 @@ const DateSelectionContainer = () => {
                     const day = selectedDate.toString().split(' ')[0];
                     dispatch(selectingDate({
                         bookingDate:selectedDate.toISOString(),
-                        bookingDay:day
+                        bookingDay:day,
+                        bookingDateString:format(selectedDate,'PPP')
                     }));
                 }  
             }

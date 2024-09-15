@@ -28,7 +28,7 @@ const SuccessBooking = () => {
         <div className='bookingConfirmationDetails'>
           <h3><span>Name : </span> <span>{data.name}</span></h3>
           <h3><span>Booking ID : </span> <span>#{data.bookingId}</span></h3>
-          <h3><span>Total Amount: </span> <span>AED {data.totalAmount}</span></h3>
+          <h3><span>Total Amount: </span> <span>AED {data.totalAmount.toFixed(2)}</span></h3>
           <h3><span>Date: </span> <span>{format(data.bookingDate, 'PPP')}</span></h3>
           <h3>Check Your Email</h3>
         </div>

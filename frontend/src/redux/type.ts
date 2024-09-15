@@ -23,6 +23,7 @@ export type TypeSelectingPreference = {
 export type TypeSelectingDate = {
     bookingDate:string;
     bookingDay:string;
+    bookingDateString:string;
 }
 
 export type TypeBookingInput = {
@@ -41,6 +42,7 @@ export type TypeBookingInput = {
     service:string;
     hostName:string;
     timeSlot:string|null;
+    bookingDateString:string;
 }
 
 
