@@ -19,7 +19,7 @@ const PaxModalContainer = () => {
         preference,
         totalAmount,
         service,
-        timeSlot
+        // timeSlot
     } = useAppSelector((state) => state.booking)
     const dispatch = useAppDispatch();
 
@@ -61,7 +61,7 @@ const PaxModalContainer = () => {
             </div>
             <p className='bookingType'>{ticketTitle}</p>
             {preference && <p className='bookingType'>{preference}</p>}
-            {timeSlot && <p className='bookingType'>Time Slot: {timeSlot} hrs</p>}
+            {/* {timeSlot && <p className='bookingType'>Time Slot: {timeSlot} hrs</p>} */}
             <h1>Select number of tickets</h1>
             <div className="paxSelector">
                     <PaxModal
