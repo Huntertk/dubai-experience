@@ -21,7 +21,7 @@ const DateSelectionContainer = () => {
         const [calenderOpen, setCalenderOpen] = useState<boolean>(false);
         const [blockedTimeSlot, setBlockedTimeSlot] = useState<string[]>([]);
         const [disabledDatesArr, setDisabledDatesArr] = useState<Date[]>([]);
-        const {service,ticketId, preferenceOption, pricing, preference, ticketTitle, isPaxModalOpen} = useAppSelector((state) => state.booking)
+        const {service,ticketId, timeSlot, preferenceOption, pricing, preference, ticketTitle, isPaxModalOpen} = useAppSelector((state) => state.booking)
         const dispatch = useAppDispatch();
         const {data, isLoading} = useGetBlockedDateQuery({service, ticketId})
         
@@ -135,7 +135,12 @@ const DateSelectionContainer = () => {
                     <p>{format(selectedDate, 'PPPP')}.</p>
                     </div>
                     {
-                        preference ? <button onClick={() => {
+                        service === 'burj-khalifa' && timeSlot && preference ? <button onClick={() => {
+                            dispatch(proceedingToThePaxContainer({isPaxModalOpen: true}))
+                        }}>Next</button> : <></>
+                    }
+                    {
+                        service !== 'burj-khalifa' && preference ? <button onClick={() => {
                             dispatch(proceedingToThePaxContainer({isPaxModalOpen: true}))
                         }}>Next</button> : <></>
                     }
