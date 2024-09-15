@@ -170,6 +170,7 @@ a {text-decoration: none;}
                                                                                                 <p style="font-size: 18px; color: #f26823;"><strong>${booking.ticketTitle}</strong><br></p>
                                                                                                 <p style="font-size: 18px; color: #f26823;"><br></p>
                                                                                                ${booking.preference && `<p style="font-size: 18px; color: #f26823;"><strong>${booking.preference} </strong></p>` }
+                                                                                               ${booking.timeSlot && `<p style="font-size: 18px; color: #f26823;"><strong>Time Slot: ${booking.timeSlot} </strong></p>` }
                                                                                         </tr>
                                                                                     </tbody>
                                                                                 </table>
