@@ -8,21 +8,26 @@ import {Navigate} from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../redux/hook';
 import DateBtnContainer from './DateBtnContainer';
 import PreferenceTour from './PreferenceTour';
-import { proceedingToThePaxContainer, selectingDate } from '../../redux/feature/bookingSlice';
+import { proceedingToThePaxContainer, selectingDate, selectingTimeSlot } from '../../redux/feature/bookingSlice';
 import PaxModalContainer from './PaxModalContainer';
-import { useGetBlockedDateQuery } from '../../redux/api/dateManageApi';
+import { useGetBlockedDateQuery, useLazyGetBlockedTimeSlotQuery } from '../../redux/api/dateManageApi';
 import LoadingSpinner from '../Loader';
+import TimeSlot from './TimeSlot';
 
 
 
 const DateSelectionContainer = () => {
         const [selectedDate, setSelectedDate] = useState<Date>()
         const [calenderOpen, setCalenderOpen] = useState<boolean>(false);
-        const [disabledDatesArr, setDisabledDatesArr] = useState<Date[]>([])
-        const {service,ticketId, preferenceOption, pricing, preference, ticketTitle, isPaxModalOpen} = useAppSelector((state) => state.booking)
+        const [blockedTimeSlot, setBlockedTimeSlot] = useState<string[]>([]);
+        const [disabledDatesArr, setDisabledDatesArr] = useState<Date[]>([]);
+        const {service,ticketId, timeSlot, preferenceOption, pricing, preference, ticketTitle, isPaxModalOpen} = useAppSelector((state) => state.booking)
         const dispatch = useAppDispatch();
         const {data, isLoading} = useGetBlockedDateQuery({service, ticketId})
-
+        
+        const [getBlockedTimeSlot,{data:timeSlotData, isLoading:timeSlotLoading}] = useLazyGetBlockedTimeSlotQuery();
+        
+    
        
 
         const formatDate = () => {
@@ -49,13 +54,20 @@ const DateSelectionContainer = () => {
             setSelectedDate(date)
         }
 
+        const handleBlockTimeSlotFetch = () => {
+            if(selectedDate){
+                dispatch(selectingTimeSlot({timeSlot:""}))
+                getBlockedTimeSlot({date:selectedDate.toLocaleDateString(), ticketId})
+            }
+        }
+
         const defaultMonth = new Date(Date.now());
 
             const handleSelectingDate = () => {
                 if(selectedDate){
-                    const day = selectedDate.toString()?.split(' ')[0];
+                    const day = selectedDate.toString().split(' ')[0];
                     dispatch(selectingDate({
-                        bookingDate:selectedDate.toISOString(),
+                        bookingDate:selectedDate.toLocaleDateString(),
                         bookingDay:day
                     }));
                 }  
@@ -65,8 +77,15 @@ const DateSelectionContainer = () => {
             if(data){
                 formatDate()
             }
+            if(service === 'burj-khalifa'){
+                handleBlockTimeSlotFetch();
+            }
+            if(timeSlotData){
+                setBlockedTimeSlot(timeSlotData)
+            }
+
             handleSelectingDate()
-        },[selectedDate, data])  
+        },[selectedDate, data, timeSlotData])  
           
 
 
@@ -75,7 +94,7 @@ const DateSelectionContainer = () => {
             return <Navigate to="/" />
         }
         
-        if(isLoading){
+        if(isLoading || timeSlotLoading){
             return <LoadingSpinner />
         }
           
@@ -109,6 +128,9 @@ const DateSelectionContainer = () => {
             {
                 selectedDate && <PreferenceTour selectedDate={selectedDate} pricing={pricing} preferenceOption={preferenceOption}  /> 
             }
+            {
+                service === 'burj-khalifa' && selectedDate && preference && timeSlotData && <TimeSlot blockedTimeSlot={blockedTimeSlot} />
+            }
             <div className="selectedDate">
                 {
                     selectedDate ? <>
@@ -119,7 +141,12 @@ const DateSelectionContainer = () => {
                     <p>{format(selectedDate, 'PPPP')}.</p>
                     </div>
                     {
-                        preference ? <button onClick={() => {
+                        service === 'burj-khalifa' && timeSlot && preference ? <button onClick={() => {
+                            dispatch(proceedingToThePaxContainer({isPaxModalOpen: true}))
+                        }}>Next</button> : <></>
+                    }
+                    {
+                        service !== 'burj-khalifa' && preference ? <button onClick={() => {
                             dispatch(proceedingToThePaxContainer({isPaxModalOpen: true}))
                         }}>Next</button> : <></>
                     }
