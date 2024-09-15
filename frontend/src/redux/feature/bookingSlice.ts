@@ -24,7 +24,7 @@ type BookingState = {
     preference:string;
     preferenceIndex:number;
     timeSlots:string[];
-    timeSlot:string|null;
+    timeSlot:string;
     preferenceOption:TypePreferenceOption[];
     isPaxModalOpen:boolean
 }
@@ -48,7 +48,7 @@ const initialState: BookingState = {
   bookingDay:"",
   preferenceIndex:0,
   preferenceOption:[],
-  timeSlot:null,
+  timeSlot:"",
   timeSlots:[],
   isPaxModalOpen:false
 }
