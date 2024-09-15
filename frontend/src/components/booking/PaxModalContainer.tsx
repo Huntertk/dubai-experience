@@ -73,7 +73,7 @@ const PaxModalContainer = () => {
                         total={adultTotal}
                     />
                     {
-                        service !== 'aya-universe' &&
+                        service !== 'aya-universe' ?
                         <PaxModal  
                         category ={"Child"} 
                         ageText={"3 to 12 yrs"} 
@@ -81,7 +81,8 @@ const PaxModalContainer = () => {
                         increase={handleInceaseChild}
                         decrease={handleDeceaseChild}
                         total={childTotal}
-                        />
+                        /> : 
+                        <></>
                     }
             </div>
                 <div className="totalPayable">
