@@ -17,7 +17,9 @@ const PaxModalContainer = () => {
         adultTotal,
         childTotal,
         preference,
-        totalAmount
+        totalAmount,
+        service,
+        timeSlot
     } = useAppSelector((state) => state.booking)
     const dispatch = useAppDispatch();
 
@@ -59,6 +61,7 @@ const PaxModalContainer = () => {
             </div>
             <p className='bookingType'>{ticketTitle}</p>
             {preference && <p className='bookingType'>{preference}</p>}
+            {timeSlot && <p className='bookingType'>Time Slot: {timeSlot} hrs</p>}
             <h1>Select number of tickets</h1>
             <div className="paxSelector">
                     <PaxModal
@@ -69,18 +72,21 @@ const PaxModalContainer = () => {
                         decrease={handleDecreaseAdult}
                         total={adultTotal}
                     />
-                     <PaxModal  
+                    {
+                        service !== 'aya-universe' &&
+                        <PaxModal  
                         category ={"Child"} 
                         ageText={"3 to 12 yrs"} 
                         count={childCount}
                         increase={handleInceaseChild}
                         decrease={handleDeceaseChild}
                         total={childTotal}
-                    />
+                        />
+                    }
             </div>
                 <div className="totalPayable">
                     <span>Total</span>
-                <span>MYR {totalAmount}</span>
+                <span>AED {totalAmount.toFixed(2)}</span>
                 </div>
                 
             <div className="dateContainer">
