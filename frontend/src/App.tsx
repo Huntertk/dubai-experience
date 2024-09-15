@@ -6,8 +6,8 @@ import LoadingSpinner from './components/Loader';
 const TourLayout = lazy(() => import('./components/layout/TourLayout'));
 // const AyaUniverse = lazy(() => import('./pages/aya-universe/AyaUniverse'));
 // const LostChambers = lazy(() => import('./pages/lost-chambers/LostChambers'));
-const GreenPlanet = lazy(() => import('./pages/green-planet/GreenPlanet'));
-// const DubaiFrame = lazy(() => import('./pages/dubai-frame/DubaiFrame'));
+// const GreenPlanet = lazy(() => import('./pages/green-planet/GreenPlanet'));
+const DubaiFrame = lazy(() => import('./pages/dubai-frame/DubaiFrame'));
 const BurjKhalifa = lazy(() => import('./pages/burj-khalifa/BurjKhalifa'));
 const DateSelectionContainer = lazy(() => import('./components/booking/DateSelectionContainer'));
 const CheckoutPage = lazy(() => import('./pages/bookingPage/CheckoutPage'));
@@ -45,7 +45,7 @@ const App = () => {
               path='/' 
               element={
                 window.location.hostname === 'dubai-experience.onrender.com' ? (
-                  <GreenPlanet />
+                  <DubaiFrame />
                 ) :  window.location.hostname === 'localhost' ? (
                   <BurjKhalifa />
                 ) : <></>
