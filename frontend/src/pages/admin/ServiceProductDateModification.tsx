@@ -35,7 +35,7 @@ const ServiceProductDateModification = () => {
     const handleAddBlockDate = async () => {
       if(selectedDate){
         addBlockDate({
-          blockedDate:selectedDate.toLocaleDateString(),
+          blockedDate:selectedDate.toISOString(),
           service,
           ticketId:id
         })
