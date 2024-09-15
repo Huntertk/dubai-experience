@@ -141,7 +141,7 @@ const CheckoutPage = () => {
 
                         <div className="guest">
                             <p className='totalPayable'>Total Payable</p>
-                            <span className='totalPayable'>AED {totalAmount.toFixed(2)}</span>
+                            <span className='totalPayable'>AED {totalAmount}</span>
                         </div>
                     </div>
                     <form onSubmit={handleSubmit}>

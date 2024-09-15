@@ -86,7 +86,7 @@ const PaxModalContainer = () => {
             </div>
                 <div className="totalPayable">
                     <span>Total</span>
-                <span>AED {totalAmount.toFixed(2)}</span>
+                <span>AED {totalAmount}</span>
                 </div>
                 
             <div className="dateContainer">
