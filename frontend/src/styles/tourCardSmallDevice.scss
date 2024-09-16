@@ -46,6 +46,23 @@
             font-size: 1.1rem;
         }
     }
+    > .iconContainer{
+        display: flex;
+        flex-direction: column;
+        padding: 10px 1rem;
+        > .icon{
+            padding: 5px 0px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            svg{
+                font-size: 1.2rem;
+            }
+            span{
+                font-size: 0.7rem;
+            }
+        }
+    }
 }
 
 

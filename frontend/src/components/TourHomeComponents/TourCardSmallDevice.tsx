@@ -5,13 +5,16 @@ import { useNavigate } from 'react-router-dom';
 import { TypeBookingTicket } from '../../utils/type';
 import { useAppDispatch } from '../../redux/hook';
 import { selectingTicket } from '../../redux/feature/bookingSlice';
+import { GiCancel } from 'react-icons/gi';
+import { SiTicktick } from 'react-icons/si';
+import { FaTicket } from 'react-icons/fa6';
 
 type TypeTourHomeCardProps = {
     data:TypeBookingTicket
 }
 
-const TourCardSmallDevice = ({data}:TypeTourHomeCardProps) => { 
-
+const TourCardSmallDevice = ({data}:TypeTourHomeCardProps) => {
+  
   const navigate = useNavigate(); 
   const dispatch = useAppDispatch();
   
@@ -59,6 +62,36 @@ const TourCardSmallDevice = ({data}:TypeTourHomeCardProps) => {
                 >
                     Book Now
                 </button>
+            </div>
+            <div className="iconContainer">
+            {
+                data.inclusionAndExclusion.inclusion.map((inclusion) => (
+                  <div className="icon" key={inclusion}>
+                     <SiTicktick />
+                     <span>{inclusion}</span>
+                  </div>
+
+                ))
+              }
+                  <div className="icon" >
+                     <GiCancel />
+                  {
+                      data.inclusionAndExclusion.exclusion.map((exclusion) => (
+                     <span key={exclusion}>{exclusion}</span>
+                     
+                    ))
+                  }
+                  </div>
+              {
+                data.inclusionAndExclusion.cancellationPolicy.map((cancel) => (
+                  <div className="icon" key={cancel}>
+                    <FaTicket />
+                    <span>{cancel}</span>
+                  </div>
+
+                ))
+              }
+              
             </div>
         </div>
   )
