@@ -22,8 +22,9 @@ const AdminLogin = () => {
         navigate("/admin/all-booking")
       }
       if(error){
-       toast.error("Wrong Credentials or Internal Error");
-        
+        if ('data' in error) {
+            toast.error(JSON.stringify(error.data));
+        }
       }
       
     }, [data, error])

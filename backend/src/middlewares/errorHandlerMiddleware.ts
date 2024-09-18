@@ -7,7 +7,7 @@ const errorHandlerMiddleware  = (err:AppError, req:Request, res:Response, next:N
     }
     const statusCode = err.statusCode ||500;
     const message = err.message || 'something went wrong, try again later';
-    return res.status(statusCode).json({ success:false, message });
+    return res.status(statusCode).json(message);
 };
   
 export default errorHandlerMiddleware;

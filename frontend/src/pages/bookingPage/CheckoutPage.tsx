@@ -65,7 +65,6 @@ const CheckoutPage = () => {
             toast.error("Email and Confirm email must be same")
             return     
         }
-        try {
             createCheckoutSession({
                 adultCount,
                 adultTotal,
@@ -85,10 +84,6 @@ const CheckoutPage = () => {
                 bookingDateString
             })
 
-        } catch (error) {
-            
-        }
-
     }
 
     useEffect(() => {
@@ -97,11 +92,12 @@ const CheckoutPage = () => {
         }
 
         if(error){
-            console.log(error);
-            
+            if ('data' in error) {
+                toast.error(JSON.stringify(error.data));
+            }   
         }
 
-    },[data])
+    },[data, error])
 
     if (totalAmount === 0) {
         return <Navigate to="/" />
