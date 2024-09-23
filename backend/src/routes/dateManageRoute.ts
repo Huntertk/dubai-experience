@@ -11,6 +11,6 @@ router.delete('/block-date', authAdmin, authorizeRoles('admin'), deleteBlockedDa
 //blocking time slot
 router.post('/block-time-slot',authAdmin, authorizeRoles('admin'), addBlockTimeSlot)
 router.get('/get-blocked-date-time-slot', getBlockedTimeSlot)
-router.post('/delete-blocked-date-time-slot', deleteBlockTimeSlot)
+router.post('/delete-blocked-date-time-slot', authAdmin, authorizeRoles('admin'), deleteBlockTimeSlot)
 
 export default router;
