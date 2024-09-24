@@ -46,9 +46,9 @@ const App = () => {
               path='/' 
               element={
                 window.location.hostname === 'dubai-experience.onrender.com' ? (
-                  <GreenPlanet />
-                ) :  window.location.hostname === 'localhost' ? (
                   <DubaiAquariumAndUnderwaterZoo />
+                ) :  window.location.hostname === 'localhost' ? (
+                  <GreenPlanet />
                 ) : <></>
               } 
             /> 
