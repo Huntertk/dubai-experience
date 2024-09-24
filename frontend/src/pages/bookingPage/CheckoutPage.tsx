@@ -30,7 +30,8 @@ const CheckoutPage = () => {
         childTotal,
         ticketId,
         timeSlot,
-        bookingDateString
+        bookingDateString,
+        bookingDay
     } = useAppSelector((state) => state.booking)
     const [userData, setUserData] = useState<TypeUserData>({
         name:"",
@@ -81,7 +82,8 @@ const CheckoutPage = () => {
                 timeSlot,
                 name:userData.name,
                 mobileNumber,
-                bookingDateString
+                bookingDateString,
+                bookingDay
             })
 
     }

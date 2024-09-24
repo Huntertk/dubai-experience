@@ -8,6 +8,7 @@ export type TypeBooking = {
     childTotal:number;
     totalAmount:number;
     bookingDate:string;
+    bookingDay:string;
     bookingDateString:string;
     name:string;
     mobileNumber:string;
@@ -50,6 +51,9 @@ const bookingSchema = new mongoose.Schema({
         type: String
     },
     bookingDateString:{
+        type: String
+    },
+    bookingDay:{
         type: String
     },
     name:{

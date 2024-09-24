@@ -43,6 +43,7 @@ export type TypeBookingInput = {
     hostName:string;
     timeSlot:string|null;
     bookingDateString:string;
+    bookingDay:string;
 }
 
 

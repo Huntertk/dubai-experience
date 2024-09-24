@@ -20,9 +20,8 @@ export const createBooking = async (req:Request, res:Response, next:NextFunction
         //Booking Payload
         const bookingPayload:TypeBooking = req.body;
 
-        //Extracting Day from Date Object
-        let daysArr:string[] = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"]
-        const day = daysArr[new Date(bookingPayload.bookingDate).getDay()]
+        
+        const day = bookingPayload.bookingDay
 
         //Finding Ticket
         const ticket = await Ticket.findById(bookingPayload.ticketId);

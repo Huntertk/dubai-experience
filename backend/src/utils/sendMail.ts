@@ -32,7 +32,6 @@ export const sendTicketMailWithPdf = async (booking:TypeBooking, imgUrls:TypeImg
                 console.log(error);
             } else {
                 console.log(info.response, " Email sent");
-
                 //Generated Qr Pdf Deleted
                 fs.unlink(path.join(__dirname, "..", "..", "uploads", `${booking._id}_ticket.pdf`), 
                     (err) => {
