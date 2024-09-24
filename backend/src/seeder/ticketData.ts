@@ -42,12 +42,11 @@ export const ticketsData:TypeTicketData[] = [
               "These tickets can't be cancelled or rescheduled"
             ],
             inclusion: [
-              "Entrance Tickets"
+              "Entrance Tickets",
+              "All Fees and Taxes"
             ],
             exclusion: [
-              "Parking",
-              "Food and Drink",
-              "Locker"
+              "Transportation"
             ]
           },
         rulesAndRestriction: [
@@ -101,10 +100,11 @@ export const ticketsData:TypeTicketData[] = [
             "No cancellations, refunds, or changes can be made"
           ],
           inclusion: [
-            "1 Day Green Planet Admission ticket"
+            "1 Day Green Planet Admission ticket",
+            "All Fees and Taxes"
           ],
           exclusion: [
-            "Food and Drink"
+            "Transportation"
           ]
         },
       rulesAndRestriction: [
@@ -161,12 +161,10 @@ export const ticketsData:TypeTicketData[] = [
               "These tickets can't be cancelled or rescheduled"
             ],
             inclusion: [
-              "Entrance Tickets"
+              "Entrance Tickets to Aya Universe"
             ],
             exclusion: [
-              "Parking",
-              "Food and Drink",
-              "Locker"
+              "Transportation"
             ]
           },
         rulesAndRestriction: [
@@ -217,12 +215,11 @@ export const ticketsData:TypeTicketData[] = [
               "These tickets can't be cancelled or rescheduled"
             ],
             inclusion: [
-              "Entrance Tickets"
+              "Entrance Tickets",
+              "All Fees and Taxes"
             ],
             exclusion: [
-              "Parking",
-              "Food and Drink",
-              "Locker"
+              "Transportation"
             ]
           },
         rulesAndRestriction: [
@@ -274,12 +271,11 @@ export const ticketsData:TypeTicketData[] = [
               "These tickets can't be cancelled or rescheduled"
             ],
             inclusion: [
-              "Entrance Tickets"
+              "Entrance Tickets",
+              "All Fees and Taxes"
             ],
             exclusion: [
-              "Parking",
-              "Food and Drink",
-              "Locker"
+              "Transportation"
             ]
           },
         rulesAndRestriction: [
@@ -333,12 +329,11 @@ export const ticketsData:TypeTicketData[] = [
               "These tickets can't be cancelled or rescheduled"
             ],
             inclusion: [
-              "Entrance Tickets"
+              "Entrance Tickets",
+              "All Fees and Taxes"
             ],
             exclusion: [
-              "Parking",
-              "Food and Drink",
-              "Locker"
+              "Transportation"
             ]
           },
         rulesAndRestriction: [
@@ -392,12 +387,11 @@ export const ticketsData:TypeTicketData[] = [
               "These tickets can't be cancelled or rescheduled"
             ],
             inclusion: [
-              "Entrance Tickets"
+              "Entrance Tickets",
+              "All Fees and Taxes"
             ],
             exclusion: [
-              "Parking",
-              "Food and Drink",
-              "Locker"
+              "Transportation"
             ]
           },
         rulesAndRestriction: [
@@ -451,12 +445,66 @@ export const ticketsData:TypeTicketData[] = [
               "These tickets can't be cancelled or rescheduled"
             ],
             inclusion: [
-              "Entrance Tickets"
+              "Entrance Tickets",
+              "All Fees and Taxes"
             ],
             exclusion: [
-              "Parking",
-              "Food and Drink",
-              "Locker"
+              "Transportation"
+            ]
+          },
+        rulesAndRestriction: [
+          "Tickets should be purchased in advance where possible, either online or at the entrance. Keep your ticket handy for inspection.",
+          "Bring valid ID if required, especially for discounted tickets or special promotions.",
+          "Follow any health and safety guidelines in place, such as wearing masks or using hand sanitizers if required.",
+          "Do not touch or tap on the aquarium glass or disturb the marine life. Follow instructions from staff regarding interaction with exhibits.",
+          "Children should be supervised at all times, especially near exhibits and touch pools.",
+          "Outside food and beverages are typically not allowed inside the aquarium."
+        ]
+      },
+      {
+        title: "The Dubai Aquarium and Underwater Zoo (Basic Experience Ticket)",
+        description: [
+          "The Dubai Aquarium and Underwater Zoo, located in The Dubai Mall, is one of the largest suspended aquariums in the world. It features a massive 10-million-liter tank filled with a diverse range of marine life, including over 140 species, such as sharks, rays, and vibrant fish.",
+        ],
+        service: "dubai-aquarium-and-underwater-zoo",
+        images: [
+          "/assets/images/dubaiZooAndAquariumTwo.jpg",
+          "/assets/images/dubaiZooAndAquariumOne.jpg",
+          "/assets/images/dubaiZooAndAquariumThree.jpg",
+          "/assets/images/dubaiZooAndAquariumFour.jpg"
+        ],
+        timeSlots:[],
+        preference: [
+          {
+            title: "Basic Experience Ticket",
+            details: [
+              "Basic Experience Ticket"
+            ],
+          }
+        ],
+        pricing: [
+          {
+            weekDays: {
+              adult: 109.26,
+              child: 109.26,
+            },
+            weekEnds: {
+              adult: 109.26,
+              child: 109.26,
+            },
+            title: "Basic Experience Ticket",
+          },
+        ],
+        inclusionAndExclusion: {
+            cancellationPolicy: [
+              "These tickets can't be cancelled or rescheduled"
+            ],
+            inclusion: [
+              "Dubai Aquarium and Underwater Zoo Admission Ticket",
+              "All Fees and Taxes"
+            ],
+            exclusion: [
+              "Transportation"
             ]
           },
         rulesAndRestriction: [

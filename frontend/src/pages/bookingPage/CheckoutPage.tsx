@@ -40,7 +40,7 @@ const CheckoutPage = () => {
 
     const [mobileNumber, setMobileNumber] = useState<string | undefined>("")
 
-   const bannerImg:string = service === 'dubai-frame' ?  "/assets/images/dubaiFrameVisitPlanGettingThereImg.avif" : service === 'aya-universe' ? "/assets/images/aya-universe-ayaUniverseWhyVisit.avif" : service === 'lost-chambers' ? "/assets/images/lostChambersTicketTwo.jpg"  : service === 'burj-khalifa' ? "/assets/images/burjKhalifaWhyVisit.jpg"  : service === 'green-planet' ? "/assets/images/greenPlanetTicketOne.jpg"  :  ""
+   const bannerImg:string = service === 'dubai-frame' ?  "/assets/images/dubaiFrameVisitPlanGettingThereImg.avif" : service === 'aya-universe' ? "/assets/images/aya-universe-ayaUniverseWhyVisit.avif" : service === 'lost-chambers' ? "/assets/images/lostChambersTicketTwo.jpg"  : service === 'burj-khalifa' ? "/assets/images/burjKhalifaWhyVisit.jpg"  : service === 'green-planet' ? "/assets/images/greenPlanetTicketOne.jpg" : service === 'dubai-aquarium-and-underwater-zoo' ? "/assets/images/dubaiZooAndAquariumTwo.jpg"  :  ""
 
 
     const hostName = window.location.hostname;
@@ -93,7 +93,7 @@ const CheckoutPage = () => {
 
         if(error){
             if ('data' in error) {
-                toast.error(JSON.stringify(error.data));
+                toast.error(`${error.data}`);
             }   
         }
 

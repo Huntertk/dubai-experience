@@ -34,17 +34,17 @@ export const createBooking = async (req:Request, res:Response, next:NextFunction
             let qrDataAdult = await QrCode.find({title: ticket.title, isUsed:false, Type:"Adult"});
                 
                 if(qrDataAdult.length < bookingPayload.adultCount){
-                    return next(new AppError("Ticket not allowed to book zero inventory", 400))
+                    return next(new AppError("Ticket not allowed to book insufficient inventory", 400))
                 }
             
                 let qrDataChild = await QrCode.find({title: ticket.title, isUsed:false, Type:"Child"});
                 
                 if(qrDataChild.length < bookingPayload.childCount){
-                    return next(new AppError("Ticket not allowed to book zero inventory", 400))
+                    return next(new AppError("Ticket not allowed to book insufficient inventory", 400))
                 }
         }
 
-        bookingPayload.bookingToken = crypto.randomBytes(16).toString('hex');
+        bookingPayload.bookingToken = crypto.randomBytes(32).toString('hex');
         let adultTotal=0
         let childTotal=0
         const pricingData = ticket.pricing.filter((d) => d.title === bookingPayload.preference);
@@ -138,6 +138,7 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
         if(verify === false || !req.query.token){
             return res.redirect("/failed")
         }
+
     try {
 
         let booking = await Booking.findOne({bookingToken:req.query.token});
@@ -157,13 +158,13 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
             let qrDataAdult = await QrCode.find({title: ticket.title, isUsed:false, Type:"Adult"});
             
             if(qrDataAdult.length < booking.adultCount){
-                return next(new AppError("Ticket not allowed to book zero inventory", 400))
+                return next(new AppError("Ticket not allowed to book insufficient inventory", 400))
             }
         
             let qrDataChild = await QrCode.find({title: ticket.title, isUsed:false, Type:"Child"});
             
             if(qrDataChild.length < booking.childCount){
-                return next(new AppError("Ticket not allowed to book zero inventory", 400))
+                return next(new AppError("Ticket not allowed to book insufficient inventory", 400))
             }
 
             const doc = new PDFDocument();
@@ -324,6 +325,10 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
                 } else if(booking.service === 'green-planet') {
                     imgUrls.bannerImg="https://i.postimg.cc/pTxRN33b/green-Planet-Highlights-One.jpg"
                     imgUrls.productImg= "https://i.postimg.cc/9MpVcJj4/green-Planet-Highlights-Two.jpg"
+
+                } else if(booking.service === 'dubai-aquarium-and-underwater-zoo') {
+                    imgUrls.bannerImg="https://i.postimg.cc/05HfVM5Q/dubai-Zoo-And-Aquarium-Two.jpg"
+                    imgUrls.productImg= "https://i.postimg.cc/d3D9qv6w/dubai-Zoo-And-Aquarium-Four.jpg"
                 }
 
                 const mailMessage = `We are delighted to confirm your ticket booking with Dubai Experience for ${booking.ticketTitle} Entry Ticket! Get ready to embark on an unforgettable experience at one of the most exciting destinations.`
@@ -357,7 +362,7 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
             booking.payment = true;
             booking.bookingStatus = "confirmed";
             booking.isQrGenerated = true;
-            booking.successToken = crypto.randomBytes(16).toString('hex');
+            booking.successToken = crypto.randomBytes(32).toString('hex');
             booking.bookingToken = undefined
             await booking.save();
 
@@ -374,7 +379,7 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
             booking.payment = true;
             booking.bookingStatus = "confirmed";
             booking.isQrGenerated = true;
-            booking.successToken = crypto.randomBytes(16).toString('hex');
+            booking.successToken = crypto.randomBytes(32).toString('hex');
             booking.bookingToken = undefined
             await booking.save();
 

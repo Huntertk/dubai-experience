@@ -26,7 +26,7 @@ import TourVisitPlan from '../../components/TourHomeComponents/TourVisitPlan';
 
 const DubaiAquariumAndUnderwaterZoo = () => {
     const serviceName:string = "Dubai Aquarium and Underwater Zoo"
-    const {data, isLoading} = useGetServiceTicketQuery({service:"green-planet"});
+    const {data, isLoading} = useGetServiceTicketQuery({service:"dubai-aquarium-and-underwater-zoo"});
 
     const dispatch = useAppDispatch() 
 

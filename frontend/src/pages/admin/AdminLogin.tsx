@@ -23,7 +23,7 @@ const AdminLogin = () => {
       }
       if(error){
         if ('data' in error) {
-            toast.error(JSON.stringify(error.data));
+          toast.error(`${error.data}`);
         }
       }
       
