@@ -130,9 +130,9 @@ const DateSelectionContainer = () => {
                 {
                     selectedDate ? <>
                     <div className='prefrenceAndDateContainer'>
-                        <p>{
-                            preference ? preference : <></> 
-                        }</p>
+                        {
+                            preference ? <p>{preference}</p> : <></> 
+                        }
                     <p>{format(selectedDate, 'PPP')}</p>
                     </div>
                     {

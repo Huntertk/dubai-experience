@@ -6,7 +6,7 @@ import LoadingSpinner from './components/Loader';
 const TourLayout = lazy(() => import('./components/layout/TourLayout'));
 // const AyaUniverse = lazy(() => import('./pages/aya-universe/AyaUniverse'));
 // const LostChambers = lazy(() => import('./pages/lost-chambers/LostChambers'));
-const GreenPlanet = lazy(() => import('./pages/green-planet/GreenPlanet'));
+// const GreenPlanet = lazy(() => import('./pages/green-planet/GreenPlanet'));
 const DubaiAquariumAndUnderwaterZoo = lazy(() => import('./pages/dubai-aquarium-and-underwater-zoo/DubaiAquariumAndUnderwaterZoo'));
 // const DubaiFrame = lazy(() => import('./pages/dubai-frame/DubaiFrame'));
 // const BurjKhalifa = lazy(() => import('./pages/burj-khalifa/BurjKhalifa'));
@@ -48,7 +48,7 @@ const App = () => {
                 window.location.hostname === 'dubai-experience.onrender.com' ? (
                   <DubaiAquariumAndUnderwaterZoo />
                 ) :  window.location.hostname === 'localhost' ? (
-                  <GreenPlanet />
+                  <DubaiAquariumAndUnderwaterZoo />
                 ) : <></>
               } 
             /> 
