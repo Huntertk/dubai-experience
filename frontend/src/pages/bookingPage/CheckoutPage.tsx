@@ -41,7 +41,7 @@ const CheckoutPage = () => {
 
     const [mobileNumber, setMobileNumber] = useState<string | undefined>("")
 
-   const bannerImg:string = service === 'dubai-frame' ?  "/assets/images/dubaiFrameVisitPlanGettingThereImg.avif" : service === 'aya-universe' ? "/assets/images/aya-universe-ayaUniverseWhyVisit.avif" : service === 'lost-chambers' ? "/assets/images/lostChambersTicketTwo.jpg"  : service === 'burj-khalifa' ? "/assets/images/burjKhalifaWhyVisit.jpg"  : service === 'green-planet' ? "/assets/images/greenPlanetTicketOne.jpg" : service === 'dubai-aquarium-and-underwater-zoo' ? "/assets/images/dubaiZooAndAquariumTwo.jpg"  :  ""
+   const bannerImg:string = service === 'dubai-frame' ?  "/assets/images/dubaiFrameVisitPlanGettingThereImg.avif" : service === 'aya-universe' ? "/assets/images/aya-universe-ayaUniverseWhyVisit.avif" : service === 'lost-chambers' ? "/assets/images/lostChambersTicketTwo.jpg"  : service === 'burj-khalifa' ? "/assets/images/burjKhalifaWhyVisit.jpg"  : service === 'green-planet' ? "/assets/images/greenPlanetTicketOne.jpg" : service === 'dubai-aquarium-and-underwater-zoo' ? "/assets/images/dubaiZooAndAquariumTwo.jpg"  : service === 'madame-tussauds' ? "/assets/images/madameTussaudsImgFour.jpg" :  ""
 
 
     const hostName = window.location.hostname;

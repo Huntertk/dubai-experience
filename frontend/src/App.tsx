@@ -10,6 +10,7 @@ const TourLayout = lazy(() => import('./components/layout/TourLayout'));
 const DubaiAquariumAndUnderwaterZoo = lazy(() => import('./pages/dubai-aquarium-and-underwater-zoo/DubaiAquariumAndUnderwaterZoo'));
 // const DubaiFrame = lazy(() => import('./pages/dubai-frame/DubaiFrame'));
 // const BurjKhalifa = lazy(() => import('./pages/burj-khalifa/BurjKhalifa'));
+const MadameTussauds = lazy(() => import('./pages/madame-tussauds/MadameTussauds'));
 const DateSelectionContainer = lazy(() => import('./components/booking/DateSelectionContainer'));
 const CheckoutPage = lazy(() => import('./pages/bookingPage/CheckoutPage'));
 const AdminLogin = lazy(() => import('./pages/admin/AdminLogin'));
@@ -48,7 +49,7 @@ const App = () => {
                 window.location.hostname === 'dubai-experience.onrender.com' ? (
                   <DubaiAquariumAndUnderwaterZoo />
                 ) :  window.location.hostname === 'localhost' ? (
-                  <DubaiAquariumAndUnderwaterZoo />
+                  <MadameTussauds />
                 ) : <></>
               } 
             /> 
