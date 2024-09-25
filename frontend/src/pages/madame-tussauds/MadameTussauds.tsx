@@ -26,7 +26,7 @@ import TourVisitPlan from '../../components/TourHomeComponents/TourVisitPlan';
 
 const MadameTussauds = () => {
     const serviceName:string = "Madame Tussauds Dubai"
-    const {data, isLoading} = useGetServiceTicketQuery({service:"lost-chambers"});
+    const {data, isLoading} = useGetServiceTicketQuery({service:"madame-tussauds"});
 
     const dispatch = useAppDispatch() 
 

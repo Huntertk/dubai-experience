@@ -282,9 +282,8 @@ export const ticketsData:TypeTicketData[] = [
           "Tickets should be purchased in advance where possible, either online or at the entrance. Keep your ticket handy for inspection.",
           "Bring valid ID if required, especially for discounted tickets or special promotions.",
           "Follow any health and safety guidelines in place, such as wearing masks or using hand sanitizers if required.",
-          "Do not touch or tap on the aquarium glass or disturb the marine life. Follow instructions from staff regarding interaction with exhibits.",
           "Children should be supervised at all times, especially near exhibits and touch pools.",
-          "Outside food and beverages are typically not allowed inside the aquarium."
+          "Outside food and beverages are typically not allowed inside the attraction."
         ]
       },
       {
@@ -340,9 +339,8 @@ export const ticketsData:TypeTicketData[] = [
           "Tickets should be purchased in advance where possible, either online or at the entrance. Keep your ticket handy for inspection.",
           "Bring valid ID if required, especially for discounted tickets or special promotions.",
           "Follow any health and safety guidelines in place, such as wearing masks or using hand sanitizers if required.",
-          "Do not touch or tap on the aquarium glass or disturb the marine life. Follow instructions from staff regarding interaction with exhibits.",
           "Children should be supervised at all times, especially near exhibits and touch pools.",
-          "Outside food and beverages are typically not allowed inside the aquarium."
+          "Outside food and beverages are typically not allowed inside the attraction."
         ]
       },
       {
@@ -398,9 +396,8 @@ export const ticketsData:TypeTicketData[] = [
           "Tickets should be purchased in advance where possible, either online or at the entrance. Keep your ticket handy for inspection.",
           "Bring valid ID if required, especially for discounted tickets or special promotions.",
           "Follow any health and safety guidelines in place, such as wearing masks or using hand sanitizers if required.",
-          "Do not touch or tap on the aquarium glass or disturb the marine life. Follow instructions from staff regarding interaction with exhibits.",
           "Children should be supervised at all times, especially near exhibits and touch pools.",
-          "Outside food and beverages are typically not allowed inside the aquarium."
+          "Outside food and beverages are typically not allowed inside the attraction."
         ]
       },
       {
@@ -456,9 +453,8 @@ export const ticketsData:TypeTicketData[] = [
           "Tickets should be purchased in advance where possible, either online or at the entrance. Keep your ticket handy for inspection.",
           "Bring valid ID if required, especially for discounted tickets or special promotions.",
           "Follow any health and safety guidelines in place, such as wearing masks or using hand sanitizers if required.",
-          "Do not touch or tap on the aquarium glass or disturb the marine life. Follow instructions from staff regarding interaction with exhibits.",
           "Children should be supervised at all times, especially near exhibits and touch pools.",
-          "Outside food and beverages are typically not allowed inside the aquarium."
+          "Outside food and beverages are typically not allowed inside the attraction."
         ]
       },
       {
@@ -511,9 +507,65 @@ export const ticketsData:TypeTicketData[] = [
           "Tickets should be purchased in advance where possible, either online or at the entrance. Keep your ticket handy for inspection.",
           "Bring valid ID if required, especially for discounted tickets or special promotions.",
           "Follow any health and safety guidelines in place, such as wearing masks or using hand sanitizers if required.",
-          "Do not touch or tap on the aquarium glass or disturb the marine life. Follow instructions from staff regarding interaction with exhibits.",
           "Children should be supervised at all times, especially near exhibits and touch pools.",
-          "Outside food and beverages are typically not allowed inside the aquarium."
+          "Outside food and beverages are typically not allowed inside the attraction."
+        ]
+      },
+      {
+        title: "Madame Tussauds Ticket in Dubai",
+        description: [
+          "Visit the Dubai location of the world's most well-known wax museum by ordering your tickets via Jom Travel Local. Discover how their wax models were created and get up close to the most well-known people in the world inside the museum.",
+        ],
+        service: "madame-tussauds",
+        images: [
+          "/assets/images/madameTussaudsImgSix.webp",
+          "/assets/images/madameTussaudsImgSeven.webp",
+          "/assets/images/madameTussaudsImgThree.webp",
+          "/assets/images/madameTussaudsImgTwo.webp",
+          "/assets/images/madameTussaudsImgFour.jpg",
+          "/assets/images/madameTussaudsImgFive.jpg",
+          "/assets/images/madameTussaudsImgOne.jpg",
+        ],
+        timeSlots:[],
+        preference: [
+          {
+            title: "General Admission",
+            details: [
+              "General Admission"
+            ],
+          }
+        ],
+        pricing: [
+          {
+            weekDays: {
+              adult: 89.45,
+              child: 78.57,
+            },
+            weekEnds: {
+              adult: 89.45,
+              child: 78.57,
+            },
+            title: "General Admission",
+          },
+        ],
+        inclusionAndExclusion: {
+            cancellationPolicy: [
+              "These tickets can't be cancelled or rescheduled"
+            ],
+            inclusion: [
+              "Madame Tussauds Entry Ticket",
+              "All Fees and Taxes"
+            ],
+            exclusion: [
+              "Transportation"
+            ]
+          },
+        rulesAndRestriction: [
+          "Tickets should be purchased in advance where possible, either online or at the entrance. Keep your ticket handy for inspection.",
+          "Bring valid ID if required, especially for discounted tickets or special promotions.",
+          "Follow any health and safety guidelines in place, such as wearing masks or using hand sanitizers if required.",
+          "Children should be supervised at all times, especially near exhibits and touch pools.",
+          "Outside food and beverages are typically not allowed inside the attraction."
         ]
       },
 ]
