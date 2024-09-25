@@ -328,6 +328,10 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
                 } else if(booking.service === 'dubai-aquarium-and-underwater-zoo') {
                     imgUrls.bannerImg="https://i.postimg.cc/05HfVM5Q/dubai-Zoo-And-Aquarium-Two.jpg"
                     imgUrls.productImg= "https://i.postimg.cc/d3D9qv6w/dubai-Zoo-And-Aquarium-Four.jpg"
+
+                } else if(booking.service === 'madame-tussauds') {
+                    imgUrls.bannerImg="https://i.postimg.cc/cLK1p3vT/madame-Tussauds-Img-Four.jpg"
+                    imgUrls.productImg= "https://i.postimg.cc/gk22KQdC/madame-Tussauds-Img-Six.webp"
                 }
 
                 const mailMessage = `We are delighted to confirm your ticket booking with Dubai Experience for ${booking.ticketTitle} Entry Ticket! Get ready to embark on an unforgettable experience at one of the most exciting destinations.`
