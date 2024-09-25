@@ -514,7 +514,7 @@ export const ticketsData:TypeTicketData[] = [
       {
         title: "Madame Tussauds Ticket in Dubai",
         description: [
-          "Visit the Dubai location of the world's most well-known wax museum by ordering your tickets via Jom Travel Local. Discover how their wax models were created and get up close to the most well-known people in the world inside the museum.",
+          "Visit the Dubai location of the world's most well-known wax museum by ordering your tickets via Dubai Experience. Discover how their wax models were created and get up close to the most well-known people in the world inside the museum.",
         ],
         service: "madame-tussauds",
         images: [
