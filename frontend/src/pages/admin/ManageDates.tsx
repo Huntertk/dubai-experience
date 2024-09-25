@@ -12,6 +12,7 @@ const ManageDates = () => {
         <Link to="/admin/manage-dates/lost-chambers">Lost Chambers</Link>
         <Link to="/admin/manage-dates/green-planet">Green Planet</Link>
         <Link to="/admin/manage-dates/burj-khalifa">Burj Khalifa</Link>
+        <Link to="/admin/manage-dates/madame-tussauds">Madame Tussauds</Link>
         <Link to="/admin/manage-dates/dubai-aquarium-and-underwater-zoo">The Dubai Aquarium and Underwater Zoo</Link>
       </div>
     </section>
