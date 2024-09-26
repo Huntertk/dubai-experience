@@ -41,7 +41,33 @@ const CheckoutPage = () => {
 
     const [mobileNumber, setMobileNumber] = useState<string | undefined>("")
 
-   const bannerImg:string = service === 'dubai-frame' ?  "/assets/images/dubaiFrameVisitPlanGettingThereImg.avif" : service === 'aya-universe' ? "/assets/images/aya-universe-ayaUniverseWhyVisit.avif" : service === 'lost-chambers' ? "/assets/images/lostChambersTicketTwo.jpg"  : service === 'burj-khalifa' ? "/assets/images/burjKhalifaWhyVisit.jpg"  : service === 'green-planet' ? "/assets/images/greenPlanetTicketOne.jpg" : service === 'dubai-aquarium-and-underwater-zoo' ? "/assets/images/dubaiZooAndAquariumTwo.jpg"  : service === 'madame-tussauds' ? "/assets/images/madameTussaudsImgFour.jpg" :  ""
+   let bannerImg:string = "";
+
+   if(service === 'dubai-frame'){
+        bannerImg = "/assets/images/dubaiFrameVisitPlanGettingThereImg.avif" 
+
+   } else if(service === 'lost-chambers'){
+        bannerImg = "/assets/images/lostChambersTicketTwo.jpg"
+
+   }else if(service === 'aya-universe'){
+        bannerImg = "/assets/images/aya-universe-ayaUniverseWhyVisit.avif"
+
+   } else if(service === 'burj-khalifa') {
+        bannerImg = "/assets/images/burjKhalifaWhyVisit.jpg"
+
+   } else if(service === 'green-planet'){
+        bannerImg = "/assets/images/greenPlanetTicketOne.jpg"
+
+   } else if(service === 'dubai-aquarium-and-underwater-zoo') {
+        bannerImg = "/assets/images/dubaiZooAndAquariumTwo.jpg"
+
+   } else if(service === 'madame-tussauds') {
+        bannerImg = "/assets/images/madameTussaudsImgFour.jpg"
+
+   } else if(service === 'atlantis-aquaventure'){
+        bannerImg = "/assets/images/AtlantisAquaventureImgTen.jpg"
+
+   }
 
 
     const hostName = window.location.hostname;

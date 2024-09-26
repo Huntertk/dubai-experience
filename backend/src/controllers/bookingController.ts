@@ -332,6 +332,9 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
                 } else if(booking.service === 'madame-tussauds') {
                     imgUrls.bannerImg="https://i.postimg.cc/cLK1p3vT/madame-Tussauds-Img-Four.jpg"
                     imgUrls.productImg= "https://i.postimg.cc/gk22KQdC/madame-Tussauds-Img-Six.webp"
+                } else if(booking.service === 'atlantis-aquaventure') {
+                    imgUrls.bannerImg="https://i.postimg.cc/nLfnKCTz/Atlantis-Aquaventure-Img-Ten.jpg"
+                    imgUrls.productImg= "https://i.postimg.cc/ZKDRNb1B/Atlantis-Aquaventure-Img-Four.jpg"
                 }
 
                 const mailMessage = `We are delighted to confirm your ticket booking with Dubai Experience for ${booking.ticketTitle} Entry Ticket! Get ready to embark on an unforgettable experience at one of the most exciting destinations.`

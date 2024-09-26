@@ -26,7 +26,7 @@ import TourVisitPlan from '../../components/TourHomeComponents/TourVisitPlan';
 
 const AtlantisAquaventure = () => {
     const serviceName:string = "Atlantis Aquaventure Waterpark"
-    const {data, isLoading} = useGetServiceTicketQuery({service:"madame-tussauds"});
+    const {data, isLoading} = useGetServiceTicketQuery({service:"atlantis-aquaventure"});
 
     const dispatch = useAppDispatch() 
 
