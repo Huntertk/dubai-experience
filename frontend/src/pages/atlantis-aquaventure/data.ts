@@ -303,7 +303,7 @@ export const atlantisAquaventureAdditionInfoData:TypeFAQAndAdditionQuestion[] = 
         id: nanoid(),
         ques:"Where can i buy Dubai Atlantis Aquaventure Waterpark Dubai tickets ?",
         ans:[
-            "You can buy Dubai Atlantis Aquaventure WaterparkDubai  tickets online and make bookings in advance to avoid waiting in long queues as well as a hassle-free-booking experience."
+            "You can buy Dubai Atlantis Aquaventure Waterpark Dubai  tickets online and make bookings in advance to avoid waiting in long queues as well as a hassle-free-booking experience."
         ]
     },
     {

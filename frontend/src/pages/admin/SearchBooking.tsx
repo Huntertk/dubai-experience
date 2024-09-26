@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLazySearchBookingQuery } from '../../redux/api/bookingApi';
 import '../../styles/searchBooking.scss';
 import BookingCard from '../../components/admin/BookingCard';
+import toast from 'react-hot-toast';
 
 const SearchBooking = () => {
   const [search, setSearch] = useState<string>("");
@@ -10,6 +11,10 @@ const SearchBooking = () => {
 
   const handleSubmit = async (e:React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if(!search){
+      toast.error("Please enter email to find bookings")
+      return
+    }
     searchBooking({search})
     setSearch("")
   }
