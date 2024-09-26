@@ -10,7 +10,7 @@ const TourLayout = lazy(() => import('./components/layout/TourLayout'));
 // const DubaiAquariumAndUnderwaterZoo = lazy(() => import('./pages/dubai-aquarium-and-underwater-zoo/DubaiAquariumAndUnderwaterZoo'));
 // const DubaiFrame = lazy(() => import('./pages/dubai-frame/DubaiFrame'));
 // const BurjKhalifa = lazy(() => import('./pages/burj-khalifa/BurjKhalifa'));
-const MadameTussauds = lazy(() => import('./pages/madame-tussauds/MadameTussauds'));
+// const MadameTussauds = lazy(() => import('./pages/madame-tussauds/MadameTussauds'));
 const AtlantisAquaventure = lazy(() => import('./pages/atlantis-aquaventure/AtlantisAquaventure'));
 const DateSelectionContainer = lazy(() => import('./components/booking/DateSelectionContainer'));
 const CheckoutPage = lazy(() => import('./pages/bookingPage/CheckoutPage'));
@@ -48,7 +48,7 @@ const App = () => {
               path='/' 
               element={
                 window.location.hostname === 'dubai-experience.onrender.com' ? (
-                  <MadameTussauds />
+                  <AtlantisAquaventure />
                 ) :  window.location.hostname === 'localhost' ? (
                   <AtlantisAquaventure />
                 ) : <></>
