@@ -42,6 +42,7 @@ const AllBookings = () => {
                 <option value={"burj-khalifa"}>Burj Khalifa</option>
                 <option value={"green-planet"}>Green Planet</option>
                 <option value={"madame-tussauds"}>Madame Tussauds</option>
+                <option value={"atlantis-aquaventure"}>Atlantis Aquaventure</option>
                 <option value={"dubai-aquarium-and-underwater-zoo"}>The Dubai Aquarium and Underwater Zoo</option>
           </select>
           <div className="bookingFilterTabContainer">

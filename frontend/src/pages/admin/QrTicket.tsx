@@ -52,6 +52,7 @@ const QrTicket = () => {
         <Link to="/admin/qr-code/view/aya-universe">Aya Universe</Link>
         <Link to="/admin/qr-code/view/green-planet">Green Planet</Link>
         <Link to="/admin/qr-code/view/madame-tussauds">Madame Tussauds</Link>
+        <Link to="/admin/qr-code/view/atlantis-aquaventure">Atlantis Aquaventure</Link>
         <Link to="/admin/qr-code/view/dubai-aquarium-and-underwater-zoo">The Dubai Aquarium and Underwater Zoo</Link>
       </div>
     </div>
