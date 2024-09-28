@@ -628,4 +628,64 @@ export const ticketsData:TypeTicketData[] = [
           "Outside food and beverages are typically not allowed inside the attraction."
         ]
       },
+      {
+        title: "Dubai Atlantis Aquaventure + Lost Chamber Aquarium Super Pass",
+        description: [
+          "Atlantis Water Park, located at Atlantis, The Palm in Dubai, provides guests of all ages with an exhilarating and immersive water park experience. Guests may enjoy the ultimate adrenaline rush with a variety of exhilarating water slides, ranging from heart-pounding drops to twisting curves. The wave pool produces artificial waves, giving guests a beach-like feel.",
+        ],
+        service: "atlantis-aquaventure",
+        images: [
+          "/assets/images/AtlantisAquaventureImgOne.webp",
+          "/assets/images/AtlantisAquaventureTwo.jpg",
+          "/assets/images/AtlantisAquaventureImgThree.jpg",
+          "/assets/images/AtlantisAquaventureImgFour.jpg",
+          "/assets/images/AtlantisAquaventureImgFive.jpg",
+          "/assets/images/AtlantisAquaventureImgSix.jpg",
+          "/assets/images/AtlantisAquaventureImgSeven.webp",
+          "/assets/images/AtlantisAquaventureImgEight.jpg",
+          "/assets/images/AtlantisAquaventureImgNine.webp",
+          "/assets/images/AtlantisAquaventureImgTen.jpg",
+        ],
+        timeSlots:[],
+        preference: [
+          {
+            title: "Atlantis Aquaventure And Lost Chamber Aquarium Super Pass",
+            details: [
+              "Atlantis Aquaventure And Lost Chamber Aquarium Super Pass"
+            ],
+          }
+        ],
+        pricing: [
+          {
+            weekDays: {
+              adult: 383.68,
+              child: 302.67,
+            },
+            weekEnds: {
+              adult: 383.68,
+              child: 302.67,
+            },
+            title: "Atlantis Aquaventure And Lost Chamber Aquarium Super Pass",
+          },
+        ],
+        inclusionAndExclusion: {
+            cancellationPolicy: [
+              "These tickets can't be cancelled or rescheduled"
+            ],
+            inclusion: [
+              "Dubai Atlantis Aquaventure Waterpark Admission Ticket",
+              "All Fees and Taxes"
+            ],
+            exclusion: [
+              "Transportation"
+            ]
+          },
+        rulesAndRestriction: [
+          "Tickets should be purchased in advance where possible, either online or at the entrance. Keep your ticket handy for inspection.",
+          "Bring valid ID if required, especially for discounted tickets or special promotions.",
+          "Follow any health and safety guidelines in place, such as wearing masks or using hand sanitizers if required.",
+          "Children should be supervised at all times, especially near exhibits and touch pools.",
+          "Outside food and beverages are typically not allowed inside the attraction."
+        ]
+      },
 ]
