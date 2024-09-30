@@ -5,7 +5,7 @@ const TourHomeMap = ({serviceName, mapUrl}:{serviceName:string; mapUrl:string}) 
 
       <h1 style={{margin:'1rem', textAlign:'center'}}>{serviceName}</h1>
       
-      <iframe width="360" height="400" src={`${mapUrl}`}></iframe>
+      <iframe width="360" height="400" src={`${mapUrl}`} loading="lazy"></iframe>
     </div>
   )
 }
