@@ -62,10 +62,7 @@
             font-size: 1.1rem;
             border-radius: 10px;
             border: 2px solid $primary;
-            &:hover,
-            &:active{
-                background-color: $primaryModalColor;
-            }
+            background-color: $primaryModalColor;
         }
         > button{
             color: #fff;
@@ -73,6 +70,7 @@
             cursor: pointer;
             &:hover,
             &:active{
+                background-color: $primaryModalColor;
                 color: #000;
             }
         }
