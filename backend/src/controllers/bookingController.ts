@@ -12,6 +12,7 @@ import path from 'path';
 import qr from 'qrcode';
 import { TypeBaseQuery, TypeBookingQuery, TypeImgUrl } from "../utils/types";
 import { sendTicketConfirmationMail, sendTicketMailWithPdf } from "../utils/sendMail";
+import { directBookingService, qrModuleService } from "../utils/helper";
 
 const stripe = new stripePackage(process.env.STRIPE_SK as string);
 
@@ -29,7 +30,7 @@ export const createBooking = async (req:Request, res:Response, next:NextFunction
             return next(new AppError("Ticket Id is Wrong", 400))
         }
 
-        if(bookingPayload.service !== 'burj-khalifa'){
+        if(qrModuleService.includes(bookingPayload.service)){
             let qrDataAdult = await QrCode.find({title: ticket.title, isUsed:false, Type:"Adult"});
                 
                 if(qrDataAdult.length < bookingPayload.adultCount){
@@ -152,7 +153,7 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
             return res.redirect("/failed")
         }
 
-        if(booking.service !== 'burj-khalifa' && booking.isQrGenerated === false){
+        if(qrModuleService.includes(booking.service) && booking.isQrGenerated === false){
 
             let qrDataAdult = await QrCode.find({title: ticket.title, isUsed:false, Type:"Adult"});
             
@@ -379,7 +380,7 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
             //     message:`/success?token=${booking.successToken}`
             // })
 
-        } else if(booking.service === 'burj-khalifa') {
+        } else if(directBookingService.includes(booking.service)) {
 
             // Updating Booking
             booking.payment = true;
@@ -399,6 +400,11 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
             if(booking.service === 'burj-khalifa'){
                 imgUrls.bannerImg="https://i.postimg.cc/Y2VtWMQK/burj-Khalifa-Highlights-One.jpg"; 
                 imgUrls.productImg="https://i.postimg.cc/FR6X3Vdg/burj-Khalifa-Ticket-Two.jpg"
+                
+            } else if(booking.service === 'dubai-sky-view'){
+                imgUrls.bannerImg="https://i.postimg.cc/Cxv6KRMN/dubai-Sky-View-Img-Four.jpg"; 
+                imgUrls.productImg="https://i.postimg.cc/j2rM1Nvs/dubai-Sky-View-Img-Six.jpg"
+
             }
 
             //Sending Booking Confirmation Mail 
