@@ -55,7 +55,7 @@ export const getAllTicketQr = async( req:Request, res:Response, next:NextFunctio
             return next(new AppError("Ticket Data not Found", 404))
         }
 
-        const qrCodes = await QrCode.find({title: ticket.title, isUsed:req.query.isUsedQr}).populate('usedBy', "bookingPlanId bookingDateString bookingTitle email name bookingId isQrGenerated _id");
+        const qrCodes = await QrCode.find({title: ticket.title, isUsed:req.query.isUsedQr}).populate('usedBy', "ticketId bookingDateString ticketTitle email name bookingId isQrGenerated _id");
 
         if(qrCodes.length < 1){
             return res.status(200).json([]);

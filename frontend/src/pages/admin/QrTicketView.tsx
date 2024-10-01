@@ -34,20 +34,20 @@ const QrTicketView = () => {
                                 <div key={qr._id} className='qr-code-view-card'>
                                 <p>Code : {qr.QrCode}</p>
                                 <p>Type : {qr.Type}</p>
-                                {/* {
+                                {
                                     qr.isUsed && (
                                         <>
                                             <p>Booking ID : #{qr.usedBy.bookingId}</p>
                                             <p>Order ID : #{qr.usedBy._id}</p>
                                             <p>Date For Booking : {qr.usedBy.bookingDateString}</p>
-                                            <p>Tour ID : {qr.usedBy.bookingPlanId}</p>
-                                            <p>Tour Name : {qr.usedBy.bookingTitle}</p>
+                                            <p>Ticket ID : {qr.usedBy.ticketId}</p>
+                                            <p>Ticket Name : {qr.usedBy.ticketTitle}</p>
                                             <p>Guest Name : {qr.usedBy.name}</p>
                                             <p>Guest Email : {qr.usedBy.email}</p>
                                             <p>QR Generated : {qr.usedBy.isQrGenerated ? "Yes" : "No"}</p>
                                         </>
                                     )
-                                } */}
+                                }
                             </div>
                             )
                            

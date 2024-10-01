@@ -100,11 +100,23 @@ export type TypeAdminAllBookingsQueryArgs = {
     page:string|number;
 }
 
+type TypeUsedBy= {
+    _id:string;
+    ticketId:string;
+    ticketTitle:string;
+    bookingDateString:string;
+    name:string;
+    email:string;
+    bookingId:string;
+    isQrGenerated:boolean;
+
+}
+
 export type TypeQR = {
     _id:string;
     QrCode:string;
     title:string;
     Type:'Adult' | 'Child';
     isUsed:boolean;
-    usedBy:string;
+    usedBy:TypeUsedBy;
 }
