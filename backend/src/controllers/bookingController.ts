@@ -62,6 +62,7 @@ export const createBooking = async (req:Request, res:Response, next:NextFunction
         });
         let totalAmount = adultTotal + childTotal;
         const hostName = req.body.hostName
+        bookingPayload.bookingTokenExpiresAt = Date.now() + 1000*60*5
         bookingPayload.totalAmount = Number(totalAmount.toFixed(2))
         bookingPayload.adultTotal = Number(adultTotal.toFixed(2));
         bookingPayload.childTotal = Number(childTotal.toFixed(2));
@@ -141,7 +142,10 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
 
     try {
 
-        let booking = await Booking.findOne({bookingToken:req.query.token});
+        let booking = await Booking.findOne({
+            bookingToken:req.query.token,
+            bookingTokenExpiresAt:{$gt:Date.now()}
+        });
 
         if(!booking){
             return res.redirect("/failed")
@@ -371,6 +375,7 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
             booking.isQrGenerated = true;
             booking.successToken = crypto.randomBytes(32).toString('hex');
             booking.bookingToken = undefined
+            booking.bookingTokenExpiresAt = undefined
             await booking.save();
 
             
@@ -388,6 +393,7 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
             booking.isQrGenerated = true;
             booking.successToken = crypto.randomBytes(32).toString('hex');
             booking.bookingToken = undefined
+            booking.bookingTokenExpiresAt = undefined
             await booking.save();
 
             let imgUrls:TypeImgUrl = {

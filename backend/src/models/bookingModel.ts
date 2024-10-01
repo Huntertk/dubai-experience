@@ -24,6 +24,7 @@ export type TypeBooking = {
     isQrGenerated:boolean;
     successToken?:string;
     bookingToken?:string;
+    bookingTokenExpiresAt?:Number;
     
 }
 
@@ -98,7 +99,8 @@ const bookingSchema = new mongoose.Schema({
         default:false
     },
     bookingToken:String,
-    successToken:String
+    successToken:String,
+    bookingTokenExpiresAt:Number,
 }, {timestamps:true});
 
 
