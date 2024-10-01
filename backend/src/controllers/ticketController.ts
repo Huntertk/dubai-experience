@@ -130,3 +130,21 @@ export const deleteTicket = async (req:Request, res:Response, next:NextFunction)
         return next(error);
     }
 }
+
+export const getAllTicketTitleAndService = async (req:Request, res:Response, next:NextFunction) => {
+    try {
+        const ticketTitleAndService = await Ticket.aggregate([
+            
+            {
+                $group:{
+                    _id:null,
+                    ticketTitle:{$addToSet:"$title"},
+                    ticketService:{$addToSet:"$service"}
+                },
+            },
+        ])
+        return res.status(200).json(ticketTitleAndService)
+    } catch (error) {
+        return next(error);
+    }
+}

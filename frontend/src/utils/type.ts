@@ -75,3 +75,15 @@ export type TypeDateManage = {
     ticketId:string;
     service:string;
 }
+
+
+export type TypeResponseTitleAndService = {
+    ticketTitle:string[],
+    ticketService:string[],
+}
+
+export type TypeCreateQRInputPayload = {
+    QrCode:string;
+    title:string;
+    Type:string;
+}

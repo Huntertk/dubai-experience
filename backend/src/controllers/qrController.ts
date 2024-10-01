@@ -67,3 +67,18 @@ export const getAllTicketQr = async( req:Request, res:Response, next:NextFunctio
         return next(error)
     }
 }
+
+export const addSingleQr = async (req:Request, res:Response, next:NextFunction) => {
+    try {
+        const qrInputPayload:{
+            QrCode:string;
+            title:string;
+            Type:string;
+        } = req.body;
+
+        await QrCode.create(qrInputPayload);
+        return res.status(201).json("new qr added");
+    } catch (error) {
+        return next(error)
+    }
+}

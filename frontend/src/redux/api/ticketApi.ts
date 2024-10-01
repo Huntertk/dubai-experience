@@ -1,5 +1,5 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
-import { TypeBookingTicket } from '../../utils/type';
+import { TypeBookingTicket, TypeResponseTitleAndService } from '../../utils/type';
 
 export const ticketApi = createApi({
     reducerPath:"ticketApi",
@@ -28,7 +28,14 @@ export const ticketApi = createApi({
                 }
             }
         }),
+        getTicketTitleAndService:builder.query<TypeResponseTitleAndService[],{}>({
+            query:() => {
+                return {
+                    url:"/get-ticket-title-service",
+                }
+            }
+        }),
     })
 })
 
-export const {useGetServiceTicketQuery, useGetTicketQuery} = ticketApi
+export const {useGetServiceTicketQuery, useGetTicketQuery, useGetTicketTitleAndServiceQuery} = ticketApi

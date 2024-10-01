@@ -49,6 +49,29 @@
                 gap: 10px;
                 padding: 1rem;
                 background-color: $primaryModalColor;
+
+                .qr-action-btn-container{
+                    width: 100%;
+                    margin: 0.51rem 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+
+                    > svg{
+                        font-size: 1.1rem;
+                        transition: all 0.3s linear;
+                        &:hover{
+                            cursor: pointer;
+                            transform: scale(1.2);
+                            &:nth-child(1){
+                                color: #008e00;
+                            }
+                            &:nth-child(2){
+                                color: #ff0000;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

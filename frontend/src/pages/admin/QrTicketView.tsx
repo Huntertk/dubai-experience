@@ -1,13 +1,16 @@
 import { useState } from 'react'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import '../../styles/qrTicketView.scss';
 import { useGetQrDataQuery } from '../../redux/api/qrApi';
 import LoadingSpinner from '../../components/Loader';
+import { FaEdit } from "react-icons/fa";
+import { FaTrash } from "react-icons/fa";
 
 const QrTicketView = () => {
-    const {id} = useParams();
+    const {id, service} = useParams();
     const [isUsedQr, setIsQrUsed] = useState(false)
     const {data, isLoading} = useGetQrDataQuery({id,isUsedQr});
+    const navigate = useNavigate()
 
     if(isLoading){
         return <LoadingSpinner />
@@ -34,6 +37,14 @@ const QrTicketView = () => {
                                 <div key={qr._id} className='qr-code-view-card'>
                                 <p>Code : {qr.QrCode}</p>
                                 <p>Type : {qr.Type}</p>
+                                {
+                                    qr.isUsed === false && (
+                                        <div className='qr-action-btn-container'>
+                                            <FaEdit onClick={() => navigate(`/admin/qr-code/edit/${service}/${qr._id}`) } />
+                                            <FaTrash />
+                                        </div>
+                                    )
+                                }
                                 {
                                     qr.isUsed && (
                                         <>

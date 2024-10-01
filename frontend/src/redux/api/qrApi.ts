@@ -1,5 +1,6 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 import { TypeQR } from '../type';
+import { TypeCreateQRInputPayload } from '../../utils/type';
 
 export const qrApi = createApi({
     reducerPath:"qrApi",
@@ -28,7 +29,17 @@ export const qrApi = createApi({
                 }
             },
         }),
+        createTicketQr:builder.mutation<{message:string}, TypeCreateQRInputPayload>({
+            query:(data) => {
+                return {
+                    url:"/create",
+                    method:"POST",
+                    body:data,
+                    
+                }
+            }
+        }),
     })
 })
 
-export const {useAddTicketQrMutation, useGetQrDataQuery} = qrApi
+export const {useAddTicketQrMutation, useGetQrDataQuery, useCreateTicketQrMutation} = qrApi

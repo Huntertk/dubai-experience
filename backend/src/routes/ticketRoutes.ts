@@ -2,7 +2,7 @@ import { NextFunction, Request, Response, Router } from "express";
 import { authAdmin, authorizeRoles } from "../middlewares/authMiddleware";
 import { body, validationResult } from "express-validator";
 import AppError from "../error/customError";
-import { createTicket, deleteTicket, getAllTickets, getTicket, getTicketsByService, updateTicket } from "../controllers/ticketController";
+import { createTicket, deleteTicket, getAllTickets, getAllTicketTitleAndService, getTicket, getTicketsByService, updateTicket } from "../controllers/ticketController";
 
 const router = Router();
 
@@ -66,8 +66,13 @@ router.delete('/delete-ticket/:id',
     authorizeRoles("admin"),    
     deleteTicket
 )
+router.get('/get-ticket-title-service',
+    authAdmin,
+    authorizeRoles("admin"),
+    getAllTicketTitleAndService
+)
 
-router.get('/get-service-tickets',getTicketsByService)
+router.get('/get-service-tickets', getTicketsByService)
 router.get('/get-ticket', getTicket)
 
 export default router;
