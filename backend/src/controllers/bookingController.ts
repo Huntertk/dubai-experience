@@ -62,7 +62,7 @@ export const createBooking = async (req:Request, res:Response, next:NextFunction
         });
         let totalAmount = adultTotal + childTotal;
         const hostName = req.body.hostName
-        bookingPayload.totalAmount = totalAmount;
+        bookingPayload.totalAmount = Number(totalAmount.toFixed(2))
         bookingPayload.adultTotal = adultTotal;
         bookingPayload.childTotal = childTotal;
         bookingPayload.ticketTitle = ticket.title;
@@ -90,7 +90,7 @@ export const createBooking = async (req:Request, res:Response, next:NextFunction
                                 service:bookingPayload.service
                             }
                         },
-                        unit_amount: totalAmount * 100,
+                        unit_amount: Math.round(bookingPayload.totalAmount * 100),
                     },
                     quantity: 1,
                 },
