@@ -8,6 +8,7 @@ const ManageTimeSlot = () => {
       <h3>Select Product</h3>
       <div className="btnContainer">
         <Link to="/admin/manage-timeslot/burj-khalifa">Burj Khalifa</Link>
+        <Link to="/admin/manage-timeslot/dubai-sky-view">Dubai Sky View</Link>
       </div>
     </section>
   )
