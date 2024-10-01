@@ -688,4 +688,63 @@ export const ticketsData:TypeTicketData[] = [
           "Outside food and beverages are typically not allowed inside the attraction."
         ]
       },
+      {
+        title: "Dubai Sky Views Observatory Ticket",
+        description: [
+          "Purchase a ticket to Sky Views Dubai, which offers three heart-pounding activities. Take the Sky Glass Slide, stroll the Sky Edge Walk, and explore the Sky Observatory.",
+        ],
+        service: "dubai-sky-view",
+        images: [
+          "/assets/images/dubaiSkyViewImgOne.jpg",
+          "/assets/images/dubaiSkyViewImgTwo.jpg",
+          "/assets/images/dubaiSkyViewImgThree.jpg",
+          "/assets/images/dubaiSkyViewImgFour.jpg",
+          "/assets/images/dubaiSkyViewImgFive.jpg",
+          "/assets/images/dubaiSkyViewImgSix.jpg",
+          "/assets/images/dubaiSkyViewImgSeven.jpeg",
+          "/assets/images/dubaiSkyViewImgEight.png",
+        ],
+        timeSlots:[
+          "10:30","11:00","11:30","12:00", "12:30", "13:00", "13:30","14:00","14:30","15:00","15:30","16:00","16:30","17:00","17:30","18:00","18:30","19:00","19:30","20:00"
+        ],
+        preference: [
+          {
+            title: "General Admission",
+            details: [
+              "Sky Views - General Admission"
+            ],
+          }
+        ],
+        pricing: [
+          {
+            weekDays: {
+              adult: 71.70,
+              child: 62.03,
+            },
+            weekEnds: {
+              adult: 71.70,
+              child: 62.03,
+            },
+            title: "General Admission",
+          },
+        ],
+        inclusionAndExclusion: {
+            cancellationPolicy: [
+              "These tickets can't be cancelled or rescheduled"
+            ],
+            inclusion: [
+              "Access to Sky Views Observatory"
+            ],
+            exclusion: [
+              "Transportation"
+            ]
+          },
+        rulesAndRestriction: [
+          "Tickets should be purchased in advance where possible, either online or at the entrance. Keep your ticket handy for inspection.",
+          "Bring valid ID if required, especially for discounted tickets or special promotions.",
+          "Follow any health and safety guidelines in place, such as wearing masks or using hand sanitizers if required.",
+          "Children should be supervised at all times, especially near exhibits and touch pools.",
+          "Outside food and beverages are typically not allowed inside the attraction."
+        ]
+      },
 ]

@@ -17,6 +17,17 @@ import TimeSlot from './TimeSlot';
 
 
 const DateSelectionContainer = () => {
+        const timeSlotService:string[] = ["burj-khalifa", "dubai-sky-view"];
+        const regularService:string[] = [
+            "dubai-frame",
+            "green-planet",
+            "aya-universe",
+            "lost-chambers",
+            "dubai-aquarium-and-underwater-zoo",
+            "madame-tussauds",
+            "atlantis-aquaventure",
+        ];
+
         const [selectedDate, setSelectedDate] = useState<Date>()
         const [calenderOpen, setCalenderOpen] = useState<boolean>(false);
         const [blockedTimeSlot, setBlockedTimeSlot] = useState<string[]>([]);
@@ -32,7 +43,7 @@ const DateSelectionContainer = () => {
 
         const formatDate = () => {
             if(data){
-                const disabledDates = data.map((date) => new Date(date.blockedDate))
+                const disabledDates:Date[] = data.map((date) => new Date(date.blockedDate))
                 setDisabledDatesArr(disabledDates)
             }
         }
@@ -54,7 +65,7 @@ const DateSelectionContainer = () => {
             setSelectedDate(new Date(date))
         }
         
-        const defaultMonth = new Date(Date.now());
+        const defaultMonth:Date = new Date(Date.now());
 
             const handleSelectingDate = () => {
                 if(selectedDate){
@@ -71,7 +82,7 @@ const DateSelectionContainer = () => {
             if(data){
                 formatDate()
             }
-            if(service === 'burj-khalifa' && selectedDate){
+            if(timeSlotService.includes(service) && selectedDate){
                 dispatch(selectingTimeSlot({timeSlot:""}))
                 getBlockedTimeSlot({date:selectedDate.toISOString(), ticketId})
             }
@@ -124,7 +135,7 @@ const DateSelectionContainer = () => {
                 selectedDate && <PreferenceTour selectedDate={selectedDate} pricing={pricing} preferenceOption={preferenceOption}  /> 
             }
             {
-                service === 'burj-khalifa' && selectedDate && preference && timeSlotData && <TimeSlot blockedTimeSlot={blockedTimeSlot} />
+                timeSlotService.includes(service) && selectedDate && preference && timeSlotData && <TimeSlot blockedTimeSlot={blockedTimeSlot} />
             }
             <div className="selectedDate">
                 {
@@ -136,12 +147,12 @@ const DateSelectionContainer = () => {
                     <p>{format(selectedDate, 'PPP')}</p>
                     </div>
                     {
-                        service === 'burj-khalifa' && timeSlot && preference ? <button onClick={() => {
+                        timeSlotService.includes(service) && timeSlot && preference ? <button onClick={() => {
                             dispatch(proceedingToThePaxContainer({isPaxModalOpen: true}))
                         }}>Next</button> : <></>
                     }
                     {
-                        service !== 'burj-khalifa' && preference ? <button onClick={() => {
+                        regularService.includes(service) && preference ? <button onClick={() => {
                             dispatch(proceedingToThePaxContainer({isPaxModalOpen: true}))
                         }}>Next</button> : <></>
                     }

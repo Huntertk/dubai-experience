@@ -26,7 +26,7 @@ import TourVisitPlan from '../../components/TourHomeComponents/TourVisitPlan';
 
 const DubaiSkyView = () => {
     const serviceName:string = "Dubai Sky View"
-    const {data, isLoading} = useGetServiceTicketQuery({service:"burj-khalifa"});
+    const {data, isLoading} = useGetServiceTicketQuery({service:"dubai-sky-view"});
 
     const dispatch = useAppDispatch() 
 

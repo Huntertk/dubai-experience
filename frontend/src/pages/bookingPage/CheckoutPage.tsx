@@ -67,7 +67,10 @@ const CheckoutPage = () => {
    } else if(service === 'atlantis-aquaventure'){
         bannerImg = "/assets/images/AtlantisAquaventureImgTen.jpg"
 
-   }
+   } else if(service === 'dubai-sky-view'){
+        bannerImg = "/assets/images/dubaiSkyViewImgTwo.jpg"
+
+    }
 
 
     const hostName = window.location.hostname;
