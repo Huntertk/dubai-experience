@@ -76,6 +76,12 @@ export const addSingleQr = async (req:Request, res:Response, next:NextFunction) 
             Type:string;
         } = req.body;
 
+        const qrExist = await QrCode.findOne({QrCode:qrInputPayload.QrCode});
+        
+        if(qrExist){
+            return next(new AppError("Qr Already Exist You are creating duplicate qr code", 400))
+        }
+
         await QrCode.create(qrInputPayload);
         return res.status(201).json("new qr added");
     } catch (error) {

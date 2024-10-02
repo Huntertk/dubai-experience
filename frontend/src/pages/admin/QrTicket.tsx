@@ -15,7 +15,7 @@ const QrTicket = () => {
   const [addTicketQr, {isLoading, data}] = useAddTicketQrMutation()
   const [qrFile, setQrFile] = useState<File | null>(null);
   const {data:titleAndServiceData, isLoading:titleAndServiceLoading} = useGetTicketTitleAndServiceQuery({});
-  const [createTicketQr, {isLoading:createQrLoading, data:createQrData}] = useCreateTicketQrMutation()
+  const [createTicketQr, {isLoading:createQrLoading, data:createQrData, error:createQrError}] = useCreateTicketQrMutation()
   
 
   const handleFileInputChange = (event:React.ChangeEvent<HTMLInputElement>) => {
@@ -45,15 +45,18 @@ const QrTicket = () => {
 
   useEffect(() => {
     if(data){
-        toast.success(data.message);
         navigate(0)
       }
       if(createQrData){
-        toast.success(createQrData.message);
         navigate(0)
     }
+    if(createQrError){
+      if ('data' in createQrError) {
+        toast.error(`${createQrError.data}`);
+      }
+    }
 
-  },[data, createQrData])
+  },[data, createQrData, createQrError])
 
   if(titleAndServiceLoading){
     return <LoadingSpinner />
