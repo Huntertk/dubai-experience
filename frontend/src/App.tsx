@@ -32,6 +32,7 @@ const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const CompanyDetails = lazy(() => import('./pages/CompanyDetails'));
 const HelpCenter = lazy(() => import('./pages/HelpCenter'));
 const ManageTimeSlot = lazy(() => import('./pages/admin/ManageTimeSlot'));
+const QrTicketEdit = lazy(() => import('./pages/admin/QrTicketEdit'));
 const ServiceProductTimeslotModification = lazy(() => import('./pages/admin/ServiceProductTimeslotModification'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
@@ -105,6 +106,10 @@ const App = () => {
                     <Route 
                       path="/admin/qr-code/view/:service/:id"  
                       element={<QrTicketView />} 
+                    />
+                    <Route 
+                      path="/admin/qr-code/edit/:service/:id"  
+                      element={<QrTicketEdit />} 
                     />
                   </Route>
                </Route>

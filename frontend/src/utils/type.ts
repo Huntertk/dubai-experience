@@ -87,3 +87,10 @@ export type TypeCreateQRInputPayload = {
     title:string;
     Type:string;
 }
+
+export type TypeUpdateQRInputPayload = {
+    QrCode?:string;
+    title?:string;
+    Type?:string;
+    id?:string;
+}

@@ -1,12 +1,13 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react';
 import { TypeQR } from '../type';
-import { TypeCreateQRInputPayload } from '../../utils/type';
+import { TypeCreateQRInputPayload, TypeUpdateQRInputPayload } from '../../utils/type';
 
 export const qrApi = createApi({
     reducerPath:"qrApi",
     baseQuery:fetchBaseQuery({
         baseUrl:"/api/v1/qr"
     }),
+    tagTypes:["getServiceAndTitle"],
     endpoints:(builder) => ({
         addTicketQr:builder.mutation<{message:string}, FormData>({
             query:(formData) => {
@@ -29,6 +30,17 @@ export const qrApi = createApi({
                 }
             },
         }),
+        getSingleQr: builder.query<TypeQR, {id:string|undefined}>({
+            query:(params) => {
+                return{
+                    url: '/single-qr',
+                    params:{
+                        id: params.id
+                    }
+                }
+            },
+            providesTags:["getServiceAndTitle"]
+        }),
         createTicketQr:builder.mutation<{message:string}, TypeCreateQRInputPayload>({
             query:(data) => {
                 return {
@@ -38,6 +50,17 @@ export const qrApi = createApi({
                     
                 }
             }
+        }),
+        updateTicketQr:builder.mutation<{message:string}, TypeUpdateQRInputPayload>({
+            query:(data) => {
+                return {
+                    url:"/update-single-qr",
+                    method:"PUT",
+                    body:data,
+                    
+                }
+            },
+            invalidatesTags:["getServiceAndTitle"]
         }),
         deleteTicketQr:builder.mutation<{message:string}, {id:string}>({
             query:(data) => {
@@ -52,4 +75,11 @@ export const qrApi = createApi({
     })
 })
 
-export const {useAddTicketQrMutation, useGetQrDataQuery, useCreateTicketQrMutation, useDeleteTicketQrMutation} = qrApi
+export const {
+    useAddTicketQrMutation,
+    useGetQrDataQuery,
+    useCreateTicketQrMutation,
+    useDeleteTicketQrMutation,
+    useGetSingleQrQuery,
+    useUpdateTicketQrMutation
+} = qrApi
