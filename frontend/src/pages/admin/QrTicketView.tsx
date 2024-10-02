@@ -9,10 +9,18 @@ import toast from 'react-hot-toast';
 
 const QrTicketView = () => {
     const {id, service} = useParams();
-    const [isUsedQr, setIsQrUsed] = useState(false)
+    const [isUsedQr, setIsQrUsed] = useState<boolean>(false)
     const {data, isLoading} = useGetQrDataQuery({id,isUsedQr});
     const [deleteTicketQr, {data:deleteQrData, isLoading:deleteQrLoading, error:deleteQrError}] = useDeleteTicketQrMutation()
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    
+    const handleDeleteFunction = (id:string) => {
+        const isDelete = confirm("Are you sure to delete");
+        if(isDelete){
+            deleteTicketQr({id})
+        }
+    }
+    
 
     useEffect(() => {
         if(deleteQrData){
@@ -58,7 +66,8 @@ const QrTicketView = () => {
                                                 {
                                                     deleteQrLoading ? <p>Loading...</p> :
                                                         <FaTrash  onClick={() => {
-                                                            deleteTicketQr({id:qr._id})
+                                                            handleDeleteFunction(qr._id)
+                                                            
                                                         }} />
                                                 }
                                         </div>
