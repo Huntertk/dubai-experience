@@ -1,16 +1,30 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 import '../../styles/qrTicketView.scss';
-import { useGetQrDataQuery } from '../../redux/api/qrApi';
+import { useDeleteTicketQrMutation, useGetQrDataQuery } from '../../redux/api/qrApi';
 import LoadingSpinner from '../../components/Loader';
 import { FaEdit } from "react-icons/fa";
 import { FaTrash } from "react-icons/fa";
+import toast from 'react-hot-toast';
 
 const QrTicketView = () => {
     const {id, service} = useParams();
     const [isUsedQr, setIsQrUsed] = useState(false)
     const {data, isLoading} = useGetQrDataQuery({id,isUsedQr});
+    const [deleteTicketQr, {data:deleteQrData, isLoading:deleteQrLoading, error:deleteQrError}] = useDeleteTicketQrMutation()
     const navigate = useNavigate()
+
+    useEffect(() => {
+        if(deleteQrData){
+            navigate(0);
+        }
+        if(deleteQrError){
+            if ('data' in deleteQrError) {
+              toast.error(`${deleteQrError.data}`);
+            }
+          }
+    },[deleteQrData, deleteQrError])
+
 
     if(isLoading){
         return <LoadingSpinner />
@@ -41,7 +55,12 @@ const QrTicketView = () => {
                                     qr.isUsed === false && (
                                         <div className='qr-action-btn-container'>
                                             <FaEdit onClick={() => navigate(`/admin/qr-code/edit/${service}/${qr._id}`) } />
-                                            <FaTrash />
+                                                {
+                                                    deleteQrLoading ? <p>Loading...</p> :
+                                                        <FaTrash  onClick={() => {
+                                                            deleteTicketQr({id:qr._id})
+                                                        }} />
+                                                }
                                         </div>
                                     )
                                 }

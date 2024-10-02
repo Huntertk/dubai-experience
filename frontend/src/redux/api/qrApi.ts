@@ -39,7 +39,17 @@ export const qrApi = createApi({
                 }
             }
         }),
+        deleteTicketQr:builder.mutation<{message:string}, {id:string}>({
+            query:(data) => {
+                return {
+                    url:"/delete",
+                    method:"POST",
+                    body:data,
+                    
+                }
+            }
+        }),
     })
 })
 
-export const {useAddTicketQrMutation, useGetQrDataQuery, useCreateTicketQrMutation} = qrApi
+export const {useAddTicketQrMutation, useGetQrDataQuery, useCreateTicketQrMutation, useDeleteTicketQrMutation} = qrApi

@@ -88,3 +88,25 @@ export const addSingleQr = async (req:Request, res:Response, next:NextFunction) 
         return next(error)
     }
 }
+
+
+export const deleteSingleQr = async (req:Request, res:Response, next:NextFunction) => {
+    try {
+        const {id}:{id:string} = req.body;
+
+        if(!id){
+            return next(new AppError("Qr ID not found", 404))
+        }
+
+        const qrExist = await QrCode.findById(id);
+        
+        if(!qrExist){
+            return next(new AppError("Qr not found with this id", 404))
+        }
+
+        await qrExist.deleteOne();
+        return res.status(200).json("query deleted successfully");
+    } catch (error) {
+        return next(error)
+    }
+}
