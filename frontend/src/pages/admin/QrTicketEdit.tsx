@@ -13,7 +13,7 @@ const QrTicketEdit = () => {
     const [Type, setType] = useState<string>("");
     const [title, setTitle] = useState<string>("");
     const {data:titleAndServiceData, isLoading:titleAndServiceLoading} = useGetTicketTitleAndServiceQuery({});
-    const {data:singleQrData, isLoading:singleQrLoading} = useGetSingleQrQuery({id})
+    const {data:singleQrData, isLoading:singleQrLoading, error:singleQrError} = useGetSingleQrQuery({id})
     const [updateTicketQr, {data:updateQrData, isLoading:updateQrLoading, error:updateQrError}] = useUpdateTicketQrMutation()
 
     const handleQrEdit = async (e:React.FormEvent<HTMLFormElement>) => {
@@ -41,10 +41,14 @@ const QrTicketEdit = () => {
             if ('data' in updateQrError) {
                 toast.error(`${updateQrError.data}`);
             }
-              
+            
+        }
+        if(singleQrError){
+            navigate('/admin/all-booking')
+
         }
 
-    },[singleQrData, updateQrData, updateQrError])
+    },[singleQrData, updateQrData, updateQrError, singleQrError])
 
     if(singleQrLoading || titleAndServiceLoading){
         return <LoadingSpinner />
