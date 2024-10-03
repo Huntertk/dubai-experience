@@ -15,6 +15,7 @@ const ManageDates = () => {
         <Link to="/admin/manage-dates/madame-tussauds">Madame Tussauds</Link>
         <Link to="/admin/manage-dates/atlantis-aquaventure">Atlantis Aquaventure</Link>
         <Link to="/admin/manage-dates/dubai-sky-view">Dubai Sky View</Link>
+        <Link to="/admin/manage-dates/dubai-ice-rink">Dubai Ice Rink</Link>
         <Link to="/admin/manage-dates/dubai-aquarium-and-underwater-zoo">The Dubai Aquarium and Underwater Zoo</Link>
       </div>
     </section>

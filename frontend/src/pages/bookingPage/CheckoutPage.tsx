@@ -70,6 +70,9 @@ const CheckoutPage = () => {
    } else if(service === 'dubai-sky-view'){
         bannerImg = "/assets/images/dubaiSkyViewImgTwo.jpg"
 
+    } else if(service === 'dubai-ice-rink'){
+        bannerImg = "/assets/images/dubaiIceRinkImgFour.jpg"
+
     }
 
 
