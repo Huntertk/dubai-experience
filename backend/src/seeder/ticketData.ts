@@ -789,8 +789,7 @@ export const ticketsData:TypeTicketData[] = [
               "These tickets can't be cancelled or rescheduled"
             ],
             inclusion: [
-              "Dubai Atlantis Aquaventure Waterpark Admission Ticket",
-              "All Fees and Taxes"
+              "Admission to Dubai Ice Rink"
             ],
             exclusion: [
               "Transportation"
