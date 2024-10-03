@@ -171,7 +171,7 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
                 return next(new AppError("Ticket not allowed to book insufficient inventory", 400))
             }
 
-            const doc = new PDFDocument();
+            const doc:PDFKit.PDFDocument = new PDFDocument();
                 
                 doc.pipe(fs.createWriteStream(path.join(__dirname, "..", "..", "uploads", `${booking._id}_ticket.pdf`)));
                 doc
@@ -337,9 +337,14 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
                 } else if(booking.service === 'madame-tussauds') {
                     imgUrls.bannerImg="https://i.postimg.cc/cLK1p3vT/madame-Tussauds-Img-Four.jpg"
                     imgUrls.productImg= "https://i.postimg.cc/gk22KQdC/madame-Tussauds-Img-Six.webp"
+
                 } else if(booking.service === 'atlantis-aquaventure') {
                     imgUrls.bannerImg="https://i.postimg.cc/nLfnKCTz/Atlantis-Aquaventure-Img-Ten.jpg"
                     imgUrls.productImg= "https://i.postimg.cc/ZKDRNb1B/Atlantis-Aquaventure-Img-Four.jpg"
+                    
+                } else if(booking.service === 'dubai-ice-rink') {
+                    imgUrls.bannerImg="https://i.postimg.cc/jdSrbWgQ/dubai-Ice-Rink-Img-Seven.jpg"
+                    imgUrls.productImg= "https://i.postimg.cc/Mpc2nC8n/dubai-Ice-Rink-Img-Nine.jpg"
                 }
 
                 const mailMessage = `We are delighted to confirm your ticket booking with Dubai Experience for ${booking.ticketTitle} Entry Ticket! Get ready to embark on an unforgettable experience at one of the most exciting destinations.`

@@ -8,4 +8,5 @@ export const qrModuleService:string[] = [
     "dubai-aquarium-and-underwater-zoo",
     "madame-tussauds",
     "atlantis-aquaventure",
+    "dubai-ice-rink"
 ];

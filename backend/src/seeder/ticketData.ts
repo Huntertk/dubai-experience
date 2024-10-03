@@ -747,4 +747,61 @@ export const ticketsData:TypeTicketData[] = [
           "Outside food and beverages are typically not allowed inside the attraction."
         ]
       },
+      {
+        title: "Dubai Ice Rink Ticket",
+        description: [
+          "Take a break from the oppressive heat of Dubai and enjoy a thrilling sensation of gliding over the cold surface of Dubai Ice Rink. You can skate on the largest ice rink in the city anytime you choose with an open date ticket, and you'll feel like a pro figure skater as you glide around the Olympic-sized rink.",
+        ],
+        service: "dubai-ice-rink",
+        images: [
+          "/assets/images/dubaiIceRinkImgOne.jpg",
+          "/assets/images/dubaiIceRinkImgTwo.jpg",
+          "/assets/images/dubaiIceRinkImgThree.jpg",
+          "/assets/images/dubaiIceRinkImgFour.jpg",
+          "/assets/images/dubaiIceRinkImgFive.jpg",
+          "/assets/images/dubaiIceRinkImgSeven.jpg",
+          "/assets/images/dubaiIceRinkImgEight.jpg",
+        ],
+        timeSlots:[],
+        preference: [
+          {
+            title: "General Admission",
+            details: [
+              "Admission to Dubai Ice Rink"
+            ],
+          }
+        ],
+        pricing: [
+          {
+            weekDays: {
+              adult: 99.73,
+              child: 99.73,
+            },
+            weekEnds: {
+              adult: 99.73,
+              child: 99.73,
+            },
+            title: "General Admission",
+          },
+        ],
+        inclusionAndExclusion: {
+            cancellationPolicy: [
+              "These tickets can't be cancelled or rescheduled"
+            ],
+            inclusion: [
+              "Dubai Atlantis Aquaventure Waterpark Admission Ticket",
+              "All Fees and Taxes"
+            ],
+            exclusion: [
+              "Transportation"
+            ]
+          },
+        rulesAndRestriction: [
+          "Tickets should be purchased in advance where possible, either online or at the entrance. Keep your ticket handy for inspection.",
+          "Bring valid ID if required, especially for discounted tickets or special promotions.",
+          "Follow any health and safety guidelines in place, such as wearing masks or using hand sanitizers if required.",
+          "Children should be supervised at all times, especially near exhibits and touch pools.",
+          "Outside food and beverages are typically not allowed inside the attraction."
+        ]
+      },
 ]

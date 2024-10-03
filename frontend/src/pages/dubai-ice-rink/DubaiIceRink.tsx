@@ -26,7 +26,7 @@ import TourVisitPlan from '../../components/TourHomeComponents/TourVisitPlan';
 
 const DubaiIceRink = () => {
     const serviceName:string = "Dubai Ice Rink"
-    const {data, isLoading} = useGetServiceTicketQuery({service:"madame-tussauds"});
+    const {data, isLoading} = useGetServiceTicketQuery({service:"dubai-ice-rink"});
 
     const dispatch = useAppDispatch() 
 
