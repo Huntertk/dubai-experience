@@ -18,10 +18,10 @@ const QrTicketEdit = () => {
 
     const handleQrEdit = async (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if(!QrCode || !title || !Type){
+        if(!title || !Type){
             return toast.error("Please enter all values")
         }
-        updateTicketQr({QrCode, title, Type, id})
+        updateTicketQr({title, Type, id})
     }
 
     const updatingQrState = ({qrCode, type, title}:{qrCode:string; type:string; title:string;}) => {
@@ -62,8 +62,7 @@ const QrTicketEdit = () => {
         placeholder="Enter QR Code"
         value={QrCode}
         required
-        onChange={(e:React.ChangeEvent<HTMLInputElement>) => setQrCode(e.target.value)} 
-        
+        readOnly
         />
         <select
         name="title"
