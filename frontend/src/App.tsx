@@ -14,6 +14,7 @@ const TourLayout = lazy(() => import('./components/layout/TourLayout'));
 // const AtlantisAquaventure = lazy(() => import('./pages/atlantis-aquaventure/AtlantisAquaventure'));
 // const DubaiSkyView = lazy(() => import('./pages/dubai-sky-view/DubaiSkyView'));
 const DubaiIceRink = lazy(() => import('./pages/dubai-ice-rink/DubaiIceRink'));
+const DubaiMiracleGarden = lazy(() => import('./pages/dubai-miracle-garden/DubaiMiracleGarden'));
 const DateSelectionContainer = lazy(() => import('./components/booking/DateSelectionContainer'));
 const CheckoutPage = lazy(() => import('./pages/bookingPage/CheckoutPage'));
 const AdminLogin = lazy(() => import('./pages/admin/AdminLogin'));
@@ -53,7 +54,7 @@ const App = () => {
                 window.location.hostname === 'dubai-experience.onrender.com' ? (
                   <DubaiIceRink />
                 ) :  window.location.hostname === 'localhost' ? (
-                  <DubaiIceRink />
+                  <DubaiMiracleGarden />
                 ) : <></>
               } 
             /> 
