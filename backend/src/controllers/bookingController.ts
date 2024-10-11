@@ -345,6 +345,10 @@ export const verifyPayment = async(req:Request, res:Response, next:NextFunction)
                 } else if(booking.service === 'dubai-ice-rink') {
                     imgUrls.bannerImg="https://i.postimg.cc/jdSrbWgQ/dubai-Ice-Rink-Img-Seven.jpg"
                     imgUrls.productImg= "https://i.postimg.cc/Mpc2nC8n/dubai-Ice-Rink-Img-Nine.jpg"
+
+                } else if(booking.service === 'dubai-miracle-garden') {
+                    imgUrls.bannerImg="https://i.postimg.cc/JzqgM6f5/dubai-Miracle-Garden-Img-Three.jpg"
+                    imgUrls.productImg= "https://i.postimg.cc/ry0vx94q/dubai-Miracle-Garden-Img-One.jpg"
                 }
 
                 const mailMessage = `We are delighted to confirm your ticket booking with Dubai Experience for ${booking.ticketTitle} Entry Ticket! Get ready to embark on an unforgettable experience at one of the most exciting destinations.`

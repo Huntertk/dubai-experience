@@ -73,8 +73,11 @@ const CheckoutPage = () => {
     } else if(service === 'dubai-ice-rink'){
         bannerImg = "/assets/images/dubaiIceRinkImgFour.jpg"
 
-    }
+    } else if(service === 'dubai-miracle-garden'){
+        bannerImg = "/assets/images/dubaiMiracleGardenImgTen.jpg"
 
+    }
+        
 
     const hostName = window.location.hostname;
 

@@ -26,7 +26,7 @@ import TourVisitPlan from '../../components/TourHomeComponents/TourVisitPlan';
 
 const DubaiMiracleGarden = () => {
     const serviceName:string = "Dubai Miracle Garden"
-    const {data, isLoading} = useGetServiceTicketQuery({service:"dubai-ice-rink"});
+    const {data, isLoading} = useGetServiceTicketQuery({service:"dubai-miracle-garden"});
 
     const dispatch = useAppDispatch() 
 

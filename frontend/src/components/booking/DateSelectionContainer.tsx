@@ -26,7 +26,8 @@ const DateSelectionContainer = () => {
             "dubai-aquarium-and-underwater-zoo",
             "madame-tussauds",
             "atlantis-aquaventure",
-            "dubai-ice-rink"
+            "dubai-ice-rink",
+            "dubai-miracle-garden"
         ];
 
         const [selectedDate, setSelectedDate] = useState<Date>()

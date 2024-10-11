@@ -803,4 +803,60 @@ export const ticketsData:TypeTicketData[] = [
           "Outside food and beverages are typically not allowed inside the attraction."
         ]
       },
+      {
+        title: "Dubai Miracle Garden Ticket",
+        description: [
+          "Miracle Garden is a one-of-a-kind show and spectacular outdoor leisure attraction in the region and throughout the world.",
+        ],
+        service: "dubai-miracle-garden",
+        images: [
+          "/assets/images/dubaiMiracleGardenImgOne.jpg",
+          "/assets/images/dubaiMiracleGardenImgTwo.jpg",
+          "/assets/images/dubaiMiracleGardenImgThree.jpg",
+          "/assets/images/dubaiMiracleGardenImgFour.jpg",
+          "/assets/images/dubaiMiracleGardenImgFive.jpg",
+          "/assets/images/dubaiMiracleGardenImgSeven.jpg",
+          "/assets/images/dubaiMiracleGardenImgEight.jpg",
+        ],
+        timeSlots:[],
+        preference: [
+          {
+            title: "General Admission",
+            details: [
+              "Admission to Dubai Miracle Garden"
+            ],
+          }
+        ],
+        pricing: [
+          {
+            weekDays: {
+              adult: 79.62,
+              child: 79.62,
+            },
+            weekEnds: {
+              adult: 79.62,
+              child: 79.62,
+            },
+            title: "General Admission",
+          },
+        ],
+        inclusionAndExclusion: {
+            cancellationPolicy: [
+              "These tickets can't be cancelled or rescheduled"
+            ],
+            inclusion: [
+              "Admission to Dubai Miracle Garden"
+            ],
+            exclusion: [
+              "Transportation"
+            ]
+          },
+        rulesAndRestriction: [
+          "Tickets should be purchased in advance where possible, either online or at the entrance. Keep your ticket handy for inspection.",
+          "Bring valid ID if required, especially for discounted tickets or special promotions.",
+          "Follow any health and safety guidelines in place, such as wearing masks or using hand sanitizers if required.",
+          "Children should be supervised at all times, especially near exhibits and touch pools.",
+          "Outside food and beverages are typically not allowed inside the attraction."
+        ]
+      },
 ]
