@@ -8,7 +8,8 @@
     "dev": "nodemon ./src/index.ts",
     "seed": "nodemon ./src/seeder/seeder.ts",
     "generate-code": "nodemon ./src/utils/generateRandomCode.ts",
-    "build": "npm install && npx tsc"
+    "build": "npm install && npx tsc",
+    "build-prod":"cd .. && cd frontend && npm install && npm run build && cd .. && cd backend && npm run build"
   },
   "author": "",
   "license": "ISC",
